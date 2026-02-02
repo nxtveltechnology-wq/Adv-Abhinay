@@ -86,18 +86,40 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white p-8 border border-gray-200 shadow-sm rounded-sm"
+            className="w-full max-w-lg mx-auto lg:mx-0 bg-white p-6 sm:p-8 border border-gray-200 shadow-sm rounded-sm overflow-hidden"
           >
             <h3 className="text-2xl font-serif font-bold text-primary mb-6">
               Send us a Message
             </h3>
-            <form className="space-y-6">
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              className="space-y-6"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="YOUR_ACCESS_KEY_HERE"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="New Contact Form Submission"
+              />
+              <input
+                type="hidden"
+                name="from_name"
+                value="Vidhit Law Website"
+              />
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Full Name
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-1 focus:ring-accent focus:border-accent outline-none transition-colors"
                   placeholder="Your Name"
                 />
@@ -108,6 +130,8 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-1 focus:ring-accent focus:border-accent outline-none transition-colors"
                   placeholder="your@email.com"
                 />
@@ -118,6 +142,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="tel"
+                  name="phone"
                   className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-1 focus:ring-accent focus:border-accent outline-none transition-colors"
                   placeholder="+91 XXXXX XXXXX"
                 />
@@ -126,7 +151,10 @@ const Contact = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Subject
                 </label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-1 focus:ring-accent focus:border-accent outline-none transition-colors">
+                <select
+                  name="subject_type"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-1 focus:ring-accent focus:border-accent outline-none transition-colors"
+                >
                   <option value="">Select a Subject</option>
                   <option value="General Inquiry">General Inquiry</option>
                   <option value="Civil/Criminal">Civil/Criminal Matter</option>
@@ -140,11 +168,16 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  required
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-1 focus:ring-accent focus:border-accent outline-none transition-colors"
                   placeholder="Brief details about your legal query..."
                 ></textarea>
               </div>
+
+              <div className="h-captcha" data-captcha="true"></div>
+
               <button
                 type="submit"
                 className="w-full bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-sm transition-colors"

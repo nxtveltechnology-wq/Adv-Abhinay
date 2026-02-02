@@ -23,26 +23,29 @@ const DisclaimerModal = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6"
         >
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
-            className="bg-white max-w-2xl w-full rounded-sm shadow-2xl overflow-hidden"
+            className="bg-white max-w-2xl w-full rounded-sm shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
           >
-            <div className="bg-primary p-6 border-b border-primary-light">
-              <h2 className="text-xl font-serif font-bold text-white tracking-wide text-center">
+            {/* Header */}
+            <div className="bg-primary p-4 sm:p-6 border-b border-primary-light flex-shrink-0">
+              <h2 className="text-lg sm:text-xl font-serif font-bold text-white tracking-wide text-center">
                 DISCLAIMER
               </h2>
             </div>
-            <div className="p-8 space-y-4 text-justify text-sm text-gray-700 leading-relaxed">
+
+            {/* Scrollable Content */}
+            <div className="p-4 sm:p-6 md:p-8 space-y-3 sm:space-y-4 text-justify text-xs sm:text-sm text-gray-700 leading-relaxed overflow-y-auto flex-1">
               <p>
                 As per the rules of the Bar Council of India, we are not
                 permitted to solicit work and advertise. By clicking on the "I
                 AGREE" button below, you acknowledge the following:
               </p>
-              <ul className="list-disc pl-5 space-y-2">
+              <ul className="list-disc pl-4 sm:pl-5 space-y-2">
                 <li>
                   There has been no advertisement, personal communication,
                   solicitation, invitation or inducement of any sort whatsoever
@@ -56,7 +59,7 @@ const DisclaimerModal = () => {
                 <li>
                   The information about us is provided to you on your specific
                   request and any information obtained or materials downloaded
-                  from this website is completely at the user’s volition and any
+                  from this website is completely at the user's volition and any
                   transmission, receipt or use of this site would not create any
                   lawyer-client relationship.
                 </li>
@@ -71,10 +74,12 @@ const DisclaimerModal = () => {
                 seek independent legal advice.
               </p>
             </div>
-            <div className="bg-gray-50 p-6 flex justify-center">
+
+            {/* Footer Button */}
+            <div className="bg-gray-50 p-4 sm:p-6 flex justify-center flex-shrink-0 border-t border-gray-200">
               <button
                 onClick={handleAgree}
-                className="bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-8 rounded-sm transition-all duration-300 uppercase tracking-widest shadow-md"
+                className="bg-accent hover:bg-accent-hover text-white font-semibold py-2.5 sm:py-3 px-6 sm:px-8 rounded-sm transition-all duration-300 uppercase tracking-widest shadow-md hover:shadow-lg cursor-pointer text-sm sm:text-base"
               >
                 I Agree
               </button>

@@ -88,32 +88,32 @@ const PracticeAreas = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group relative h-[320px] overflow-hidden rounded-sm shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100"
+              className="group relative h-[320px] overflow-hidden rounded-sm shadow-md hover:shadow-2xl active:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100"
             >
               {/* Background Image */}
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-active:scale-110"
                 style={{
                   backgroundImage: `url(${area.backgroundImage})`,
                 }}
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/50 group-hover:via-slate-900/80 group-hover:to-slate-900/40 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/50 group-hover:via-slate-900/80 group-hover:to-slate-900/40 group-active:via-slate-900/80 group-active:to-slate-900/40 transition-colors duration-500" />
 
               {/* Content */}
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div className="transform translate-y-4 group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-500">
                   <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-serif font-bold text-white group-hover:text-accent transition-colors leading-tight max-w-[85%]">
+                    <h3 className="text-xl font-serif font-bold text-white group-hover:text-accent group-active:text-accent transition-colors leading-tight max-w-[85%]">
                       {area.title}
                     </h3>
-                    <ArrowRight className="text-accent opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0" />
+                    <ArrowRight className="text-accent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0 group-active:translate-x-0" />
                   </div>
 
-                  <div className="h-0.5 w-12 bg-accent mb-4 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  <div className="h-0.5 w-12 bg-accent mb-4 transform scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 transition-transform duration-500 origin-left" />
 
-                  <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-4 group-hover:translate-y-0">
+                  <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-4 group-hover:translate-y-0 group-active:translate-y-0">
                     {area.desc}
                   </p>
                 </div>
