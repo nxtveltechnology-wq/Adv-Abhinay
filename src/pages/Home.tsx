@@ -210,29 +210,29 @@ const Home = () => {
                   className="rounded-xl w-full h-[500px] object-cover"
                 />
                 {/* Overlay Stats */}
-                <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-xl border border-gray-100">
-                  <div className="grid grid-cols-3 gap-4 text-center">
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 bg-white/95 backdrop-blur-sm p-3 sm:p-6 rounded-xl shadow-xl border border-gray-100">
+                  <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
                     <div>
-                      <div className="text-3xl font-bold text-accent mb-1">
+                      <div className="text-xl sm:text-3xl font-bold text-accent mb-1">
                         15+
                       </div>
-                      <div className="text-xs text-gray-600 uppercase tracking-wider">
+                      <div className="text-[10px] sm:text-xs text-gray-600 uppercase tracking-normal sm:tracking-wider leading-tight">
                         Years Experience
                       </div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-primary mb-1">
+                      <div className="text-xl sm:text-3xl font-bold text-primary mb-1">
                         500+
                       </div>
-                      <div className="text-xs text-gray-600 uppercase tracking-wider">
+                      <div className="text-[10px] sm:text-xs text-gray-600 uppercase tracking-normal sm:tracking-wider leading-tight">
                         Cases Won
                       </div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-green-600 mb-1">
+                      <div className="text-xl sm:text-3xl font-bold text-green-600 mb-1">
                         98%
                       </div>
-                      <div className="text-xs text-gray-600 uppercase tracking-wider">
+                      <div className="text-[10px] sm:text-xs text-gray-600 uppercase tracking-normal sm:tracking-wider leading-tight">
                         Success Rate
                       </div>
                     </div>

@@ -40,15 +40,18 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="p-2.5 bg-primary text-white rounded-sm group-hover:bg-accent transition-colors duration-300 shadow-sm">
-              <Scale className="h-7 w-7" />
+          <Link
+            to="/"
+            className="flex items-center space-x-2 sm:space-x-3 group"
+          >
+            <div className="p-1.5 sm:p-2.5 bg-primary text-white rounded-sm group-hover:bg-accent transition-colors duration-300 shadow-sm">
+              <Scale className="h-5 w-5 sm:h-7 sm:w-7" />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-serif font-bold text-primary tracking-wide leading-none">
+              <span className="text-sm sm:text-lg font-serif font-bold text-primary tracking-wide leading-none">
                 VIDHIT LAW ASSOCIATES
               </span>
-              <span className="text-[10px] text-primary-light/80 tracking-[0.2em] uppercase font-medium mt-1">
+              <span className="text-[8px] sm:text-[10px] text-primary-light/80 tracking-[0.1em] sm:tracking-[0.2em] uppercase font-medium mt-0.5 sm:mt-1">
                 Advocates & Legal Consultants
               </span>
             </div>

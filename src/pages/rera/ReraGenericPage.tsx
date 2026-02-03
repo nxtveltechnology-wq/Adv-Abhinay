@@ -11,7 +11,11 @@ import {
   Briefcase,
 } from "lucide-react";
 import { useEffect } from "react";
-import { reraServiceDetails, reraPackages, type ReraServiceDetail } from "../../data/siteData";
+import {
+  reraServiceDetails,
+  reraPackages,
+  type ReraServiceDetail,
+} from "../../data/siteData";
 
 const ReraGenericPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -115,7 +119,7 @@ const ReraGenericPage = () => {
   return (
     <div className="pt-20 min-h-screen bg-white">
       {/* Dynamic Header */}
-      <div className="bg-slate-900 text-white py-16 lg:py-24 relative overflow-hidden">
+      <div className="bg-slate-900 text-white py-12 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
         {/* Abstract geometric shape */}
         <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
@@ -133,7 +137,7 @@ const ReraGenericPage = () => {
               <ChevronRight className="h-4 w-4" />
               <span className="text-white">Details</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold mb-6 leading-tight">
               {detail.title}
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed border-l-4 border-accent pl-6">
@@ -143,7 +147,7 @@ const ReraGenericPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           {/* Left Content Column */}
           <div className="lg:col-span-2 space-y-16">

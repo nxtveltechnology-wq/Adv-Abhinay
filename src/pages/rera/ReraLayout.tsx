@@ -53,10 +53,10 @@ const ReraLayout = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="flex flex-col lg:grid lg:grid-cols-4 gap-8">
           {/* Sidebar */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 px-4 lg:px-0">
             <div className="bg-white rounded-sm shadow-sm border border-gray-100 p-4 sticky top-24">
               <h3 className="text-lg font-serif font-bold text-primary mb-4 px-2">
                 Service Menu
@@ -99,7 +99,7 @@ const ReraLayout = () => {
 
           {/* Main Content Area */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-sm shadow-sm border border-gray-100 p-8 min-h-[500px]">
+            <div className="lg:bg-white lg:rounded-sm lg:shadow-sm lg:border lg:border-gray-100 lg:p-8 min-h-[500px]">
               <Outlet />
             </div>
           </div>

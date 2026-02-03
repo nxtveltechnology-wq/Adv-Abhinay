@@ -12,7 +12,7 @@ const ReraHome = () => {
   return (
     <div className="flex flex-col">
       {/* 4.1 RERA Hero Section */}
-      <div className="relative bg-slate-900 text-white py-24 lg:py-32 overflow-hidden">
+      <div className="relative bg-slate-900 text-white py-16 sm:py-24 lg:py-32 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20 fixed-bg"
           style={{ backgroundImage: `url(${backgroundImages.rera})` }}
@@ -30,24 +30,24 @@ const ReraHome = () => {
                 Specialized Practice
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
               RERA <span className="text-accent">Advisory & Litigation</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl">
               Comprehensive legal solutions for Real Estate Projects, Agents,
               and Allottees. From registration to dispute resolution, we ensure
               seamless compliance with the RERA Act.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/rera/packages"
-                className="bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-8 rounded-sm transition-all flex items-center gap-2 shadow-lg shadow-accent/20"
+                className="bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-8 rounded-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-accent/20 w-full sm:w-auto"
               >
                 View Engagement Models <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/contact"
-                className="border border-white/20 hover:bg-white/10 text-white font-semibold py-3 px-8 rounded-sm transition-all backdrop-blur-sm"
+                className="border border-white/20 hover:bg-white/10 text-white font-semibold py-3 px-8 rounded-sm transition-all backdrop-blur-sm text-center w-full sm:w-auto"
               >
                 Schedule Consultation
               </Link>
@@ -77,7 +77,7 @@ const ReraHome = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white p-8 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-accent/30"
+              className="bg-white p-6 sm:p-8 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-accent/30"
             >
               <div className="bg-primary/5 w-14 h-14 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                 <service.icon className="h-7 w-7 text-primary group-hover:text-white" />
