@@ -12,6 +12,11 @@ import {
   Mail,
 } from "lucide-react";
 import SectionWrapper from "../components/SectionWrapper";
+import BlogSection from "../components/home/BlogSection";
+import ReraPopup from "../components/home/ReraPopup";
+import AwardsSection from "../components/home/AwardsSection";
+import TestimonialsSection from "../components/home/TestimonialsSection";
+import AskQuerySection from "../components/home/AskQuerySection";
 import bgBanner from "../assets/bg-banner.jpeg";
 import {
   practiceAreas,
@@ -247,7 +252,7 @@ const Home = () => {
       {/* 3.3 Core Values & Approach */}
       <section className="py-24 bg-primary text-white border-y border-white/5 relative overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-5"
+          className="absolute inset-0 bg-cover bg-center opacity-10"
           style={{ backgroundImage: `url(${backgroundImages.books})` }}
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -337,37 +342,45 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {practiceAreas.slice(0, 9).map((area, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {practiceAreas.slice(0, 8).map((area, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group relative h-[250px] overflow-hidden rounded-sm shadow-md hover:shadow-xl active:shadow-xl transition-all duration-500 cursor-pointer"
+              className="group relative flex flex-col bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100/50 hover:-translate-y-1 h-full"
             >
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-active:scale-110"
-                style={{
-                  backgroundImage: `url(${area.backgroundImage})`,
-                }}
-              />
+              {/* Image Section */}
+              <div className="relative h-48 overflow-hidden rounded-t-xl">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+                  style={{ backgroundImage: `url(${area.backgroundImage})` }}
+                />
+                <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/30 transition-colors duration-300" />
+              </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40 group-hover:via-black/70 group-hover:to-black/30 group-active:via-black/70 group-active:to-black/30 transition-colors duration-500" />
+              {/* Overlapping Icon */}
+              <div className="absolute top-48 left-6 -translate-y-1/2 z-20">
+                <div className="w-14 h-14 bg-slate-900 rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:bg-accent transition-colors duration-300">
+                  {area.icon && <area.icon className="h-6 w-6 text-white" />}
+                </div>
+              </div>
 
-              {/* Content */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <div className="transform translate-y-2 group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-500">
-                  <h3 className="text-lg font-serif font-bold text-white mb-2 group-hover:text-accent group-active:text-accent transition-colors leading-tight">
-                    {area.title}
-                  </h3>
-                  <div className="h-0.5 w-8 bg-accent mb-3 transform scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 transition-transform duration-500 origin-left" />
-                  <p className="text-gray-300 text-xs leading-relaxed opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-4 group-hover:translate-y-0 group-active:translate-y-0">
-                    {area.desc}
-                  </p>
+              {/* Content Section */}
+              <div className="pt-10 pb-8 px-6 flex flex-col flex-grow">
+                <h3 className="text-lg font-serif font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2 text-left">
+                  {area.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3 text-left">
+                  {area.desc}
+                </p>
+                <div className="mt-auto text-left">
+                  <span className="inline-flex items-center text-sm font-bold text-accent group-hover:text-primary transition-colors tracking-wide uppercase cursor-pointer">
+                    View Detail{" "}
+                    <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -383,6 +396,9 @@ const Home = () => {
           </Link>
         </div>
       </SectionWrapper>
+
+      {/* 3.4.5 Awards & Recognition */}
+      <AwardsSection />
 
       {/* 3.5 RERA Services - Background Image Added */}
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
@@ -507,7 +523,13 @@ const Home = () => {
         </div>
       </SectionWrapper>
 
-      {/* 3.7 Contact CTA - Streamlined */}
+      {/* 3.6.5 Testimonials */}
+      <TestimonialsSection />
+
+      {/* 3.7 Blog Section */}
+      <BlogSection />
+
+      {/* 3.8 Contact CTA - Streamlined */}
       <section className="py-24 bg-primary text-white text-center relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
@@ -531,6 +553,12 @@ const Home = () => {
           </Link>
         </div>
       </section>
+
+      {/* 3.9 Ask Any Query Section */}
+      <AskQuerySection />
+
+      {/* RERA Popup */}
+      <ReraPopup />
     </div>
   );
 };

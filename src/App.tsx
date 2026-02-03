@@ -10,9 +10,13 @@ const PracticeAreas = lazy(() => import("./pages/PracticeAreas"));
 const Services = lazy(() => import("./pages/Services"));
 const Team = lazy(() => import("./pages/Team")); // We might rename this to Partners internally or keep file name
 const Packages = lazy(() => import("./pages/Packages"));
+const Blogs = lazy(() => import("./pages/Blogs"));
+const Career = lazy(() => import("./pages/Career"));
 const Contact = lazy(() => import("./pages/Contact"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const Disclaimer = lazy(() => import("./pages/Disclaimer"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
 
 // RERA Components
 const ReraLayout = lazy(() => import("./pages/rera/ReraLayout"));
@@ -46,8 +50,12 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/team" element={<Team />} />
             <Route path="/packages" element={<Packages />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/career" element={<Career />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Suspense>

@@ -80,7 +80,7 @@ const PracticeAreas = () => {
           <div className="w-16 h-1 bg-accent mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {practiceAreas.map((area, index) => (
             <motion.div
               key={index}
@@ -88,34 +88,37 @@ const PracticeAreas = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group relative h-[320px] overflow-hidden rounded-sm shadow-md hover:shadow-2xl active:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100"
+              className="group relative flex flex-col bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100/50 hover:-translate-y-1 h-full"
             >
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-active:scale-110"
-                style={{
-                  backgroundImage: `url(${area.backgroundImage})`,
-                }}
-              />
+              {/* Image Section */}
+              <div className="relative h-52 overflow-hidden rounded-t-xl">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+                  style={{ backgroundImage: `url(${area.backgroundImage})` }}
+                />
+                <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/30 transition-colors duration-300" />
+              </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/50 group-hover:via-slate-900/80 group-hover:to-slate-900/40 group-active:via-slate-900/80 group-active:to-slate-900/40 transition-colors duration-500" />
+              {/* Overlapping Icon - Positioned absolute relative to card to avoid clipping */}
+              <div className="absolute top-52 left-6 -translate-y-1/2 z-20">
+                <div className="w-14 h-14 bg-slate-900 rounded-full flex items-center justify-center shadow-lg border-4 border-white group-hover:bg-accent transition-colors duration-300">
+                  {area.icon && <area.icon className="h-6 w-6 text-white" />}
+                </div>
+              </div>
 
-              {/* Content */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <div className="transform translate-y-4 group-hover:translate-y-0 group-active:translate-y-0 transition-transform duration-500">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-serif font-bold text-white group-hover:text-accent group-active:text-accent transition-colors leading-tight max-w-[85%]">
-                      {area.title}
-                    </h3>
-                    <ArrowRight className="text-accent opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0 group-active:translate-x-0" />
-                  </div>
-
-                  <div className="h-0.5 w-12 bg-accent mb-4 transform scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 transition-transform duration-500 origin-left" />
-
-                  <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-4 group-hover:translate-y-0 group-active:translate-y-0">
-                    {area.desc}
-                  </p>
+              {/* Content Section */}
+              <div className="pt-10 pb-8 px-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-serif font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  {area.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                  {area.desc}
+                </p>
+                <div className="mt-auto">
+                  <span className="inline-flex items-center text-sm font-bold text-accent group-hover:text-primary transition-colors tracking-wide uppercase">
+                    View Detail{" "}
+                    <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </div>
               </div>
             </motion.div>

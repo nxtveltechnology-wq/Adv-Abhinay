@@ -8,14 +8,23 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Column */}
           <div className="space-y-6">
-            <div>
-              <h3 className="text-2xl font-serif font-bold text-white tracking-wide">
-                VIDHIT LAW ASSOCIATES
-              </h3>
-              <p className="text-xs uppercase tracking-[0.2em] text-accent mt-1">
-                Advocates & Legal Consultants
-              </p>
-            </div>
+            <Link to="/" className="flex items-center space-x-3 group">
+              <div className="">
+                <img
+                  src="/logo/vidhit-logo-footer.png"
+                  alt="Vidhit Law Associates Logo"
+                  className="w-40 lg:w-55 object-contain"
+                />
+              </div>
+              {/* <div>
+                <h3 className="text-xl font-serif font-bold text-white tracking-wide leading-none">
+                  VIDHIT LAW ASSOCIATES
+                </h3>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-accent mt-1.5 font-medium">
+                  Advocates & Legal Consultants
+                </p>
+              </div> */}
+            </Link>
             <p className="text-sm leading-relaxed text-gray-400">
               Committed to the pursuit of justice through integrity, diligence,
               and professional excellence.
@@ -50,6 +59,11 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-sm">
               <li>
+                <Link to="/" className="hover:text-accent transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link
                   to="/about"
                   className="hover:text-accent transition-colors"
@@ -59,18 +73,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/practice-areas"
+                  to="/blogs"
                   className="hover:text-accent transition-colors"
                 >
-                  Practice Areas
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/rera"
-                  className="hover:text-accent transition-colors"
-                >
-                  RERA Services
+                  Blogs & News
                 </Link>
               </li>
               <li>
@@ -92,18 +98,45 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Practice Areas */}
+          {/* Services */}
           <div>
             <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm relative inline-block">
-              Practice Areas
+              Our Services
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-accent"></span>
             </h4>
             <ul className="space-y-3 text-sm">
-              <li>Civil & Criminal Law</li>
-              <li>Corporate & Business</li>
-              <li>Banking & Finance</li>
-              <li>Family Disputes</li>
-              <li>Arbitration</li>
+              <li>
+                <Link
+                  to="/practice-areas"
+                  className="hover:text-accent transition-colors"
+                >
+                  Practice Areas
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/rera"
+                  className="hover:text-accent transition-colors"
+                >
+                  RERA Advisory
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/practice-areas"
+                  className="hover:text-accent transition-colors"
+                >
+                  Litigation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/practice-areas"
+                  className="hover:text-accent transition-colors"
+                >
+                  Corporate Consultancy
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -146,8 +179,15 @@ const Footer = () => {
             >
               Disclaimer
             </Link>
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
+            <Link
+              to="/privacy-policy"
+              className="hover:text-white transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="hover:text-white transition-colors">
+              Terms of Service
+            </Link>
           </div>
         </div>
         <div className="text-center mt-8 text-[10px] text-gray-600 max-w-2xl mx-auto">

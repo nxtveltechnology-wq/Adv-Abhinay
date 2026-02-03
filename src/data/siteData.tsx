@@ -11,6 +11,9 @@ import {
   Building2,
   FileCheck,
   Briefcase,
+  Zap,
+  Heart,
+  Coffee,
 } from "lucide-react";
 
 // Assets
@@ -20,8 +23,25 @@ import legalCourt from "../assets/legal_court.png";
 import legalConsultation from "../assets/legal_consultation.png";
 import realEstateLaw from "../assets/real_estate_law.png";
 import lawTeamMeeting from "../assets/law_team_meeting.png";
+import bgBanner from "../assets/bg-banner.jpeg";
 
 // --- Interfaces ---
+
+export interface JobOpening {
+  id: number;
+  title: string;
+  type: "Full-Time" | "Internship" | "Part-Time";
+  location: string;
+  department: string;
+  experience: string;
+  description: string;
+}
+
+export interface CareerBenefit {
+  title: string;
+  desc: string;
+  icon: any;
+}
 
 export interface PracticeArea {
   title: string;
@@ -66,11 +86,32 @@ export interface CoreValue {
   icon: any;
 }
 
+export interface Award {
+  title: string;
+  year: string;
+  organization: string;
+  image?: string;
+}
+
+export interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  content: string;
+  image?: string;
+}
+
+export interface Client {
+  id: number;
+  name: string;
+  logo: string;
+}
+
 // --- Data ---
 
 export const backgroundImages = {
   scales: legalScales,
-  books: legalBooks,
+  books: bgBanner,
   court: legalCourt,
   consultation: legalConsultation,
   rera: realEstateLaw,
@@ -458,3 +499,141 @@ export const reraServiceDetails: Record<string, ReraServiceDetail> = {
     ],
   },
 };
+
+export const awards: Award[] = [
+  {
+    title: "Best Commercial Litigation Firm",
+    year: "2023",
+    organization: "Legal Era Awards",
+    image:
+      "https://images.unsplash.com/photo-1629904853716-6b1484e5378e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGF3YXJkfGVufDB8fDB8fHww",
+  },
+  {
+    title: "Rising Star in Real Estate Law",
+    year: "2022",
+    organization: "Asian Legal Business",
+    image:
+      "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXdhcmR8ZW58MHx8MHx8fDA%3D",
+  },
+  {
+    title: "Excellence in Legal Practice",
+    year: "2021",
+    organization: "Indian National Bar Association",
+    image:
+      "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YXdhcmR8ZW58MHx8MHx8fDA%3D",
+  },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: "Rajesh Kumar",
+    role: "Director, Sunshine Buildtech Pvt Ltd",
+    content:
+      "Vidhit Law Associates provided exceptional guidance during our complex RERA registration process. Their team is knowledgeable, responsive, and truly professional.",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces",
+  },
+  {
+    id: 2,
+    name: "Amit Singh",
+    role: "Civil Contractor",
+    content:
+      "I was impressed by their strategic approach to my legal dispute. They not only won the case but also ensured a smooth execution of the order. Highly recommended.",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces",
+  },
+  {
+    id: 3,
+    name: "Priya Sharma",
+    role: "Homebuyer",
+    content:
+      "Thanks to Advocate Abhinay and his team, I was able to get my refund from a builder who had delayed the project for years. They are the best for RERA matters.",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=faces",
+  },
+];
+
+export const clients: Client[] = [
+  {
+    id: 1,
+    name: "Tech Solutions Inc.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png",
+  },
+  {
+    id: 2,
+    name: "Green Valley Real Estate",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+  },
+  {
+    id: 3,
+    name: "BuildWell Constructions",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1200px-IBM_logo.svg.png",
+  },
+  {
+    id: 4,
+    name: "Innovate India Ltd",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Tarta_Steel_logo.svg/1200px-Tarta_Steel_logo.svg.png",
+  },
+  {
+    id: 5,
+    name: "Sunrise Developers",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1200px-Accenture.svg.png",
+  },
+];
+
+export const jobOpenings: JobOpening[] = [
+  {
+    id: 1,
+    title: "Senior Litigation Associate",
+    type: "Full-Time",
+    location: "Patna High Court",
+    department: "Litigation",
+    experience: "5-7 Years",
+    description:
+      "Looking for an experienced litigator with a strong command over Civil and Constitutional matters.",
+  },
+  {
+    id: 2,
+    title: "Legal Researcher",
+    type: "Full-Time",
+    location: "Patna Office",
+    department: "Research",
+    experience: "1-3 Years",
+    description:
+      "Detail-oriented researcher to support the team with case laws and drafting.",
+  },
+  {
+    id: 3,
+    title: "Legal Intern",
+    type: "Internship",
+    location: "Patna Office",
+    department: "General",
+    experience: "Final Year Student",
+    description:
+      "Opportunity for law students to gain hands-on experience in court proceedings.",
+  },
+];
+
+export const careerBenefits: CareerBenefit[] = [
+  {
+    title: "Mentorship",
+    desc: "Direct guidance from senior partners and experts.",
+    icon: Users,
+  },
+  {
+    title: "Growth",
+    desc: "Structured career path with regular performance reviews.",
+    icon: Zap,
+  },
+  {
+    title: "Work-Life Balance",
+    desc: "We respect personal time and mental well-being.",
+    icon: Heart,
+  },
+  {
+    title: "Vibrant Environment",
+    desc: "Collaborative and inclusive workplace culture.",
+    icon: Coffee,
+  },
+];
