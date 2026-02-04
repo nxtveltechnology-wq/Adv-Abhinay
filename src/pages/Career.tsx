@@ -13,6 +13,7 @@ import {
   backgroundImages,
 } from "../data/siteData";
 import { useState } from "react";
+import SEO from "../components/SEO";
 
 const Career = () => {
   const [activeTab, setActiveTab] = useState<"internship" | "associate">(
@@ -21,6 +22,11 @@ const Career = () => {
 
   return (
     <div className="">
+      <SEO
+        title="Careers & Internships | Vidhit Law Associates - Join Our Legal Team"
+        description="Join Vidhit Law Associates for a rewarding legal career. Internships for law students and Associate positions for experienced advocates in Patna."
+        keywords="Legal Jobs Patna, Law Internship Bihar, Advocate Jobs, Legal Career, Law Firm Vacancies"
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div

@@ -150,18 +150,22 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
                 <span>
-                  <strong>Patna Offices:</strong>
+                  <strong>Office:</strong> Boring Road, Patna
                   <br />
-                  Boring Road & Kankarbagh
+                  <strong>Chamber – High Court:</strong> Room No. 1, Table No.
+                  2, Lawyers’ Chamber
+                  <br />
+                  <strong>Chamber – Civil Court:</strong> Table No. 4A, Main
+                  Hall, Civil Court
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent shrink-0" />
-                <span>+91 XXXXX XXXXX</span>
+                <span>+91 99346 52263, +91 70082 22725</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
-                <span>contact@vidhitlaw.com</span>
+                <span>vidhitlawassociates8@gmail.com</span>
               </li>
             </ul>
           </div>

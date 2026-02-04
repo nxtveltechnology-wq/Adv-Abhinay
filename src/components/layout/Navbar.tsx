@@ -44,7 +44,7 @@ const Navbar = () => {
       className={`fixed w-full z-50 transition-all duration-300 border-b border-transparent ${
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-sm py-4"
-          : "bg-white py-6 border-b-gray-100"
+          : "bg-white py-4 border-b-gray-100"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,11 +59,11 @@ const Navbar = () => {
               <img
                 src="/logo/vidhit-logo.png"
                 alt="Vidhit Law Associates Logo"
-                className="w-16"
+                className="w-14"
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-sm sm:text-lg font-serif font-bold text-primary tracking-wide leading-none">
+              <span className="text-sm sm:text-lg font-sans-serif font-bold text-primary  leading-none">
                 VIDHIT LAW ASSOCIATES
               </span>
               <span className="text-[8px] sm:text-[10px] text-primary-light/80 tracking-[0.1em] sm:tracking-[0.2em] uppercase font-medium mt-0.5 sm:mt-1">

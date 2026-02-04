@@ -6,6 +6,7 @@ import legalBooks from "../assets/legal_books.png";
 import legalScales from "../assets/legal_scales.png";
 import lawTeamMeeting from "../assets/law_team_meeting.png";
 import legalConsultation from "../assets/legal_consultation.png";
+import SEO from "../components/SEO";
 
 const AboutUs = () => {
   const fadeIn = {
@@ -16,6 +17,11 @@ const AboutUs = () => {
 
   return (
     <div className="flex flex-col">
+      <SEO
+        title="About Us | Vidhit Law Associates - Top Legal Firm in Bihar"
+        description="Vidhit Law Associates is a team of dedicated advocates in Patna, Bihar, committed to justice, integrity, and professional excellence in all legal matters."
+        keywords="About Vidhit Law, Law Firm Profile, Advocates in Bihar, Legal Team Patna, Best Lawyers Patna"
+      />
       {/* 1. Header Section */}
       <div className="relative bg-primary py-24 text-center text-white overflow-hidden">
         <div

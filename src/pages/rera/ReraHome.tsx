@@ -7,10 +7,16 @@ import {
   reraPackages,
   backgroundImages,
 } from "../../data/siteData";
+import SEO from "../../components/SEO";
 
 const ReraHome = () => {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="RERA Consultants in Patna | RERA Registration & Litigation Services - Vidhit Law"
+        description="Expert RERA consultants in Patna for Project Registration, Agent Registration, QPR Filings, and Dispute Resolution (Litigation). Protect your real estate interests."
+        keywords="RERA Consultant Patna, RERA Registration Bihar, RERA Litigation Lawyer, Real Estate Law Firm, RERA Agent Registration"
+      />
       {/* 4.1 RERA Hero Section */}
       <div className="relative bg-slate-900 text-white py-16 sm:py-24 lg:py-32 overflow-hidden">
         <div

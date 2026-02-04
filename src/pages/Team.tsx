@@ -9,10 +9,16 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { partners, backgroundImages } from "../data/siteData";
+import SEO from "../components/SEO";
 
 const Team = () => {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Our Team | Vidhit Law Associates - Experienced Advocates in Patna"
+        description="Meet our team of experienced advocates and legal experts at Vidhit Law Associates, Patna. Specialists in Civil, Criminal, RERA, and Corporate Law."
+        keywords="Advocates Team Patna, Legal Experts Bihar, Vidhit Law Partners, Lawyers Profile, Advocate Abhinay Priyadarshi"
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-primary via-primary/95 to-slate-900 text-white py-32 relative overflow-hidden">
         <div

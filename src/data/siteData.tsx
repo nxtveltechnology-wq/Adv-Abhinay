@@ -506,21 +506,21 @@ export const awards: Award[] = [
     year: "2023",
     organization: "Legal Era Awards",
     image:
-      "https://images.unsplash.com/photo-1629904853716-6b1484e5378e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGF3YXJkfGVufDB8fDB8fHww",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2ip7ACQFze5R84zL9OU1zhnhX5VFkYlYScA&s",
   },
   {
     title: "Rising Star in Real Estate Law",
     year: "2022",
     organization: "Asian Legal Business",
     image:
-      "https://images.unsplash.com/photo-1578269174936-2709b6aeb913?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXdhcmR8ZW58MHx8MHx8fDA%3D",
+      "https://assets.spe.org/dims4/default/cadfd13/2147483647/strip/true/crop/724x407+0+38/resize/1200x675!/quality/90/?url=http%3A%2F%2Fspe-brightspot.s3.us-east-2.amazonaws.com%2Fb2%2Fd3%2F6310f62f4245bac3c0e1ebeb72c5%2Fgettyimages-2157551537.jpg",
   },
   {
     title: "Excellence in Legal Practice",
     year: "2021",
     organization: "Indian National Bar Association",
     image:
-      "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YXdhcmR8ZW58MHx8MHx8fDA%3D",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaUxuljRuWfNjczz1cyOFl5oKrujsJm2gWzw&s",
   },
 ];
 

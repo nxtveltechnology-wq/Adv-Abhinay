@@ -25,6 +25,7 @@ import {
   heroSliderImages,
   partners,
 } from "../data/siteData";
+import SEO from "../components/SEO";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,6 +46,11 @@ const Home = () => {
 
   return (
     <div className="flex flex-col overflow-x-hidden">
+      <SEO
+        title="Vidhit Law Associates | Top Advocates & Legal Consultants in Patna"
+        description="Vidhit Law Associates is a premier law firm in Patna providing comprehensive legal solutions in Civil, Criminal, RERA, and Corporate Law."
+        keywords="Lawyer in Patna, Advocate in Patna, High Court Lawyer, RERA Consultant, Best Law Firm in Patna"
+      />
       {/* 3.1 Hero Section */}
       <section className="relative text-white py-20 lg:py-24 overflow-hidden flex items-center min-h-[85vh] bg-gray-900">
         {/* Background Slider */}
@@ -397,9 +403,6 @@ const Home = () => {
         </div>
       </SectionWrapper>
 
-      {/* 3.4.5 Awards & Recognition */}
-      <AwardsSection />
-
       {/* 3.5 RERA Services - Background Image Added */}
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/5 skew-x-12 transform origin-top-right"></div>
@@ -430,6 +433,9 @@ const Home = () => {
           </Link>
         </div>
       </section>
+
+      {/* 3.4.5 Awards & Recognition */}
+      <AwardsSection />
 
       {/* 3.6 Partners */}
       <SectionWrapper background="light">

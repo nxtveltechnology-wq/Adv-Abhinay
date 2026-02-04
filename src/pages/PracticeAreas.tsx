@@ -2,10 +2,16 @@ import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Scale, Gavel, FileText } from "lucide-react";
 import SectionWrapper from "../components/SectionWrapper";
 import { practiceAreas, backgroundImages } from "../data/siteData";
+import SEO from "../components/SEO";
 
 const PracticeAreas = () => {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Practice Areas | Vidhit Law Associates - Civil, Criminal, Corporate"
+        description="Explore our wide range of legal services including Civil Litigation, Criminal Defense, Corporate Law, RERA Advisory, and Family Disputes in Patna."
+        keywords="Civil Lawyer Patna, Criminal Lawyer, Corporate Law Firm, RERA Services, Divorce Lawyer Patna, Legal Services List"
+      />
       {/* Hero Section */}
       <div className="bg-primary text-white py-24 relative overflow-hidden">
         <div

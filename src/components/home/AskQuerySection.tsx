@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { User, Mail, Phone, MessageSquare, ArrowRight } from "lucide-react";
 import { useState } from "react";
-import { backgroundImages } from "../../data/siteData";
 
 const AskQuerySection = () => {
   const [formState, setFormState] = useState({
@@ -41,31 +40,23 @@ const AskQuerySection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative h-full"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-              <div className="absolute inset-0 bg-primary/20 hover:bg-transparent transition-colors duration-500 z-10"></div>
-              <img
-                src={backgroundImages.consultation}
-                alt="Legal Consultation"
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-              />
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white h-full min-h-[400px]">
+              <div className="absolute inset-0 bg-primary/20 pointer-events-none z-10 transition-opacity hover:opacity-0 duration-500"></div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.378546559795!2d85.10702810000002!3d25.6175651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5834928f20d5%3A0x8e82a6132d786d3d!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "400px" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
             </div>
 
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100 max-w-xs z-20 hidden md:block">
-              <div className="flex items-center gap-4">
-                <div className="bg-accent/10 p-3 rounded-full">
-                  <MessageSquare className="h-6 w-6 text-accent" />
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900 text-lg">
-                    Quick Response
-                  </p>
-                  <p className="text-xs text-gray-500">Within 24 Hours</p>
-                </div>
-              </div>
-            </div>
+            {/* Floating Badge moved to corner of map? No, can keep or remove. User said "replace image with map". Keeping badge might look good or weird over map. I'll remove it as maps have their own UI. */}
           </motion.div>
 
           {/* Right Side - Form */}

@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import SectionWrapper from "../components/SectionWrapper";
+import SEO from "../components/SEO";
 
 const Contact = () => {
   return (
     <div className="flex flex-col">
+      <SEO
+        title="Contact Us | Vidhit Law Associates"
+        description="Get in touch with Vidhit Law Associates for expert legal consultation in Patna. Call us or visit our High Court and Civil Court chambers."
+        keywords="Contact Lawyer Patna, Legal Consultation, Law Firm Address Patna, Advocate Phone Number"
+      />
       <div className="bg-primary text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
@@ -35,13 +41,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-primary mb-1">
-                    Patna Offices
+                    Our Offices
                   </h4>
                   <p className="text-gray-600">
-                    <strong>Office 1:</strong> Boring Road, Patna, Bihar
-                  </p>
-                  <p className="text-gray-600">
-                    <strong>Office 2:</strong> Kankarbagh, Patna, Bihar
+                    <strong>Office:</strong> Boring Road, Patna <br />
+                    <strong>Chamber – High Court:</strong> Room No. 1, Table No.
+                    2, Lawyers’ Chamber <br />
+                    <strong>Chamber – Civil Court:</strong> Table No. 4A, Main
+                    Hall, Civil Court
                   </p>
                 </div>
               </div>
@@ -52,7 +59,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-primary mb-1">Phone</h4>
-                  <p className="text-gray-600">+91 XXXXX XXXXX</p>
+                  <p className="text-gray-600">
+                    +91 99346 52263, +91 70082 22725
+                  </p>
                   <p className="text-sm text-gray-500 mt-1">
                     Mon-Sat, 10:00 AM - 7:00 PM
                   </p>
@@ -65,7 +74,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-primary mb-1">Email</h4>
-                  <p className="text-gray-600">contact@vidhitlaw.com</p>
+                  <p className="text-gray-600">
+                    vidhitlawassociates8@gmail.com
+                  </p>
                 </div>
               </div>
             </div>
@@ -78,6 +89,19 @@ const Contact = () => {
                 Consultations are strictly by appointment. Please contact us to
                 schedule a meeting.
               </p>
+            </div>
+
+            {/* Map */}
+            <div className="mt-12 rounded-lg overflow-hidden shadow-md border border-gray-200">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.525992087522!2d85.11664407604616!3d25.616513977443833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5822f309a63b%3A0x6b4f7454212513Z!2sPatna%20High%20Court!5e0!3m2!1sen!2sin!4v1707010000000!5m2!1sen!2sin"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </motion.div>
 
