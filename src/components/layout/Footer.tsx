@@ -1,181 +1,144 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Facebook, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { useBrand } from "../../context/BrandContext";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  const brand = useBrand();
+
   return (
-    <footer className="bg-[#0b1120] text-gray-300 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand Column */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="">
-                <img
-                  src="/logo/vidhit-logo-footer.png"
-                  alt="Vidhit Law Associates Logo"
-                  className="w-40 lg:w-55 object-contain"
-                />
-              </div>
-              {/* <div>
-                <h3 className="text-xl font-serif font-bold text-white tracking-wide leading-none">
-                  VIDHIT LAW ASSOCIATES
-                </h3>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-accent mt-1.5 font-medium">
-                  Advocates & Legal Consultants
-                </p>
-              </div> */}
+    <footer className="bg-[#0b1120] text-gray-300 border-t border-gray-800 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+          {/* Column 1: Logo */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="block">
+              <img
+                src={brand.footerLogo}
+                alt={brand.footerLogoAlt}
+                className="w-48 lg:w-56 object-contain"
+              />
             </Link>
-            <p className="text-sm leading-relaxed text-gray-400">
-              Committed to the pursuit of justice through integrity, diligence,
-              and professional excellence.
-            </p>
-            <div className="flex space-x-4 pt-2">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+          </div>
+
+          {/* Column 2: Main Navigation */}
+          <div className="flex flex-col space-y-4">
+            {[
+              { name: "ABOUT US", path: "/about" },
+              { name: "OUR TEAM", path: "/team" },
+              { name: "INDUSTRIES", path: "#" },
+              { name: "NEWS & INSIGHTS", path: "/blogs" },
+              { name: "CAREERS", path: "/career" },
+            ].map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className="text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors"
               >
-                <Linkedin className="h-5 w-5" />
-              </a>
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Column 3: Practices */}
+          <div>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#8892b0] mb-6">
+              Practices
+            </h4>
+            <ul className="space-y-3">
+              {[
+                "Civil Litigation",
+                "Criminal Defense",
+                "Constitutional Law",
+                "Corporate Law",
+                "RERA Advisory",
+                "Family Law",
+              ].map((practice) => (
+                <li key={practice}>
+                  <Link
+                    to="/practice-areas"
+                    className="text-sm text-gray-400 hover:text-accent transition-colors"
+                  >
+                    {practice}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact Info */}
+          <div>
+            <div className="mb-8">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#8892b0] mb-4">
+                Phone
+              </h4>
+              <div className="flex flex-col space-y-2 text-sm text-gray-300 font-medium">
+                <a
+                  href={`tel:${brand.phoneRaw}`}
+                  className="hover:text-accent transition-colors"
+                >
+                  T {brand.phone}
+                </a>
+                <a
+                  href={`tel:${brand.altPhoneRaw}`}
+                  className="hover:text-accent transition-colors"
+                >
+                  M {brand.altPhone}
+                </a>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#8892b0] mb-4">
+                Email
+              </h4>
               <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                href={`mailto:${brand.email}`}
+                className="text-sm text-gray-300 font-medium hover:text-accent transition-colors"
               >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Facebook className="h-5 w-5" />
+                {brand.email}
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Column 5: Follow Us */}
           <div>
-            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm relative inline-block">
-              Quick Links
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-accent"></span>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-[#8892b0] mb-6">
+              Follow Us
             </h4>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link to="/" className="hover:text-accent transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="hover:text-accent transition-colors"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/blogs"
-                  className="hover:text-accent transition-colors"
-                >
-                  Blogs & News
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/team"
-                  className="hover:text-accent transition-colors"
-                >
-                  Partners
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="hover:text-accent transition-colors"
-                >
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm relative inline-block">
-              Our Services
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-accent"></span>
-            </h4>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  to="/practice-areas"
-                  className="hover:text-accent transition-colors"
-                >
-                  Practice Areas
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/rera"
-                  className="hover:text-accent transition-colors"
-                >
-                  RERA Advisory
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/practice-areas"
-                  className="hover:text-accent transition-colors"
-                >
-                  Litigation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/practice-areas"
-                  className="hover:text-accent transition-colors"
-                >
-                  Corporate Consultancy
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm relative inline-block">
-              Contact Us
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-accent"></span>
-            </h4>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <span>
-                  <strong>Office:</strong> Boring Road, Patna
-                  <br />
-                  <strong>Chamber – High Court:</strong> Room No. 1, Table No.
-                  2, Lawyers’ Chamber
-                  <br />
-                  <strong>Chamber – Civil Court:</strong> Table No. 4A, Main
-                  Hall, Civil Court
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-accent shrink-0" />
-                <span>+91 99346 52263, +91 70082 22725</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-accent shrink-0" />
-                <span>vidhitlawassociates8@gmail.com</span>
-              </li>
-            </ul>
+            <div className="flex flex-col space-y-4">
+              <a
+                href="#"
+                className="flex items-center group text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors"
+              >
+                LinkedIn{" "}
+                <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="#"
+                className="flex items-center group text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors"
+              >
+                Twitter{" "}
+                <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="#"
+                className="flex items-center group text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors"
+              >
+                Facebook{" "}
+                <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-          <p>
-            &copy; {new Date().getFullYear()} Vidhit Law Associates. All rights
-            reserved.
-          </p>
+        {/* Bottom Section */}
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center text-xs text-gray-500">
+          <div className="space-y-1">
+            <p>
+              &copy; {currentYear} {brand.copyright}. All Rights Reserved.
+            </p>
+            <p className="opacity-70">{brand.barCouncilNote}</p>
+          </div>
           <div className="mt-4 md:mt-0 flex gap-6">
             <Link
               to="/disclaimer"
@@ -189,17 +152,7 @@ const Footer = () => {
             >
               Privacy Policy
             </Link>
-            <Link to="/terms" className="hover:text-white transition-colors">
-              Terms of Service
-            </Link>
           </div>
-        </div>
-        <div className="text-center mt-8 text-[10px] text-gray-600 max-w-2xl mx-auto">
-          <strong>Bar Council of India Compliance:</strong> The rules of the Bar
-          Council of India prohibit law firms from soliciting work or
-          advertising in any manner. By clicking on any link, the user
-          acknowledges that there has been no solicitation to create an
-          attorney-client relationship.
         </div>
       </div>
     </footer>

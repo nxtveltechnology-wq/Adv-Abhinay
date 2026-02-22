@@ -13,7 +13,8 @@ import {
 } from "lucide-react";
 import SectionWrapper from "../components/SectionWrapper";
 import BlogSection from "../components/home/BlogSection";
-import ReraPopup from "../components/home/ReraPopup";
+
+import FloatingReraCard from "../components/home/FloatingReraCard";
 import AwardsSection from "../components/home/AwardsSection";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import AskQuerySection from "../components/home/AskQuerySection";
@@ -123,6 +124,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Floating RERA Card */}
+      <FloatingReraCard />
+
       {/* 3.2 About the Firm - Redesigned to Match Team Page Style */}
       <section className="py-24 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
         {/* Background Pattern */}
@@ -135,7 +139,7 @@ const Home = () => {
           ></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto pt-30 lg:py-2 px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <motion.div
@@ -296,8 +300,8 @@ const Home = () => {
                 <li className="flex items-start gap-4">
                   <span className="w-2 h-2 rounded-full bg-accent mt-2.5 shrink-0"></span>
                   <p className="text-lg">
-                    Cost-effective and time-bound legal services designed to
-                    deliver value.
+                    Structured and time-bound legal processes with defined
+                    stages of engagement.
                   </p>
                 </li>
                 <li className="flex items-start gap-4">
@@ -562,9 +566,6 @@ const Home = () => {
 
       {/* 3.9 Ask Any Query Section */}
       <AskQuerySection />
-
-      {/* RERA Popup */}
-      <ReraPopup />
     </div>
   );
 };

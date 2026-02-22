@@ -1,0 +1,66 @@
+{
+  "activeBrand": "vidhitlaw",
+
+  "brands": {
+    "vidhitlaw": {
+      "id": "vidhitlaw",
+      "name": "VIDHIT LAW ASSOCIATES",
+      "tagline": "Advocates & Legal Consultants",
+      "description": "A full-service law firm providing comprehensive legal solutions across civil, criminal, constitutional, corporate, and real estate law domains.",
+      "logo": "/logo/vidhit-logo.png",
+      "logoAlt": "Vidhit Law Associates Logo",
+      "footerLogo": "/logo/vidhit-logo-footer.png",
+      "footerLogoAlt": "Vidhit Law Associates",
+      "email": "vidhitlawassociates8@gmail.com",
+      "phone": "+91-99346-52263",
+      "phoneRaw": "+919934652263",
+      "altPhone": "+91-70082-22725",
+      "altPhoneRaw": "+917008222725",
+      "copyright": "Vidhit Law Associates",
+      "barCouncilNote": "Bar Council of India Compliance: No solicitation intended.",
+      "homeComponent": "VidhitHome",
+      "socialLinks": {
+        "linkedin": "#",
+        "twitter": "#",
+        "facebook": "#",
+        "instagram": "#"
+      }
+    },
+    "lexrera": {
+      "id": "lexrera",
+      "name": "LEX RERA",
+      "tagline": "Real Estate Regulatory Experts",
+      "description": "Specialized legal firm focused on RERA compliance, real estate regulatory advisory, project registration, and dispute resolution for developers and homebuyers.",
+      "logo": "/logo/LexRera.png",
+      "logoAlt": "Lex Rera Logo",
+      "footerLogo": "/logo/LexRera.png",
+      "footerLogoAlt": "Lex Rera",
+      "email": "lexrera@gmail.com",
+      "phone": "+91-99346-52263",
+      "phoneRaw": "+919934652263",
+      "altPhone": "+91-70082-22725",
+      "altPhoneRaw": "+917008222725",
+      "copyright": "Lex Rera",
+      "barCouncilNote": "Bar Council of India Compliance: No solicitation intended.",
+      "homeComponent": "LexReraHome",
+      "socialLinks": {
+        "linkedin": "#",
+        "twitter": "#",
+        "facebook": "#",
+        "instagram": "#"
+      }
+    }
+  },
+
+  "commonPages": [
+    "about",
+    "contact",
+    "team",
+    "career",
+    "blogs",
+    "practice-areas",
+    "disclaimer",
+    "privacy-policy",
+    "terms"
+  ]
+}
