@@ -107,7 +107,7 @@ const ReraGenericPage = () => {
           The requested RERA service could not be located.
         </p>
         <Link
-          to="/rera"
+          to="/"
           className="text-accent hover:text-primary font-semibold flex items-center gap-2"
         >
           <ArrowRight className="h-4 w-4 rotate-180" /> Back to RERA Home
@@ -131,7 +131,10 @@ const ReraGenericPage = () => {
             className="max-w-4xl"
           >
             <div className="flex items-center gap-2 text-accent/80 text-sm font-semibold uppercase tracking-widest mb-4">
-              <Link to="/rera" className="hover:text-white transition-colors">
+              <Link
+                to="/services"
+                className="hover:text-white transition-colors"
+              >
                 RERA Services
               </Link>
               <ChevronRight className="h-4 w-4" />
@@ -269,7 +272,7 @@ const ReraGenericPage = () => {
                     .map((otherSlug) => (
                       <li key={otherSlug}>
                         <Link
-                          to={`/rera/${otherSlug}`}
+                          to={`/${otherSlug}`}
                           className="text-gray-600 hover:text-accent text-sm flex items-center justify-between group transition-colors"
                         >
                           {reraServiceDetails[otherSlug].title

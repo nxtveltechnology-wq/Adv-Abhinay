@@ -10,11 +10,11 @@ interface NavLink {
 }
 
 const reraNavLinks: NavLink[] = [
-  { name: "Home", path: "/rera" },
-  { name: "About", path: "/rera/about" },
-  { name: "Services", path: "/rera/services" },
-  { name: "Packages", path: "/rera/packages" },
-  { name: "Contact", path: "/rera/contact" },
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Packages", path: "/packages" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const ReraNavbar = () => {
@@ -35,8 +35,8 @@ const ReraNavbar = () => {
   }, [pathname]);
 
   const isActive = (path: string) => {
-    if (path === "/rera" && pathname === "/rera") return true;
-    if (path !== "/rera" && pathname.startsWith(path)) return true;
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
     return false;
   };
 
@@ -51,7 +51,7 @@ const ReraNavbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           {/* Brand label */}
           <span className="text-[10px] uppercase tracking-widest font-semibold text-amber-400 hidden sm:block">
-            Lex RERA — Real Estate Regulatory Experts
+            Lex RERA Advisors — Real Estate Regulatory Partner
           </span>
           {/* Contact info */}
           <div className="flex items-center space-x-4 ml-auto text-[10px] md:text-[11px] uppercase tracking-wider font-semibold">
@@ -78,7 +78,7 @@ const ReraNavbar = () => {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link
-            to="/rera"
+            to="/"
             className="flex items-center space-x-3 group flex-shrink-0"
           >
             <div className="relative">
@@ -124,7 +124,7 @@ const ReraNavbar = () => {
 
             {/* CTA Button */}
             <Link
-              to="/rera/contact"
+              to="/contact"
               className="ml-4 px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white text-[12px] uppercase tracking-wider font-bold rounded-sm transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-1.5"
             >
               Book Consultation
@@ -182,7 +182,7 @@ const ReraNavbar = () => {
 
               <div className="pt-4 border-t border-gray-100 mt-4">
                 <Link
-                  to="/rera/contact"
+                  to="/contact"
                   onClick={() => setIsOpen(false)}
                   className="block w-full text-center px-5 py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm uppercase tracking-wider font-bold rounded-sm transition-all"
                 >

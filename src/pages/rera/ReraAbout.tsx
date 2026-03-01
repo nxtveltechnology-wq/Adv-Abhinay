@@ -153,7 +153,7 @@ const ReraAbout = () => {
             to your needs.
           </p>
           <Link
-            to="/rera/contact"
+            to="/contact"
             className="inline-flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm uppercase tracking-wider font-bold rounded-sm transition-all"
           >
             Contact Us

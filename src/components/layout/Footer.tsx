@@ -26,7 +26,6 @@ const Footer = () => {
             {[
               { name: "ABOUT US", path: "/about" },
               { name: "OUR TEAM", path: "/team" },
-              { name: "INDUSTRIES", path: "#" },
               { name: "NEWS & INSIGHTS", path: "/blogs" },
               { name: "CAREERS", path: "/career" },
             ].map((link) => (

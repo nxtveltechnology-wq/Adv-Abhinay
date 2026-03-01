@@ -1,5 +1,5 @@
 {
-  "activeBrand": "lexrera",
+  "activeBrand": "vidhitlaw",
 
   "brands": {
     "vidhitlaw": {
@@ -28,19 +28,19 @@
     },
     "lexrera": {
       "id": "lexrera",
-      "name": "LEX RERA",
-      "tagline": "Real Estate Regulatory Experts",
+      "name": "LEX RERA ADVISORS",
+      "tagline": "Real Estate Regulatory Partner",
       "description": "Specialized legal firm focused on RERA compliance, real estate regulatory advisory, project registration, and dispute resolution for developers and homebuyers.",
       "logo": "/logo/LexRera.png",
       "logoAlt": "Lex Rera Logo",
       "footerLogo": "/logo/LexRera.png",
       "footerLogoAlt": "Lex Rera",
-      "email": "lexrera@gmail.com",
-      "phone": "+91-99346-52263",
-      "phoneRaw": "+919934652263",
-      "altPhone": "+91-70082-22725",
-      "altPhoneRaw": "+917008222725",
-      "copyright": "Lex Rera",
+      "email": "lexreraadvisors@gmail.com",
+      "phone": "+91-7008222725",
+      "phoneRaw": "+91-7008222725",
+      "altPhone": "+91-9934652263",
+      "altPhoneRaw": "+91-9934652263",
+      "copyright": "Lex Rera Advisors",
       "barCouncilNote": "Bar Council of India Compliance: No solicitation intended.",
       "homeComponent": "LexReraHome",
       "socialLinks": {
@@ -50,17 +50,5 @@
         "instagram": "#"
       }
     }
-  },
-
-  "commonPages": [
-    "about",
-    "contact",
-    "team",
-    "career",
-    "blogs",
-    "practice-areas",
-    "disclaimer",
-    "privacy-policy",
-    "terms"
-  ]
+  }
 }

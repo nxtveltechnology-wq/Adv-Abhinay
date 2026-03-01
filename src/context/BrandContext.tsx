@@ -1,5 +1,4 @@
 import { createContext, useContext, type ReactNode } from "react";
-import { useLocation } from "react-router-dom";
 import brandConfig from "../data/brandConfig.json";
 
 // --- Types ---
@@ -33,7 +32,6 @@ export interface Brand {
 export interface BrandConfig {
   activeBrand: string;
   brands: Record<string, Brand>;
-  commonPages: string[];
 }
 
 // --- Resolve active brand ---
@@ -44,13 +42,8 @@ const activeBrand: Brand = config.brands[config.activeBrand];
 const BrandContext = createContext<Brand>(activeBrand);
 
 export const BrandProvider = ({ children }: { children: ReactNode }) => {
-  const { pathname } = useLocation();
-  // Switch to Lex Rera brand when on /rera/* routes
-  const isReraPage = pathname.startsWith("/rera");
-  const currentBrand = isReraPage ? config.brands["lexrera"] : activeBrand;
-
   return (
-    <BrandContext.Provider value={currentBrand}>
+    <BrandContext.Provider value={activeBrand}>
       {children}
     </BrandContext.Provider>
   );

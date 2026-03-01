@@ -69,27 +69,27 @@ const ReraHome = () => {
     {
       name: "Agent Registration",
       icon: Users,
-      path: "/rera/agent-registration",
+      path: "/agent-registration",
     },
     {
       name: "Project Registration",
       icon: Building2,
-      path: "/rera/registration",
+      path: "/registration",
     },
-    { name: "RERA Act & Rules", icon: BookOpen, path: "/rera/compliance" },
+    { name: "RERA Act & Rules", icon: BookOpen, path: "/compliance" },
     {
       name: "Filing Complaints",
       icon: Scale,
-      path: "/rera/dispute-resolution",
+      path: "/dispute-resolution",
     },
     {
       name: "RERA Judgments",
       icon: FileText,
-      path: "/rera/dispute-resolution",
+      path: "/judgments",
     },
-    { name: "Cause List", icon: Calendar, path: "/rera" },
-    { name: "Defaulter List", icon: HelpCircle, path: "/rera" },
-    { name: "Calculate Fees", icon: Scale, path: "/rera/packages" },
+    { name: "Cause List", icon: Calendar, path: "/cause-list" },
+    { name: "Defaulter List", icon: HelpCircle, path: "/defaulter-list" },
+    { name: "Calculate Fees", icon: Scale, path: "/packages" },
   ];
 
   const MotionLink = motion(Link);
@@ -137,13 +137,13 @@ const ReraHome = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Link
-                  to="/rera/registration"
+                  to="/registration"
                   className="bg-[#fbbf24] hover:bg-yellow-400 text-[#0a1e3c] font-bold py-3 px-6 md:py-3.5 md:px-8 rounded-sm transition-all shadow-lg flex items-center justify-center gap-2"
                 >
                   Project Registration <ArrowRight className="h-5 w-5" />
                 </Link>
                 <Link
-                  to="/rera/agent-registration"
+                  to="/agent-registration"
                   className="bg-transparent border-2 border-white/30 hover:bg-white/10 text-white font-bold py-3 px-6 md:py-3.5 md:px-8 rounded-sm transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
                 >
                   Agent Registration
@@ -177,32 +177,32 @@ const ReraHome = () => {
                   {
                     ...reraServices[0],
                     color: "bg-blue-500",
-                    path: "/rera/registration",
+                    path: "/registration",
                   },
                   {
                     ...reraServices[1],
                     color: "bg-green-500",
-                    path: "/rera/agent-registration",
+                    path: "/agent-registration",
                   },
                   {
                     ...reraServices[2],
                     color: "bg-purple-500",
-                    path: "/rera/compliance",
+                    path: "/compliance",
                   },
                   {
                     ...reraServices[3],
                     color: "bg-red-500",
-                    path: "/rera/dispute-resolution",
+                    path: "/dispute-resolution",
                   },
                   {
                     ...reraServices[4],
                     color: "bg-indigo-500",
-                    path: "/rera/pre-project",
+                    path: "/pre-project",
                   },
                   {
                     ...reraServices[5],
                     color: "bg-orange-500",
-                    path: "/rera/allottees",
+                    path: "/allottees",
                   },
                 ].map((item, i) => (
                   <Link
@@ -258,37 +258,37 @@ const ReraHome = () => {
                     ...reraServices[0],
                     color: "bg-blue-500",
                     angle: 270,
-                    path: "/rera/registration",
+                    path: "/registration",
                   }, // Project Reg (Top)
                   {
                     ...reraServices[1],
                     color: "bg-green-500",
                     angle: 330,
-                    path: "/rera/agent-registration",
+                    path: "/agent-registration",
                   }, // Agent Reg (Top Right)
                   {
                     ...reraServices[2],
                     color: "bg-purple-500",
                     angle: 30,
-                    path: "/rera/compliance",
+                    path: "/compliance",
                   }, // Compliance (Bottom Right)
                   {
                     ...reraServices[3],
                     color: "bg-red-500",
                     angle: 90,
-                    path: "/rera/dispute-resolution",
+                    path: "/dispute-resolution",
                   }, // Litigation (Bottom)
                   {
                     ...reraServices[4],
                     color: "bg-indigo-500",
                     angle: 150,
-                    path: "/rera/pre-project",
+                    path: "/pre-project",
                   }, // Promoter Advisory (Bottom Left)
                   {
                     ...reraServices[5],
                     color: "bg-orange-500",
                     angle: 210,
-                    path: "/rera/allottees",
+                    path: "/allottees",
                   }, // Allottees (Top Left)
                 ].map((item, index) => {
                   const angleRad = (item.angle * Math.PI) / 180;
@@ -395,7 +395,7 @@ const ReraHome = () => {
 
                 {service.slug && (
                   <Link
-                    to={`/rera/${service.slug}`}
+                    to={`/${service.slug}`}
                     className="inline-flex items-center text-[#fbbf24] font-bold text-sm tracking-wide uppercase hover:text-[#d97706] transition-colors"
                   >
                     Read More <ChevronRight className="h-4 w-4 ml-1" />

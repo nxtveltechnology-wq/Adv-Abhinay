@@ -38,10 +38,6 @@ const Navbar = () => {
     {
       name: "About Us",
       path: "/about",
-      children: [
-        { name: "Our Firm", path: "/about" },
-        { name: "Mission & Vision", path: "/about#mission" },
-      ],
     },
     { name: "Our Team", path: "/team" },
     {
@@ -49,10 +45,9 @@ const Navbar = () => {
       path: "#",
       children: [
         { name: "Practice Areas", path: "/practice-areas" },
-        { name: "RERA Services", path: "/rera" },
+        { name: "RERA Services", path: "https://adv-abhinay-odij.vercel.app/" },
       ],
     },
-    { name: "Industries", path: "#" }, // Placeholder
   ];
 
   const isActive = (path: string) => {

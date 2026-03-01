@@ -137,7 +137,7 @@ const ReraPackages = () => {
               {/* CTA */}
               <div className="px-6 pb-6">
                 <Link
-                  to="/rera/contact"
+                  to="/contact"
                   className={`block w-full text-center py-3 text-sm font-bold uppercase tracking-wider rounded-sm transition-all ${
                     pkg.badge
                       ? "bg-amber-500 hover:bg-amber-600 text-white shadow-md"
@@ -185,7 +185,7 @@ const ReraPackages = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/rera/contact"
+              to="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm uppercase tracking-wider font-bold rounded-sm transition-all"
             >
               Get a Custom Quote

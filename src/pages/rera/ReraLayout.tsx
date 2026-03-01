@@ -1,19 +1,24 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import ReraNavbar from "../../components/layout/rera/ReraNavbar";
 import ReraFooter from "../../components/layout/rera/ReraFooter";
+import ScrollToTopButton from "../../components/layout/ScrollToTopButton";
 
+// Root layout for all LexRera brand routes
 const ReraLayout = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
-      {/* RERA-specific Navbar */}
       <ReraNavbar />
-
-      {/* Page content — no padding here; each page hero handles its own top offset */}
       <main className="flex-1">
         <Outlet />
       </main>
-
-      {/* RERA-specific Footer */}
+      <ScrollToTopButton />
       <ReraFooter />
     </div>
   );

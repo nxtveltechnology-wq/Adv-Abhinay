@@ -22,7 +22,7 @@ const officeDetails = [
   {
     icon: MapPin,
     label: "Office Address",
-    value: "RERA Bhawan, Exhibition Road, Patna, Bihar 800001",
+    value: "Darsrath Gali, Agamkuan Thana Road Kankarbagh, Patna - 800026",
     href: null,
   },
   {

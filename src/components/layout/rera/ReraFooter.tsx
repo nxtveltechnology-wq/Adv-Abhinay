@@ -3,21 +3,21 @@ import { Phone, Mail, MapPin, ArrowRight, Scale } from "lucide-react";
 import { useBrand } from "../../../context/BrandContext";
 
 const reraNavLinks = [
-  { name: "Home", path: "/rera" },
-  { name: "About", path: "/rera/about" },
-  { name: "Services", path: "/rera/services" },
-  { name: "Packages", path: "/rera/packages" },
-  { name: "Contact", path: "/rera/contact" },
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Packages", path: "/packages" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const reraServices = [
-  { name: "Pre-Project Assistance", path: "/rera/pre-project" },
-  { name: "Project Registration", path: "/rera/registration" },
-  { name: "Agent Registration", path: "/rera/agent-registration" },
-  { name: "Compliance & Filings", path: "/rera/compliance" },
-  { name: "Dispute Resolution", path: "/rera/dispute-resolution" },
-  { name: "Allottees Services", path: "/rera/allottees" },
-  { name: "Legal Drafting", path: "/rera/drafting" },
+  { name: "Pre-Project Assistance", path: "/pre-project" },
+  { name: "Project Registration", path: "/registration" },
+  { name: "Agent Registration", path: "/agent-registration" },
+  { name: "Compliance & Filings", path: "/compliance" },
+  { name: "Dispute Resolution", path: "/dispute-resolution" },
+  { name: "Allottees Services", path: "/allottees" },
+  { name: "Legal Drafting", path: "/drafting" },
 ];
 
 const ReraFooter = () => {
@@ -33,7 +33,7 @@ const ReraFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
           {/* Column 1: Brand */}
           <div className="lg:col-span-1">
-            <Link to="/rera" className="inline-block mb-5">
+            <Link to="/" className="inline-block mb-5">
               <img
                 src={brand.footerLogo}
                 alt={brand.footerLogoAlt}
@@ -49,7 +49,7 @@ const ReraFooter = () => {
             <div className="flex items-center gap-2 text-amber-400">
               <Scale className="h-4 w-4 flex-shrink-0" />
               <span className="text-[10px] uppercase tracking-widest font-semibold">
-                Real Estate Regulatory Experts
+                Real Estate Regulatory Partner
               </span>
             </div>
           </div>
@@ -157,7 +157,7 @@ const ReraFooter = () => {
 
             {/* Book Consultation CTA */}
             <Link
-              to="/rera/contact"
+              to="/contact"
               className="mt-8 inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white text-[11px] uppercase tracking-wider font-bold rounded-sm transition-all duration-200 shadow-md hover:shadow-amber-900/30 hover:shadow-lg"
             >
               Book Consultation

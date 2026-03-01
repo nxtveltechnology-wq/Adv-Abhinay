@@ -13,7 +13,7 @@ const services = [
   {
     icon: Lightbulb,
     title: "Pre-Project Assistance",
-    path: "/rera/pre-project",
+    path: "/pre-project",
     desc: "Legal due diligence, site analysis, RERA applicability assessment, and strategic project planning before you break ground.",
     highlights: [
       "Land title verification",
@@ -24,7 +24,7 @@ const services = [
   {
     icon: FileText,
     title: "Project Registration",
-    path: "/rera/registration",
+    path: "/registration",
     desc: "Complete assistance in registering your real estate project with RERA authority — from document preparation to approval.",
     highlights: [
       "Document preparation",
@@ -35,7 +35,7 @@ const services = [
   {
     icon: Users,
     title: "Agent Registration",
-    path: "/rera/agent-registration",
+    path: "/agent-registration",
     desc: "End-to-end support for real estate agents to get RERA registered and renew their licenses on time.",
     highlights: [
       "Agent eligibility check",
@@ -46,7 +46,7 @@ const services = [
   {
     icon: Scale,
     title: "Compliance & Filings",
-    path: "/rera/compliance",
+    path: "/compliance",
     desc: "Timely quarterly and annual compliance filings, status reports, and project updates to keep you in good standing with RERA.",
     highlights: [
       "Quarterly status updates",
@@ -57,7 +57,7 @@ const services = [
   {
     icon: Shield,
     title: "Dispute Resolution",
-    path: "/rera/dispute-resolution",
+    path: "/dispute-resolution",
     desc: "Expert legal representation in RERA tribunals and adjudicating officer hearings for developers and homebuyers.",
     highlights: [
       "Complaint drafting",
@@ -68,7 +68,7 @@ const services = [
   {
     icon: BookOpen,
     title: "Allottees Services",
-    path: "/rera/allottees",
+    path: "/allottees",
     desc: "Dedicated services for homebuyers — protecting your rights, filing complaints, and seeking compensation for delays.",
     highlights: [
       "Buyer rights advisory",
@@ -79,7 +79,7 @@ const services = [
   {
     icon: FileText,
     title: "Legal Drafting",
-    path: "/rera/drafting",
+    path: "/drafting",
     desc: "Precise drafting of RERA-compliant sale agreements, builder-buyer agreements, and allied real estate documents.",
     highlights: [
       "Sale agreements",
@@ -166,7 +166,7 @@ const ReraServices = () => {
             you to the right solution.
           </p>
           <Link
-            to="/rera/contact"
+            to="/contact"
             className="inline-flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm uppercase tracking-wider font-bold rounded-sm transition-all"
           >
             Book Free Consultation
