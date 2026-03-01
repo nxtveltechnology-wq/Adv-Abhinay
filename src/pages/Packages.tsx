@@ -1,6 +1,6 @@
 export default function Packages() {
   return (
-    <div className="min-h-screen bg-background py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background pt-[120px] md:pt-[160px] pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-foreground mb-8">
           Our Packages

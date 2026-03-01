@@ -20,7 +20,7 @@ const Team = () => {
         keywords="Advocates Team Patna, Legal Experts Bihar, Vidhit Law Partners, Lawyers Profile, Advocate Abhinay Priyadarshi"
       />
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary via-primary/95 to-slate-900 text-white py-32 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-primary via-primary/95 to-slate-900 text-white pt-[140px] md:pt-[180px] pb-24 relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-10"
           style={{ backgroundImage: `url(${backgroundImages.team})` }}

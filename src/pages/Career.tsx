@@ -28,7 +28,7 @@ const Career = () => {
         keywords="Legal Jobs Patna, Law Internship Bihar, Advocate Jobs, Legal Career, Law Firm Vacancies"
       />
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] min-h-[500px] flex col-span-1 items-center justify-center overflow-hidden pt-[100px] md:pt-[120px]">
         <div
           className="absolute inset-0 bg-cover bg-center fixed-bg"
           style={{ backgroundImage: `url(${backgroundImages.team})` }}

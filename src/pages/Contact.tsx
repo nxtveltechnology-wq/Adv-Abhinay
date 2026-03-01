@@ -11,7 +11,7 @@ const Contact = () => {
         description="Get in touch with Vidhit Law Associates for expert legal consultation in Patna. Call us or visit our High Court and Civil Court chambers."
         keywords="Contact Lawyer Patna, Legal Consultation, Law Firm Address Patna, Advocate Phone Number"
       />
-      <div className="bg-primary text-white py-20">
+      <div className="bg-primary text-white pt-[120px] md:pt-[160px] pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
             Contact Us

@@ -621,7 +621,7 @@ const ReraHome = () => {
       </section>
 
       {/* --- CLIENTS SECTION --- */}
-      <section className="py-12 md:py-16 bg-white border-t border-gray-100">
+      {/* <section className="py-12 md:py-16 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-sm md:text-xl font-bold text-gray-400 mb-6 md:mb-8 uppercase tracking-widest">
             Trusted By Builders & Agencies Nationwide
@@ -641,7 +641,7 @@ const ReraHome = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* --- CTA BOTTOM --- */}
       <div className="bg-[#0a1e3c] py-12 relative overflow-hidden">

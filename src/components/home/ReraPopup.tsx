@@ -47,13 +47,15 @@ const ReraPopup = () => {
                     Need expert guidance on Real Estate Regulatory Authority
                     (RERA) compliance and dispute resolution?
                   </p>
-                  <Link
-                    to="/rera"
+                  <a
+                    href="https://lexrera.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setIsVisible(false)}
                     className="inline-flex items-center text-sm font-bold text-black bg-accent hover:bg-accent/90 px-5 py-2.5 rounded-sm transition-all shadow-md hover:shadow-lg"
                   >
                     View Services <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

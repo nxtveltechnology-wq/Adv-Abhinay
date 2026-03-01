@@ -4,7 +4,7 @@ import { Scale } from "lucide-react";
 const TermsAndConditions = () => {
   return (
     <div className="">
-      <div className="bg-primary text-white py-12">
+      <div className="bg-primary text-white pt-[120px] md:pt-[160px] pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl md:text-4xl font-serif font-bold mb-4 flex items-center gap-3">
             <Scale className="h-8 w-8 text-accent" />

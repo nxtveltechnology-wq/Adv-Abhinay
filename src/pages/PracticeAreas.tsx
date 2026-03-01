@@ -13,7 +13,7 @@ const PracticeAreas = () => {
         keywords="Civil Lawyer Patna, Criminal Lawyer, Corporate Law Firm, RERA Services, Divorce Lawyer Patna, Legal Services List"
       />
       {/* Hero Section */}
-      <div className="bg-primary text-white py-24 relative overflow-hidden">
+      <div className="bg-primary text-white pt-[120px] md:pt-[160px] pb-16 md:pb-24 relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: `url(${backgroundImages.court})` }}

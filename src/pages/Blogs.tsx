@@ -14,8 +14,8 @@ const Blogs = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-primary text-white py-16 md:py-24 relative overflow-hidden">
+      {/* Enhanced Hero Section */}
+      <div className="bg-primary text-white pt-[120px] md:pt-[160px] pb-16 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary/95" />
 

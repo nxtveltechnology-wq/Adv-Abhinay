@@ -45,7 +45,7 @@ const Navbar = () => {
       path: "#",
       children: [
         { name: "Practice Areas", path: "/practice-areas" },
-        { name: "RERA Services", path: "https://adv-abhinay-odij.vercel.app/" },
+        { name: "RERA Services", path: "https://lexrera.vercel.app/" },
       ],
     },
   ];
@@ -58,7 +58,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 border-b border-transparent bg-white ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent bg-white ${
         scrolled ? "shadow-md" : "border-b-gray-100"
       }`}
     >
@@ -149,6 +149,19 @@ const Navbar = () => {
                         }`}
                       />
                     </button>
+                  ) : link.path.startsWith("http") ? (
+                    <a
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`relative text-[15px] uppercase tracking-wider font-bold transition-colors duration-300 py-2 ${
+                        isActive(link.path)
+                          ? "text-accent"
+                          : "text-slate-800 hover:text-accent"
+                      }`}
+                    >
+                      {link.name}
+                    </a>
                   ) : (
                     <Link
                       to={link.path}
@@ -172,19 +185,35 @@ const Navbar = () => {
                         transition={{ duration: 0.2 }}
                         className="absolute top-full right-0 w-56 bg-white shadow-xl rounded-sm overflow-hidden border border-gray-100 py-2"
                       >
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.name}
-                            to={child.path}
-                            className={`block px-5 py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gray-50 transition-colors ${
-                              isActive(child.path)
-                                ? "text-accent bg-gray-50"
-                                : "text-gray-600 hover:text-accent"
-                            }`}
-                          >
-                            {child.name}
-                          </Link>
-                        ))}
+                        {link.children.map((child) =>
+                          child.path.startsWith("http") ? (
+                            <a
+                              key={child.name}
+                              href={child.path}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`block px-5 py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gray-50 transition-colors ${
+                                isActive(child.path)
+                                  ? "text-accent bg-gray-50"
+                                  : "text-gray-600 hover:text-accent"
+                              }`}
+                            >
+                              {child.name}
+                            </a>
+                          ) : (
+                            <Link
+                              key={child.name}
+                              to={child.path}
+                              className={`block px-5 py-3 text-sm font-semibold uppercase tracking-wide hover:bg-gray-50 transition-colors ${
+                                isActive(child.path)
+                                  ? "text-accent bg-gray-50"
+                                  : "text-gray-600 hover:text-accent"
+                              }`}
+                            >
+                              {child.name}
+                            </Link>
+                          ),
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -228,22 +257,51 @@ const Navbar = () => {
                         {link.name}
                       </div>
                       <div className="pl-4 space-y-3 border-l-2 border-gray-100/50">
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.name}
-                            to={child.path}
-                            onClick={() => setIsOpen(false)}
-                            className={`block text-xs font-bold uppercase tracking-wide hover:text-accent transition-colors ${
-                              isActive(child.path)
-                                ? "text-accent"
-                                : "text-slate-600"
-                            }`}
-                          >
-                            {child.name}
-                          </Link>
-                        ))}
+                        {link.children.map((child) =>
+                          child.path.startsWith("http") ? (
+                            <a
+                              key={child.name}
+                              href={child.path}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => setIsOpen(false)}
+                              className={`block text-xs font-bold uppercase tracking-wide hover:text-accent transition-colors ${
+                                isActive(child.path)
+                                  ? "text-accent"
+                                  : "text-slate-600"
+                              }`}
+                            >
+                              {child.name}
+                            </a>
+                          ) : (
+                            <Link
+                              key={child.name}
+                              to={child.path}
+                              onClick={() => setIsOpen(false)}
+                              className={`block text-xs font-bold uppercase tracking-wide hover:text-accent transition-colors ${
+                                isActive(child.path)
+                                  ? "text-accent"
+                                  : "text-slate-600"
+                              }`}
+                            >
+                              {child.name}
+                            </Link>
+                          ),
+                        )}
                       </div>
                     </div>
+                  ) : link.path!.startsWith("http") ? (
+                    <a
+                      href={link.path!}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className={`block text-sm uppercase tracking-wider font-bold hover:text-accent transition-colors ${
+                        isActive(link.path!) ? "text-accent" : "text-slate-800"
+                      }`}
+                    >
+                      {link.name}
+                    </a>
                   ) : (
                     <Link
                       to={link.path!}

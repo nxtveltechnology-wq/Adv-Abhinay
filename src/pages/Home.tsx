@@ -53,7 +53,7 @@ const Home = () => {
         keywords="Lawyer in Patna, Advocate in Patna, High Court Lawyer, RERA Consultant, Best Law Firm in Patna"
       />
       {/* 3.1 Hero Section */}
-      <section className="relative text-white py-20 lg:py-24 overflow-hidden flex items-center min-h-[85vh] bg-gray-900">
+      <section className="relative text-white pt-[120px] md:pt-[140px] pb-20 lg:pb-24 overflow-hidden flex items-center min-h-[85vh] bg-gray-900">
         {/* Background Slider */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Slider Images */}

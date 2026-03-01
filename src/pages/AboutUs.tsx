@@ -23,7 +23,7 @@ const AboutUs = () => {
         keywords="About Vidhit Law, Law Firm Profile, Advocates in Bihar, Legal Team Patna, Best Lawyers Patna"
       />
       {/* 1. Header Section */}
-      <div className="relative bg-primary py-24 text-center text-white overflow-hidden">
+      <div className="relative bg-primary pt-[120px] md:pt-[160px] pb-16 md:pb-24 text-center text-white overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-10"
           style={{ backgroundImage: `url(${legalCourt})` }}
