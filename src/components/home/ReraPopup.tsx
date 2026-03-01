@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight, Building } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const ReraPopup = () => {
   const [isVisible, setIsVisible] = useState(false);

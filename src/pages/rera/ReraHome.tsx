@@ -13,12 +13,7 @@ import {
   Award,
   Calendar,
 } from "lucide-react";
-import {
-  reraServices,
-  backgroundImages,
-  awards,
-  clients,
-} from "../../data/siteData";
+import { reraServices, backgroundImages, awards } from "../../data/siteData";
 import SEO from "../../components/SEO";
 
 // Animation Variants
