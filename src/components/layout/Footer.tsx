@@ -19,6 +19,9 @@ const Footer = () => {
                 className="w-48 lg:w-56 object-contain"
               />
             </Link>
+            <p className="mt-4 text-sm text-gray-400 font-medium tracking-wide">
+              {brand.tagline}
+            </p>
           </div>
 
           {/* Column 2: Main Navigation */}

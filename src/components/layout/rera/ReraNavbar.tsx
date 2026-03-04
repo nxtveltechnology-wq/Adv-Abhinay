@@ -14,6 +14,7 @@ const reraNavLinks: NavLink[] = [
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Packages", path: "/packages" },
+  { name: "News", path: "/blogs" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -47,27 +48,35 @@ const ReraNavbar = () => {
       }`}
     >
       {/* Top utility bar */}
-      <div className="bg-[#0a1628] text-gray-300 py-1.5 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          {/* Brand label */}
-          <span className="text-[10px] uppercase tracking-widest font-semibold text-amber-400 hidden sm:block">
-            Lex RERA Advisors — Real Estate Regulatory Partner
-          </span>
-          {/* Contact info */}
-          <div className="flex items-center space-x-4 ml-auto text-[10px] md:text-[11px] uppercase tracking-wider font-semibold">
+      <div className="bg-[#0a1628] text-gray-300 py-2 md:py-1.5 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end items-center text-[9px] md:text-[11px] uppercase tracking-wider font-semibold">
+          <div className="flex flex-row items-center gap-5 sm:gap-4 md:gap-6">
             <a
               href={`tel:${brand.phoneRaw}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 hover:text-white transition-colors group"
             >
-              <Phone className="h-2.5 w-2.5 md:h-3 md:w-3 text-amber-400" />
-              <span>{brand.phone}</span>
+              <div className="w-8 h-8 sm:w-auto sm:h-auto bg-gray-800 sm:bg-transparent rounded-full flex items-center justify-center group-hover:bg-gray-700 sm:group-hover:bg-transparent transition-colors">
+                <Phone className="h-3.5 w-3.5 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3 text-amber-400 shrink-0" />
+              </div>
+              <span className="hidden sm:inline">{brand.phone}</span>
+            </a>
+            <a
+              href={`tel:${brand.altPhoneRaw}`}
+              className="flex items-center gap-1.5 hover:text-white transition-colors group"
+            >
+              <div className="w-8 h-8 sm:w-auto sm:h-auto bg-gray-800 sm:bg-transparent rounded-full flex items-center justify-center group-hover:bg-gray-700 sm:group-hover:bg-transparent transition-colors">
+                <Phone className="h-3.5 w-3.5 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3 text-amber-400 shrink-0" />
+              </div>
+              <span className="hidden sm:inline">{brand.altPhone}</span>
             </a>
             <a
               href={`mailto:${brand.email}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 hover:text-white transition-colors group"
             >
-              <Mail className="h-2.5 w-2.5 md:h-3 md:w-3 text-amber-400" />
-              <span>{brand.email}</span>
+              <div className="w-8 h-8 sm:w-auto sm:h-auto bg-gray-800 sm:bg-transparent rounded-full flex items-center justify-center group-hover:bg-gray-700 sm:group-hover:bg-transparent transition-colors">
+                <Mail className="h-4 w-4 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3 text-amber-400 shrink-0" />
+              </div>
+              <span className="hidden sm:inline">{brand.email}</span>
             </a>
           </div>
         </div>
@@ -92,7 +101,7 @@ const ReraNavbar = () => {
               <span className="text-lg sm:text-xl font-bold text-slate-900 leading-tight tracking-tight">
                 {brand.name}
               </span>
-              <span className="text-[9px] sm:text-[10px] text-amber-600 tracking-widest uppercase font-semibold mt-0.5">
+              <span className="text-[8px] sm:text-[10px] text-amber-600 tracking-widest uppercase font-semibold mt-0.5">
                 {brand.tagline}
               </span>
             </div>

@@ -47,9 +47,11 @@ const ReraAbout = () => {
               Who We Are
             </h1>
             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-              Lex RERA is a specialized legal advisory firm exclusively
-              dedicated to Real Estate Regulatory Authority (RERA) compliance,
-              advisory, and dispute resolution in India.
+              Complete legal protection for Developers, Agents, and Homebuyers —
+              from registration and compliance to litigation and dispute
+              resolution. Under one umbrella, we deliver end-to-end support with
+              precision and expertise, so you can focus on your core real estate
+              operations with complete confidence.
             </p>
           </div>
         </div>

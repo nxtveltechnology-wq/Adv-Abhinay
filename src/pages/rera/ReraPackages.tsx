@@ -4,10 +4,8 @@ import { useBrand } from "../../context/BrandContext";
 
 const packages = [
   {
-    name: "Starter",
-    subtitle: "Developer / First-time Registration",
-    price: "₹15,000",
-    period: "One-time",
+    name: "One Time Service Packages",
+    subtitle: "For Specific One-Time Needs",
     badge: null,
     color: "border-gray-200",
     headerBg: "bg-slate-800",
@@ -18,18 +16,15 @@ const packages = [
       "1 round of authority queries",
       "Email support for 30 days",
     ],
-    cta: "Get Started",
+    cta: "Contact Us",
   },
   {
-    name: "Standard",
+    name: "Project Specific Packages",
     subtitle: "Complete Project Registration",
-    price: "₹30,000",
-    period: "Per project",
     badge: "Most Popular",
     color: "border-amber-400",
     headerBg: "bg-gradient-to-br from-amber-500 to-amber-600",
     features: [
-      "Everything in Starter",
       "End-to-end project registration",
       "Compliance filing (1 year)",
       "Unlimited authority queries",
@@ -37,18 +32,15 @@ const packages = [
       "Dedicated relationship manager",
       "WhatsApp support",
     ],
-    cta: "Get Started",
+    cta: "Contact Us",
   },
   {
-    name: "Premium",
+    name: "Yearly Legal Packages",
     subtitle: "Full Legal Coverage",
-    price: "₹60,000",
-    period: "Per year",
     badge: null,
     color: "border-gray-200",
     headerBg: "bg-[#0a1628]",
     features: [
-      "Everything in Standard",
       "Quarterly compliance filings",
       "Annual RERA renewal",
       "Dispute resolution support",
@@ -57,17 +49,17 @@ const packages = [
       "Priority response (24 hrs)",
       "Tribunal representation (1 case)",
     ],
-    cta: "Get Started",
+    cta: "Contact Us",
   },
 ];
 
 const addOns = [
-  { name: "Agent Registration", price: "₹5,000" },
-  { name: "Additional Compliance Quarter", price: "₹3,000" },
-  { name: "Builder-Buyer Agreement Draft", price: "₹4,000" },
-  { name: "RERA Complaint Filing", price: "₹8,000" },
-  { name: "Tribunal Representation", price: "₹15,000 onwards" },
-  { name: "Project Extension Application", price: "₹6,000" },
+  { name: "Agent Registration" },
+  { name: "Additional Compliance Quarter" },
+  { name: "Builder-Buyer Agreement Draft" },
+  { name: "RERA Complaint Filing" },
+  { name: "Tribunal Representation" },
+  { name: "Project Extension Application" },
 ];
 
 const ReraPackages = () => {
@@ -110,13 +102,9 @@ const ReraPackages = () => {
               )}
 
               {/* Header */}
-              <div className={`${pkg.headerBg} text-white px-6 py-6`}>
-                <h3 className="text-xl font-bold mb-0.5">{pkg.name}</h3>
-                <p className="text-xs text-white/70 mb-4">{pkg.subtitle}</p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-3xl font-bold">{pkg.price}</span>
-                  <span className="text-sm text-white/60">/ {pkg.period}</span>
-                </div>
+              <div className={`${pkg.headerBg} text-white px-6 py-8`}>
+                <h3 className="text-xl font-bold mb-1">{pkg.name}</h3>
+                <p className="text-sm text-white/70">{pkg.subtitle}</p>
               </div>
 
               {/* Features */}
@@ -166,9 +154,6 @@ const ReraPackages = () => {
                   <ArrowRight className="h-3.5 w-3.5 text-amber-500" />
                   <span className="text-sm text-gray-700">{addon.name}</span>
                 </div>
-                <span className="text-sm font-bold text-amber-600">
-                  {addon.price}
-                </span>
               </div>
             ))}
           </div>

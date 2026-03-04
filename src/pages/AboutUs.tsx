@@ -5,7 +5,6 @@ import legalCourt from "../assets/legal_court.png";
 import legalBooks from "../assets/legal_books.png";
 import legalScales from "../assets/legal_scales.png";
 import lawTeamMeeting from "../assets/law_team_meeting.png";
-import legalConsultation from "../assets/legal_consultation.png";
 import SEO from "../components/SEO";
 
 const AboutUs = () => {
@@ -34,7 +33,7 @@ const AboutUs = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-serif font-bold mb-6"
           >
-            Building Trust Through Excellence
+            Our Journey
           </motion.h1>
           <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed">
             VIDHIT Law Associates: Where legal expertise meets unwavering
@@ -45,7 +44,7 @@ const AboutUs = () => {
 
       {/* 2. Who We Are - Left/Right */}
       <SectionWrapper background="light">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid gap-16 items-center">
           <motion.div {...fadeIn} className="order-2 lg:order-1">
             <h5 className="text-accent font-semibold tracking-widest uppercase mb-4 text-sm flex items-center gap-2">
               <span className="w-8 h-0.5 bg-accent"></span> Who We Are
@@ -54,20 +53,41 @@ const AboutUs = () => {
               A Legacy of Legal Integrity
             </h2>
             <p className="text-gray-600 leading-relaxed text-lg mb-6">
-              VIDHIT Law Associates is a premier full-service law firm based in
-              Patna, Bihar, with a reputation for delivering exceptional legal
-              representation. Our foundation is built on the core values of
-              integrity, diligence, and a relentless pursuit of justice.
+              VIDHIT Law Associates is a full-service law firm committed to
+              delivering precise, ethical, and result-oriented legal solutions
+              to individuals, businesses, and institutions. With a strong
+              foundation in litigation, advisory, and dispute resolution, the
+              Firm blends deep legal expertise with a client-centric approach to
+              protect rights, manage risks, and achieve favorable outcomes.
             </p>
             <p className="text-gray-600 leading-relaxed text-lg mb-8">
-              We distinguish ourselves not just by the breadth of our legal
-              knowledge, but by our deep understanding of our clients' unique
-              challenges. Whether it's complex corporate litigation or sensitive
-              family matters, we approach every case with the same level of
-              commitment and strategic depth.
+              At VIDHIT Law Associates, we believe that the true purpose of
+              legal practice lies in the pursuit of justice. Our services are
+              driven by integrity, diligence, and professional excellence. The
+              Firm is strengthened by a team of experienced legal professionals
+              possessing extensive knowledge across diverse fields of law, with
+              years of practice representing clients before various courts,
+              tribunals, and statutory authorities across the State of Bihar.
+            </p>
+            <p className="text-gray-600 leading-relaxed text-lg mb-8">
+              Our practice is not confined to courtroom advocacy alone. We offer
+              comprehensive and strategic legal advisory services to
+              individuals, corporate entities, financial institutions, and
+              government organizations. The Firm has earned recognition for its
+              expertise in handling a wide spectrum of legal issues,
+              particularly in the areas of dispute resolution, banking and
+              insurance laws, corporate compliance and governance, and advisory
+              support to the rapidly growing real estate sector.
+            </p>
+            <p className="text-gray-600 leading-relaxed text-lg mb-8">
+              VIDHIT Law Associates also provides end-to-end legal assistance in
+              both domestic and international matters, including advisory
+              services for setting up and operating businesses in India,
+              ensuring regulatory compliance, and facilitating sustainable and
+              compliant growth.
             </p>
 
-            <div className="flex gap-8 border-t border-gray-200 pt-8">
+            <div className="flex gap-8 border-t border-gray-200 pt-8 items-center justify-center">
               <div>
                 <span className="block text-4xl font-serif font-bold text-accent mb-1">
                   15+
@@ -87,14 +107,14 @@ const AboutUs = () => {
             </div>
           </motion.div>
 
-          <div className="order-1 lg:order-2 relative">
+          {/* <div className="order-1 lg:order-2 relative">
             <div className="absolute top-0 right-0 w-2/3 h-full bg-accent/5 rounded-sm -z-10 transform translate-x-4 -translate-y-4"></div>
             <img
               src={legalConsultation}
               alt="Legal Consultation"
               className="rounded-sm shadow-xl w-full h-auto object-cover"
             />
-          </div>
+          </div> */}
         </div>
       </SectionWrapper>
 
@@ -169,8 +189,8 @@ const AboutUs = () => {
                   desc: "No legal jargon. We ensure you understand every step of the legal process.",
                 },
                 {
-                  title: "Cost-Effective Solutions",
-                  desc: "We believe justice should be accessible, offering premium services at fair value.",
+                  title: "In-Depth Research",
+                  desc: "Meticulous legal research to build unshakeable arguments and strategies.",
                 },
                 {
                   title: "Comprehensive Research",

@@ -5,6 +5,9 @@ import {
   MapPin,
   Clock,
   ArrowRight,
+  CheckCircle,
+  Loader2,
+  Send,
 } from "lucide-react";
 import SectionWrapper from "../components/SectionWrapper";
 import {
@@ -19,6 +22,66 @@ const Career = () => {
   const [activeTab, setActiveTab] = useState<"internship" | "associate">(
     "internship",
   );
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    position_type: "",
+    resume_link: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleApplicationSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "895ec363-c2fe-4e95-af96-8f592d14f0f3",
+          subject: "New Career Application Submission",
+          from_name: "Vidhit Career Page",
+          ...form,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitSuccess(true);
+      } else {
+        setSubmitError(result.message || "Failed to submit application.");
+      }
+    } catch (error) {
+      setSubmitError("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const scrollToApplyForm = () => {
+    const applyForm = document.getElementById("apply");
+    if (applyForm) {
+      applyForm.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="">
@@ -147,7 +210,10 @@ const Career = () => {
                       ))}
                     </ul>
                   </div>
-                  <button className="w-full py-4 border-2 border-accent text-accent font-bold rounded-lg hover:bg-accent hover:text-white transition-all uppercase tracking-wider">
+                  <button
+                    onClick={scrollToApplyForm}
+                    className="w-full py-4 border-2 border-accent text-accent font-bold rounded-lg hover:bg-accent hover:text-white transition-all uppercase tracking-wider"
+                  >
                     Apply for Internship
                   </button>
                 </div>
@@ -206,7 +272,10 @@ const Career = () => {
                       ))}
                     </ul>
                   </div>
-                  <button className="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all uppercase tracking-wider shadow-lg">
+                  <button
+                    onClick={scrollToApplyForm}
+                    className="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all uppercase tracking-wider shadow-lg"
+                  >
                     View Opportunities
                   </button>
                 </div>
@@ -248,6 +317,7 @@ const Career = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 hover:shadow-lg hover:border-accent/30 transition-all group cursor-pointer"
+                onClick={scrollToApplyForm}
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div>
@@ -277,6 +347,186 @@ const Career = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+      {/* Application Form */}
+      <section id="apply" className="py-24 bg-white border-t border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-accent font-bold tracking-widest uppercase text-sm mb-3 block">
+              Join Us
+            </span>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">
+              Application Form
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Submit your details below to apply for an internship or associate
+              position.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 md:p-10 border border-gray-200 shadow-xl rounded-xl">
+            {submitSuccess ? (
+              <div className="flex flex-col items-center justify-center py-16 text-center">
+                <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                  <CheckCircle className="h-10 w-10 text-green-600" />
+                </div>
+                <h3 className="text-3xl font-serif font-bold text-slate-900 mb-4">
+                  Application Submitted!
+                </h3>
+                <p className="text-gray-600 text-lg max-w-md mx-auto">
+                  Thank you for your interest in joining Vidhit Law Associates.
+                  Our team will review your application and contact you soon.
+                </p>
+                <button
+                  onClick={() => {
+                    setSubmitSuccess(false);
+                    setForm({
+                      name: "",
+                      email: "",
+                      phone: "",
+                      position_type: "",
+                      resume_link: "",
+                      message: "",
+                    });
+                  }}
+                  className="mt-8 px-8 py-3 bg-primary/10 text-primary font-bold rounded-lg hover:bg-primary/20 transition-colors"
+                >
+                  Submit Another Application
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleApplicationSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                      placeholder="Your Name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={form.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                      placeholder="+91 XXXXX XXXXX"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Applying For *
+                    </label>
+                    <select
+                      name="position_type"
+                      value={form.position_type}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                    >
+                      <option value="">Select a Position</option>
+                      <option value="Internship">Internship</option>
+                      <option value="Associate">Associate Program</option>
+                      {jobOpenings.map((job) => (
+                        <option
+                          key={job.id}
+                          value={`${job.title} - ${job.location}`}
+                        >
+                          {job.title} - {job.location}
+                        </option>
+                      ))}
+                      <option value="Other">Other Openings</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Resume / LinkedIn / Portfolio Link *
+                  </label>
+                  <input
+                    type="url"
+                    name="resume_link"
+                    value={form.resume_link}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                    placeholder="Link to your resume or LinkedIn profile"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Cover Letter / Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                    placeholder="Tell us why you'd be a great fit for Vidhit Law Associates..."
+                  ></textarea>
+                </div>
+
+                <div className="h-captcha" data-captcha="true"></div>
+
+                {submitError && (
+                  <p className="text-red-500 text-sm font-medium">
+                    {submitError}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-light text-white disabled:opacity-70 font-bold py-4 px-6 rounded-lg transition-colors shadow-lg"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="h-5 w-5 animate-spin" />
+                      Submitting Application...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5" />
+                      Submit Application
+                    </>
+                  )}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>

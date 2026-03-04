@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Search, Tag, Calendar } from "lucide-react";
-import blogsData from "../data/blogs.json";
+import { ArrowRight, Search, Tag, Calendar, Loader2 } from "lucide-react";
 import { useState } from "react";
+import brandConfig from "../data/brandConfig.json";
+import { useNews } from "../hooks/useNews";
 
 const Blogs = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const currentBrand = (brandConfig as any).activeBrand as
+    | "vidhitlaw"
+    | "lexrera";
+  const feedType = currentBrand === "lexrera" ? "lexrera" : "vidhit";
 
-  const filteredBlogs = blogsData.filter(
+  const { news, loading } = useNews(feedType);
+
+  const filteredBlogs = news.filter(
     (blog) =>
       blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       blog.category.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -56,7 +63,11 @@ const Blogs = () => {
         </div>
 
         {/* Blog Grid */}
-        {filteredBlogs.length > 0 ? (
+        {loading ? (
+          <div className="flex justify-center items-center py-32 w-full">
+            <Loader2 className="w-10 h-10 animate-spin text-accent" />
+          </div>
+        ) : filteredBlogs.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredBlogs.map((blog, index) => (
               <motion.div
@@ -74,7 +85,9 @@ const Blogs = () => {
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
-                        "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800";
+                        feedType === "lexrera"
+                          ? "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
+                          : "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800";
                     }}
                   />
                   <div className="absolute top-4 left-4">
@@ -100,10 +113,15 @@ const Blogs = () => {
                   </p>
 
                   <div className="mt-auto pt-6 border-t border-gray-100">
-                    <button className="text-primary font-bold text-sm tracking-wide uppercase flex items-center gap-2 group/btn hover:text-accent transition-colors">
+                    <a
+                      href={blog.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary font-bold text-sm tracking-wide uppercase flex items-center gap-2 group/btn hover:text-accent transition-colors"
+                    >
                       Read Full Article
                       <ArrowRight className="h-4 w-4 transform group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
+                    </a>
                   </div>
                 </div>
               </motion.div>

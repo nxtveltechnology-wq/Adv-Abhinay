@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import DisclaimerModal from "./components/ui/DisclaimerModal";
@@ -8,12 +8,14 @@ import { BrandProvider, brandConfig } from "./context/BrandContext";
 const VidhitHome = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/AboutUs"));
 const PracticeAreas = lazy(() => import("./pages/PracticeAreas"));
+const CourtsAndTribunals = lazy(() => import("./pages/CourtsAndTribunals"));
 const Services = lazy(() => import("./pages/Services"));
 const Team = lazy(() => import("./pages/Team"));
 const Packages = lazy(() => import("./pages/Packages"));
 const Blogs = lazy(() => import("./pages/Blogs"));
 const Career = lazy(() => import("./pages/Career"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Awards = lazy(() => import("./pages/Awards"));
 const Disclaimer = lazy(() => import("./pages/Disclaimer"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
@@ -40,6 +42,23 @@ const Loading = () => (
 );
 
 function App() {
+  const activeBrandConfig =
+    brandConfig.brands[activeBrand as keyof typeof brandConfig.brands];
+
+  useEffect(() => {
+    // Dynamically update the favicon based on the active brand
+    let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
+
+    if (activeBrandConfig && activeBrandConfig.logo) {
+      link.href = activeBrandConfig.logo;
+    }
+  }, [activeBrandConfig]);
+
   return (
     <Router>
       <BrandProvider>
@@ -56,6 +75,7 @@ function App() {
                 <Route path="/services" element={<ReraServices />} />
                 <Route path="/packages" element={<ReraPackages />} />
                 <Route path="/contact" element={<ReraContact />} />
+                <Route path="/blogs" element={<Blogs />} />
                 <Route path="/:slug" element={<ReraGenericPage />} />
               </Route>
               <Route path="*" element={<PageNotFound />} />
@@ -69,12 +89,17 @@ function App() {
                 <Route path="/" element={<VidhitHome />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/practice-areas" element={<PracticeAreas />} />
+                <Route
+                  path="/courts-and-tribunals"
+                  element={<CourtsAndTribunals />}
+                />
                 <Route path="/services" element={<Services />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/packages" element={<Packages />} />
                 <Route path="/blogs" element={<Blogs />} />
                 <Route path="/career" element={<Career />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/awards" element={<Awards />} />
                 <Route path="/disclaimer" element={<Disclaimer />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms" element={<TermsAndConditions />} />

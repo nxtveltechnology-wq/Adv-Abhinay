@@ -21,7 +21,7 @@ import legalScales from "../assets/legal_scales.png";
 import legalBooks from "../assets/legal_books.png";
 import legalCourt from "../assets/legal_court.png";
 import legalConsultation from "../assets/legal_consultation.png";
-import realEstateLaw from "../assets/real_estate_law.png";
+// import realEstateLaw from "../assets/real_estate_law.png";
 import lawTeamMeeting from "../assets/law_team_meeting.png";
 import bgBanner from "../assets/bg-banner.jpeg";
 
@@ -56,6 +56,8 @@ export interface Partner {
   designation: string;
   description: string;
   image?: string;
+  email?: string;
+  phone?: string;
 }
 
 export interface ReraService {
@@ -104,7 +106,6 @@ export interface Testimonial {
 export interface Client {
   id: number;
   name: string;
-  logo: string;
 }
 
 // --- Data ---
@@ -114,7 +115,7 @@ export const backgroundImages = {
   books: bgBanner,
   court: legalCourt,
   consultation: legalConsultation,
-  rera: realEstateLaw,
+  rera: "https://goelgangadevelopments.com/wp-content/uploads/2019/08/28.jpg",
   team: lawTeamMeeting,
 };
 
@@ -144,11 +145,19 @@ export const coreValues: CoreValue[] = [
 
 export const practiceAreas: PracticeArea[] = [
   {
-    title: "Civil, Criminal & Constitutional Law",
-    desc: "Comprehensive representation in civil disputes, criminal defense, and constitutional writ jurisdictions before High Courts and Tribunals.",
+    title:
+      "Civil and criminal litigation before Trial Courts, Appellate Courts, and High Courts",
+    desc: "Comprehensive representation in civil disputes and criminal defense across all levels of the judiciary.",
     icon: Scale,
     backgroundImage:
       "https://jimhalelaw.com/wp-content/uploads/2024/01/cuffed-hands-behind-back.jpg",
+  },
+  {
+    title: "Civil, Criminal & Constitutional Matters",
+    desc: "Expert legal counsel and representation in complex civil suits, criminal trials, and constitutional writ jurisdictions.",
+    icon: Shield,
+    backgroundImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP2RFPMPqmcQs4iLheWx2OqMEtuHxh2NkWiQ&s",
   },
   {
     title: "Service & Employment Law",
@@ -172,6 +181,13 @@ export const practiceAreas: PracticeArea[] = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1XBK-vxtO3rW4GEH-X0psUzZrbe3wgB8Jbg&s",
   },
   {
+    title: "Dispute Resolution – Litigation, Arbitration & Mediation",
+    desc: "Alternative dispute resolution services providing cost-effective and timely settlement of civil and commercial conflicts.",
+    icon: Heart,
+    backgroundImage:
+      "https://lh5.googleusercontent.com/proxy/MwOSjzEZ1tTwJlJPEHmE1JOD8ZmyInlkMTFXH_6nEEda0OwvnmwiwI41SIe56ANivmGefpZGfoN6Dk_sG1SPSXapwesoZy9Na8Ui-AeASPEuvk280dimM7Uxkw",
+  },
+  {
     title: "Corporate & Business Laws",
     desc: "Advisory on company law, regulatory compliance, mergers & acquisitions, and corporate governance for businesses.",
     icon: Building2,
@@ -179,18 +195,25 @@ export const practiceAreas: PracticeArea[] = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1ZCFoc9vRjN54u_BKdVC07JEP41GmgorU6w&s",
   },
   {
-    title: "Labour & Industrial Relations",
+    title: "Labour, Industrial & Employment Relations",
     desc: "Ensuring compliance with labour codes, handling industrial disputes, and advising on employee welfare laws.",
     icon: Users,
     backgroundImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDVI8PzvJOYExGe-G9HwoMP727daSf9BNQ_w&s",
   },
   {
-    title: "Contract Drafting & Agreements",
+    title: "Contract Drafting & Commercial Agreements",
     desc: "Meticulous drafting, vetting, and negotiation of commercial contracts, sale deeds, and legal agreements.",
     icon: FileText,
     backgroundImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR0SKALhgWN_LUkAht1PRhj5K2TUg1_13Ghw&s",
+  },
+  {
+    title: "Real Estate (RERA), Infrastructure & Project Disputes",
+    desc: "Specialized regulatory and advisory support to real estate stakeholders for compliance and dispute resolution.",
+    icon: Building2,
+    backgroundImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVuoSwPzSsanQU8HIx6sSpxSP2bqg-GNtFJA&s",
   },
   {
     title: "Election Law & Representation",
@@ -207,23 +230,31 @@ export const practiceAreas: PracticeArea[] = [
       "https://blog.ipleaders.in/wp-content/uploads/2020/09/Bankruptcylaw-1.png",
   },
   {
-    title: "Intellectual Property Rights",
+    title: "Franchising, Licensing & Distributorship Agreements",
+    desc: "Drafting and negotiating comprehensive agreements to protect business interests across supply chains and brand expansions.",
+    icon: FileCheck,
+    backgroundImage:
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    title:
+      "Intellectual Property Laws - Trademark, Patent & Copyright (Filing & Infringement)",
     desc: "Protection and enforcement of trademarks, copyrights, and patents to safeguard intellectual assets.",
     icon: Lightbulb,
     backgroundImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu9uOgtI1wsFvwtl4QZBqeB2YcNmJKHp-Dhw&s",
   },
   {
-    title: "Education & Environmental Laws",
+    title: "Education & Environment Laws",
     desc: "Navigating legal issues in the education sector and ensuring compliance with environmental regulations.",
     icon: BookOpen,
     backgroundImage:
       "https://blog.ipleaders.in/wp-content/uploads/2020/12/web_climate_law_istock-961826918_0.jpg",
   },
   {
-    title: "Startups & Emerging Businesses",
+    title: "Start-ups & Emerging Businesses",
     desc: "End-to-end legal structuring, incorporation, and advisory services tailored for startups and new ventures.",
-    icon: Lightbulb,
+    icon: Zap,
     backgroundImage: "https://etimg.etb2bimg.com/photo/106867403.cms",
   },
   {
@@ -231,7 +262,7 @@ export const practiceAreas: PracticeArea[] = [
     desc: "Expert counsel on provident fund disputes, social security compliance, and employee benefits.",
     icon: ShieldCheck,
     backgroundImage:
-      "https://fe189aae.delivery.rocketcdn.me/wp-content/uploads/2024/03/Social-Security-TeamLease-Services-Limited-1.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-ZSFi1i4Q1-zRi8R1FjWg3SKSsRrOP5ga2g&s",
   },
   {
     title: "Family & Matrimonial Disputes",
@@ -248,18 +279,63 @@ export const partners: Partner[] = [
     role: "Partner",
     designation: "Advocate, Patna High Court",
     description:
-      "A distinguished legal practitioner with deep expertise in civil, criminal, and constitutional law. Known for his strategic litigation capability and unwavering commitment to client rights.",
-    image:
-      "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop&crop=faces",
+      "Mr. Abhinay Priyadarshi is a young and dynamic Advocate with a strong academic foundation and extensive practical experience across diverse areas of law. He graduated with a BBA LL.B. (Hons.) with specialization in Intellectual Property Rights from KIIT University and has further strengthened his academic credentials with an LL.M., while presently pursuing his Ph.D. in Law.",
+    image: "./team/Abhinay.jpeg",
+    email: "vidhitlawassociates8@gmail.com",
+    phone: "+91-7008222725",
   },
   {
     name: "Jainandra Kumar",
     role: "Partner",
     designation: "Advocate, Patna High Court",
     description:
-      "Specializes in corporate advisory, RERA regulations, and commercial dispute resolution. He brings a pragmatic, solution-oriented approach to complex legal challenges.",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces",
+      "JAINANDRA has  15 years of extensive experience in litigation, legal advisory, documentation, and regulatory compliance. Education:- LL.B, M.B.A.(HRM), M.COM . Practicing before the Hon’ble Patna High Court since 2011, he has successfully represented clients in matters relating to Arbitration, Consumer Protection, Negotiable Instruments Act, Civil & Criminal Writs, Bail Matters, Appeals, and allied laws.",
+    image: "./team/Jainandra.jpeg",
+    email: "vidhitlawassociates8@gmail.com",
+    phone: "+91-9934652263",
+  },
+];
+
+export const supportTeam: Partner[] = [
+  {
+    name: "RANJEET CHOUBEY",
+    role: "Senior Associate",
+    designation: "Senior Associate",
+    description:
+      "Mr.Ranjeet Choubey is a seasoned litigation professional with over 20 years of extensive experience in the legal field. He holds qualifications of M.Com and LL.B., bringing a strong blend of commercial insight and legal acumen to his practice. Mr. Choubey has developed particular expertise in election-related matters, including disputes concerning Municipalities, Panchayats, and other statutory bodies. His practice spans a wide spectrum of Civil and Criminal Litigation, where he regularly handles complex legal issues and represents clients before various judicial forums. He has substantial experience in matters involving Writ Jurisdiction, and has successfully advised and represented clients in mediation proceedings governed by diverse substantive laws. Known for his precision and clarity, Mr. Choubey is highly adept in drafting pleadings and conducting matters before courts, tribunals, quasi-judicial bodies, and the High Court. In addition, he has served as a panel lawyer for government organizations, providing legal advisory and representation services, further underscoring his depth of experience and professional credibility.",
+    image: "./team/Ranjit.jpeg",
+    email: "[EMAIL_ADDRESS]",
+    phone: "+91-9431034035",
+  },
+  {
+    name: "Priyanka Kumari",
+    role: "Associate",
+    designation: "Associate",
+    description:
+      "Ms. Priyanka Kumari is a bright and dynamic young lawyer with sound knowledge and practical exposure across diverse areas of law. She holds a B.A. LL.B. degree from UPES, Dehradun, and has been actively engaged in legal practice since her enrollment.",
+    image: "./team/Priyanka.jpeg",
+    email: "vikram@vidhitlaw.com",
+    phone: "+91 98765 43213",
+  },
+  {
+    name: "Ramratan Singh",
+    role: "Senior Associate",
+    designation: "Senior Associate",
+    description:
+      "Ram Ratna Singh is an advocate with over 20 years of litigation experience. He completed his graduation and LL.B. from Magadh University and was enrolled with the Bar in 1996. He is also an Advocate-on-Record at the Patna High Court.",
+    image: "./team/Ram-ratan.jpeg",
+    email: "neha@vidhitlaw.com",
+    phone: "+91 98765 43214",
+  },
+  {
+    name: "Bishwash Vijeta",
+    role: "Associate",
+    designation: "Associate",
+    description:
+      "Bishwash Vijeta  is a young and dynamic Advocate with a strong academic foundation and substantial practical experience across diverse areas of law. He completed his B.A. LL.B. (Hons.) and further enhanced his academic credentials by obtaining an LL.M. from Chanakya National Law University (CNLU). He is presently pursuing his Ph.D. in Law.",
+    image: "./team/Bishwash.jpeg",
+    email: "rohan@vidhitlaw.com",
+    phone: "+91 98765 43215",
   },
 ];
 
@@ -554,32 +630,25 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-export const clients: Client[] = [
-  {
-    id: 1,
-    name: "Tech Solutions Inc.",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png",
-  },
-  {
-    id: 2,
-    name: "Green Valley Real Estate",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-  },
-  {
-    id: 3,
-    name: "BuildWell Constructions",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1200px-IBM_logo.svg.png",
-  },
-  {
-    id: 4,
-    name: "Innovate India Ltd",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Tarta_Steel_logo.svg/1200px-Tarta_Steel_logo.svg.png",
-  },
-  {
-    id: 5,
-    name: "Sunrise Developers",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1200px-Accenture.svg.png",
-  },
+export const vidhitClients: Client[] = [
+  { id: 1, name: "M/s  Lakshya Bharti Global Infra Corporation Pvt. Ltd" },
+  { id: 2, name: "Dakshin Bihar Gramin Bank Officer’s Association" },
+  { id: 3, name: "BuildWell Constructions" },
+  { id: 4, name: "M/s Ansh Raj Construction Pvt. LTD." },
+  { id: 5, name: "Rajesh Kumar CAT Client" },
+  { id: 6, name: "Birbal Singh Lbour and industrial law client" },
+  { id: 7, name: "Sabh Imam" },
+];
+
+export const reraClients: Client[] = [
+  { id: 1, name: "Sarvodya Grih Nirman Pvt. LTD" },
+  { id: 2, name: "DURGA HOME CONSTRUCTION" },
+  { id: 3, name: "DURGA URBAN PROJECTS LLP" },
+  { id: 4, name: "Platinum Heritage Homes Pvt. Ltd." },
+  { id: 5, name: "M/S Metro Construction" },
+  { id: 6, name: "AZALFA BUILDING CONSTRUCTION PVT LTD" },
+  { id: 7, name: "Sarvodya Grih Nirman Pvt. LTD." },
+  { id: 8, name: "AZALFA BUILDING CONSTRUCTION PVT LTD" },
 ];
 
 export const jobOpenings: JobOpening[] = [
@@ -609,7 +678,7 @@ export const jobOpenings: JobOpening[] = [
     type: "Internship",
     location: "Patna Office",
     department: "General",
-    experience: "Final Year Student",
+    experience: "1 -3 Years",
     description:
       "Opportunity for law students to gain hands-on experience in court proceedings.",
   },
@@ -636,4 +705,17 @@ export const careerBenefits: CareerBenefit[] = [
     desc: "Collaborative and inclusive workplace culture.",
     icon: Coffee,
   },
+];
+
+export const galleryImages = [
+  "./gallary/court1.jpeg", // Wide (Gavel)
+  "./team/Abhinay.jpeg", // Wide (Meeting)
+  "./team/Bishwash.jpeg", // Wide (Meeting)
+  "./gallary/team.jpeg", // Tall (Clock/Meeting)
+  "./gallary/main.jpeg", // Tall (Law Books)
+  "./team/Priyanka.jpeg", // Wide (Meeting)
+  "./team/Jainandra.jpeg", // Wide (Meeting)
+  "./team/Ram-ratan.jpeg", // Wide (Meeting)
+  "./team/Ranjit.jpeg", // Wide (Meeting)
+  "./gallary/court2.jpeg", // Square/Wide (Courthouse)
 ];

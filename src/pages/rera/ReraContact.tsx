@@ -1,5 +1,13 @@
-import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { useState, type FormEvent } from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
+  Loader2,
+} from "lucide-react";
 import { useBrand } from "../../context/BrandContext";
 
 const contactInfo = [
@@ -54,6 +62,8 @@ const ReraContact = () => {
     service: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -63,10 +73,40 @@ const ReraContact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Form submission placeholder – integrate backend/email service here
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "acaa235f-83b5-4829-85ef-a58275d7ccae",
+          subject: `New Lex Rera Inquiry from ${form.name}`,
+          from_name: form.name,
+          email: form.email || "Not Provided",
+          phone: form.phone,
+          service: form.service || "General Inquiry",
+          message: form.message,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(result.message || "Failed to submit form.");
+      }
+    } catch (error) {
+      setSubmitError("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -254,12 +294,26 @@ const ReraContact = () => {
                       />
                     </div>
 
+                    {submitError && (
+                      <p className="text-red-500 text-sm">{submitError}</p>
+                    )}
+
                     <button
                       type="submit"
-                      className="flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm uppercase tracking-wider font-bold rounded-sm transition-all shadow-md hover:shadow-lg"
+                      disabled={isSubmitting}
+                      className="flex items-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-[#0a1e3c] hover:text-white disabled:opacity-70 text-sm uppercase tracking-wider font-bold rounded-sm transition-all shadow-md hover:shadow-lg"
                     >
-                      <Send className="h-4 w-4" />
-                      Send Message
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4" />
+                          Send Message
+                        </>
+                      )}
                     </button>
                   </form>
                 </>

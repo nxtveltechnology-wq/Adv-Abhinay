@@ -10,11 +10,17 @@ import {
   Scale,
   BookOpen,
   HelpCircle,
-  Award,
   Calendar,
+  Loader2,
 } from "lucide-react";
-import { reraServices, backgroundImages, awards } from "../../data/siteData";
+import {
+  reraServices,
+  backgroundImages,
+  reraClients,
+} from "../../data/siteData";
 import SEO from "../../components/SEO";
+import brandConfig from "../../data/brandConfig.json";
+import { useNews } from "../../hooks/useNews";
 
 // Animation Variants
 const fadeInUp = {
@@ -34,31 +40,9 @@ const staggerContainer = {
 
 const ReraHome = () => {
   const statsRef = useRef(null);
-
-  // Mock Data for "Latest RERA News" & "Training" as they are not in siteData
-  const reraNews = [
-    {
-      id: 1,
-      title: "New RERA Guidelines for Project Extensions",
-      date: "Oct 15, 2023",
-      excerpt:
-        "The RERA authority has issued new notifications regarding the extension of project completion deadlines...",
-    },
-    {
-      id: 2,
-      title: "Supreme Court Ruling on Homebuyer Rights",
-      date: "Sep 22, 2023",
-      excerpt:
-        "In a landmark judgment, the Supreme Court has upheld the rights of homebuyers as financial creditors...",
-    },
-    {
-      id: 3,
-      title: "UP RERA Reduces Compliance Burden",
-      date: "Aug 10, 2023",
-      excerpt:
-        "Steps taken to simplify the quarterly progress report filing process for smaller real estate projects...",
-    },
-  ];
+  const brand = brandConfig.brands.lexrera;
+  const { news: reraNewsData, loading: newsLoading } = useNews("lexrera");
+  const recentReraNews = reraNewsData.slice(0, 3);
 
   const importantLinks = [
     {
@@ -98,7 +82,7 @@ const ReraHome = () => {
       />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-[720px] md:min-h-[760px] flex items-center bg-slate-900 overflow-hidden pt-28 md:pt-32 pb-12 md:pb-16">
+      <section className="relative min-h-[720px] md:min-h-[760px] flex items-center bg-slate-900 overflow-hidden pt-32 md:pt-32 pb-12 md:pb-16">
         {/* Background Image with Overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -118,30 +102,23 @@ const ReraHome = () => {
               className="md:w-1/2 text-white text-center md:text-left order-2 md:order-1 w-full px-2 md:px-0"
             >
               <div className="inline-block bg-[#fbbf24] text-[#0a1e3c] text-[10px] md:text-xs font-bold px-3 py-1 rounded-sm mb-4 uppercase tracking-wider">
-                India's Top RERA Consultants
+                Your Complete RERA Advisor
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6">
-                RERA Registration <br />
-                <span className="text-[#fbbf24]">Easy & Simple</span>
+              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-serif font-bold leading-tight mb-6">
+                Simplifying RERA Registration & Filing <br />
               </h1>
+
               <p className="text-gray-300 text-base md:text-lg mb-8 max-w-xl leading-relaxed mx-auto md:mx-0">
-                Complete legal protection for Developers, Agents, and
-                Homebuyers. From registration to litigation, we handle it all
-                with precision.
+                Your Complete Partner for RERA Registration, Compliance,
+                Advisory & Legal Solutions.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Link
-                  to="/registration"
+                  to="/about"
                   className="bg-[#fbbf24] hover:bg-yellow-400 text-[#0a1e3c] font-bold py-3 px-6 md:py-3.5 md:px-8 rounded-sm transition-all shadow-lg flex items-center justify-center gap-2"
                 >
-                  Project Registration <ArrowRight className="h-5 w-5" />
-                </Link>
-                <Link
-                  to="/agent-registration"
-                  className="bg-transparent border-2 border-white/30 hover:bg-white/10 text-white font-bold py-3 px-6 md:py-3.5 md:px-8 rounded-sm transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
-                >
-                  Agent Registration
+                  About Lex Rera Advisor <ArrowRight className="h-5 w-5" />
                 </Link>
               </div>
 
@@ -237,12 +214,14 @@ const ReraHome = () => {
                   transition={{ duration: 0.5, ease: "backOut" }}
                   className="absolute inset-0 flex items-center justify-center z-10"
                 >
-                  <div className="bg-[#0a1e3c] p-6 rounded-full border-4 border-[#fbbf24] shadow-[0_0_30px_rgba(251,191,36,0.2)] text-center w-28 h-28 md:w-32 md:h-32 flex flex-col items-center justify-center cursor-default z-20">
-                    <Scale className="h-6 w-6 md:h-8 md:w-8 text-[#fbbf24] mb-1" />
-                    <span className="text-[9px] md:text-[10px] font-bold text-white uppercase tracking-wider leading-tight">
-                      LEX RERA
-                      <br />
-                      Advisors
+                  <div className="bg-[#0a1e3c] p-6 rounded-full border-4 border-[#fbbf24] shadow-[0_0_30px_rgba(251,191,36,0.2)] text-center w-28 h-28 md:w-36 md:h-36 flex flex-col items-center justify-center cursor-default z-20 overflow-hidden">
+                    <img
+                      src={brand.logo}
+                      alt="LexRera Logo"
+                      className="w-16 h-16 md:w-20 md:h-20 object-contain mb-1"
+                    />
+                    <span className="text-[8px] md:text-[9px] font-bold text-[#fbbf24] uppercase tracking-wider leading-tight">
+                      {brand.name}
                     </span>
                   </div>
                 </motion.div>
@@ -422,42 +401,52 @@ const ReraHome = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {reraNews.map((news) => (
-              <div
-                key={news.id}
-                className="bg-white border border-gray-200 hover:border-[#fbbf24] transition-colors group"
-              >
-                <div className="h-48 bg-gray-200 relative overflow-hidden">
-                  <img
-                    src={`https://source.unsplash.com/random/800x600?law,building&sig=${news.id}`}
-                    alt="News"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4 bg-[#0a1e3c] text-white text-[10px] md:text-xs font-bold px-3 py-1">
-                    RERA UPDATES
+          {newsLoading ? (
+            <div className="flex justify-center items-center h-48 w-full">
+              <Loader2 className="w-8 h-8 animate-spin text-[#fbbf24]" />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              {recentReraNews.map((news) => (
+                <div
+                  key={news.id}
+                  className="bg-white border border-gray-200 hover:border-[#fbbf24] transition-colors group flex flex-col h-full"
+                >
+                  <div className="h-48 bg-gray-200 relative overflow-hidden flex-shrink-0">
+                    <img
+                      src={news.image}
+                      alt={news.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4 bg-[#0a1e3c] text-white text-[10px] md:text-xs font-bold px-3 py-1">
+                      REAL ESTATE NEWS
+                    </div>
+                  </div>
+                  <div className="p-5 md:p-6 flex flex-col flex-grow">
+                    <span className="text-xs text-gray-400 font-semibold mb-2 block">
+                      {news.date}
+                    </span>
+                    <h3 className="text-base md:text-lg font-bold text-[#0a1e3c] mb-3 group-hover:text-[#d97706] transition-colors line-clamp-2">
+                      {news.title}
+                    </h3>
+                    <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-4 line-clamp-3">
+                      {news.excerpt}
+                    </p>
+                    <div className="mt-auto">
+                      <a
+                        href={news.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs md:text-sm font-bold text-[#0a1e3c] hover:underline hover:text-[#fbbf24] transition-colors"
+                      >
+                        Read Full Story
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div className="p-5 md:p-6">
-                  <span className="text-xs text-gray-400 font-semibold mb-2 block">
-                    {news.date}
-                  </span>
-                  <h3 className="text-base md:text-lg font-bold text-[#0a1e3c] mb-3 group-hover:text-[#d97706] transition-colors line-clamp-2">
-                    {news.title}
-                  </h3>
-                  <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-4 line-clamp-3">
-                    {news.excerpt}
-                  </p>
-                  <Link
-                    to="/blogs"
-                    className="text-xs md:text-sm font-bold text-[#0a1e3c] hover:underline"
-                  >
-                    Read Full Story
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           <div className="mt-8 text-center md:hidden">
             <Link
@@ -557,17 +546,17 @@ const ReraHome = () => {
             </div>
             <div className="lg:w-1/2 grid grid-cols-2 gap-3 md:gap-4">
               <img
-                src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=500&h=300&fit=crop"
+                src="https://www.vts.com/wp-content/uploads/2021/10/10.04.21-The-6-Types-of-Commercial-Real-Estate-Property-new.webp"
                 alt="Workshop 1"
                 className="rounded-lg shadow-lg w-full h-32 md:h-40 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1558403194-611308249627?w=500&h=300&fit=crop"
+                src="https://img1.wsimg.com/isteam/ip/bbc07c00-602b-41d8-8c81-8f6a91f5015e/1-495ea02.jpg/:/rs=w:365,cg:true,m"
                 alt="Workshop 2"
                 className="rounded-lg shadow-lg w-full h-32 md:h-40 object-cover mt-4 md:mt-8"
               />
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop"
+                src="https://myofficespace.com.my/wp-content/uploads/2025/03/Corporate-Real-Estate-Management.jpg"
                 alt="Workshop 3"
                 className="rounded-lg shadow-lg w-full h-32 md:h-40 object-cover"
               />
@@ -582,7 +571,7 @@ const ReraHome = () => {
       </section>
 
       {/* --- AWARDS SECTION --- */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      {/* <section className="py-12 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#0a1e3c] mb-8 md:mb-12">
             Awards & Recognition
@@ -613,30 +602,80 @@ const ReraHome = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* --- CLIENTS SECTION --- */}
-      {/* <section className="py-12 md:py-16 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-sm md:text-xl font-bold text-gray-400 mb-6 md:mb-8 uppercase tracking-widest">
-            Trusted By Builders & Agencies Nationwide
-          </h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            {clients.map((client) => (
+      <section className="py-16 md:py-24 bg-gray-50 border-t border-gray-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#0a1e3c] mb-4">
+            Trusted Clients
+          </h2>
+          <div className="w-16 md:w-20 h-1 bg-[#fbbf24] mx-auto"></div>
+        </div>
+
+        <div className="relative w-full flex flex-col gap-6 md:gap-8 overflow-hidden">
+          <style>{`
+            @keyframes scrollLeft {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            @keyframes scrollRight {
+              0% { transform: translateX(-50%); }
+              100% { transform: translateX(0); }
+            }
+            .animate-scroll-left {
+              animation: scrollLeft 40s linear infinite;
+            }
+            .animate-scroll-right {
+              animation: scrollRight 40s linear infinite;
+            }
+            .pause-on-hover:hover {
+              animation-play-state: paused;
+            }
+          `}</style>
+
+          {/* Top Row - Moving Left */}
+          <div className="flex w-max animate-scroll-left pause-on-hover px-4">
+            {[
+              ...reraClients,
+              ...reraClients,
+              ...reraClients,
+              ...reraClients,
+            ].map((client, idx) => (
               <div
-                key={client.id}
-                className="w-24 md:w-32 h-12 md:h-16 flex items-center justify-center"
+                key={`row1-${idx}`}
+                className="w-48 md:w-64 h-24 md:h-28 mx-3 flex flex-col items-center justify-center bg-white border border-gray-100 rounded-xl p-3 shadow-sm group hover:border-[#fbbf24] hover:shadow-md transition-all duration-300 shrink-0"
               >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="max-w-full max-h-full object-contain"
-                />
+                <div className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-slate-50 text-gray-400 group-hover:bg-[#fbbf24]/20 group-hover:text-[#fbbf24] transition-all duration-300 mb-2">
+                  <Building2 className="h-5 w-5 md:h-6 md:w-6" />
+                </div>
+                <span className="text-xs md:text-sm font-semibold text-gray-500 group-hover:text-[#0a1e3c] text-center line-clamp-1 transition-colors">
+                  {client.name}
+                </span>
               </div>
             ))}
           </div>
+
+          {/* Bottom Row - Moving Right */}
+          <div className="flex w-max animate-scroll-right pause-on-hover px-12">
+            {[...reraClients, ...reraClients, ...reraClients, ...reraClients]
+              .reverse()
+              .map((client, idx) => (
+                <div
+                  key={`row2-${idx}`}
+                  className="w-48 md:w-64 h-24 md:h-28 mx-3 flex flex-col items-center justify-center bg-white border border-gray-100 rounded-xl p-3 shadow-sm group hover:border-[#0a1e3c] hover:shadow-md transition-all duration-300 shrink-0"
+                >
+                  <div className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-slate-50 text-gray-400 group-hover:bg-[#0a1e3c]/10 group-hover:text-[#0a1e3c] transition-all duration-300 mb-2">
+                    <Building2 className="h-5 w-5 md:h-6 md:w-6" />
+                  </div>
+                  <span className="text-xs md:text-sm font-semibold text-gray-500 group-hover:text-[#fbbf24] text-center line-clamp-1 transition-colors">
+                    {client.name}
+                  </span>
+                </div>
+              ))}
+          </div>
         </div>
-      </section> */}
+      </section>
 
       {/* --- CTA BOTTOM --- */}
       <div className="bg-[#0a1e3c] py-12 relative overflow-hidden">

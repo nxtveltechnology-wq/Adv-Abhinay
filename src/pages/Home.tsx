@@ -1,21 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  Scale,
-  Phone,
-  BookOpen,
-  Shield,
-  Award,
-  Linkedin,
-  Mail,
-} from "lucide-react";
+import { ArrowRight, Scale, BookOpen, Shield } from "lucide-react";
 import SectionWrapper from "../components/SectionWrapper";
 import BlogSection from "../components/home/BlogSection";
 
 import FloatingReraCard from "../components/home/FloatingReraCard";
-import AwardsSection from "../components/home/AwardsSection";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import AskQuerySection from "../components/home/AskQuerySection";
 import bgBanner from "../assets/bg-banner.jpeg";
@@ -25,13 +15,18 @@ import {
   coreValues,
   heroSliderImages,
   partners,
+  supportTeam,
+  vidhitClients,
 } from "../data/siteData";
+import { Building2 } from "lucide-react";
 import SEO from "../components/SEO";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const banners = [bgBanner, ...heroSliderImages];
+  const allTeam = [...partners, ...supportTeam];
+  const carouselItems = [...allTeam, ...allTeam, ...allTeam, ...allTeam];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -53,7 +48,7 @@ const Home = () => {
         keywords="Lawyer in Patna, Advocate in Patna, High Court Lawyer, RERA Consultant, Best Law Firm in Patna"
       />
       {/* 3.1 Hero Section */}
-      <section className="relative text-white pt-[120px] md:pt-[140px] pb-20 lg:pb-24 overflow-hidden flex items-center min-h-[85vh] bg-gray-900">
+      <section className="relative text-white pt-[120px] md:pt-[180px] pb-20 lg:pb-24 overflow-hidden flex items-center min-h-[85vh] bg-gray-900">
         {/* Background Slider */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Slider Images */}
@@ -89,35 +84,27 @@ const Home = () => {
               Strategic Legal Solutions
             </h5>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6 drop-shadow-lg">
-              VIDHIT LAW ASSOCIATES
+              WELCOME TO <br /> VIDHIT LAW ASSOCIATES
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-2 font-light drop-shadow-md">
-              Professional | Strategic | Result-Oriented
+              Solicitors | Lawyers | Counsellors
             </p>
-            <p className="text-base text-gray-300 mb-8 max-w-xl leading-relaxed italic border-l-4 border-accent pl-4">
+            <p className="text-base text-gray-300 mb-4 max-w-2xl leading-relaxed italic border-l-4 border-accent pl-4">
               "Where Law Meets Trust — Advice that Matters, Crafted in the Art
               of Law"
             </p>
 
             <p className="text-gray-200 mb-8 max-w-2xl leading-relaxed text-base pl-1">
-              Full-service law firm providing ethical, precise, and
-              solution-oriented legal services. combining strong litigation
-              capabilities with strategic legal advisory to protect rights,
-              manage risks, and deliver effective outcomes.
+              A full-service law firm providing ethical, strategic, and
+              effective legal solutions.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Link
-                to="/practice-areas"
+                to="/about"
                 className="bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-6 rounded-sm transition-all flex items-center gap-2 shadow-lg hover:shadow-accent/20 transform hover:-translate-y-1 text-sm uppercase tracking-wide"
               >
-                View Practice Areas <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/contact"
-                className="border border-white/30 hover:bg-white/10 text-white font-semibold py-3 px-6 rounded-sm transition-all backdrop-blur-md hover:backdrop-blur-lg text-sm uppercase tracking-wide"
-              >
-                Contact Us
+                About The Firm <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </motion.div>
@@ -439,102 +426,137 @@ const Home = () => {
       </section>
 
       {/* 3.4.5 Awards & Recognition */}
-      <AwardsSection />
+      {/* <AwardsSection /> */}
 
-      {/* 3.6 Partners */}
-      <SectionWrapper background="light">
-        <div className="text-center mb-16">
+      {/* 3.6 Our Team Carousel */}
+      <section className="py-24 bg-slate-50 overflow-hidden relative border-y border-gray-100">
+        <div className="text-center mb-16 relative z-10 px-4">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
-            Partners
+            Our Team
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {partners.map((partner, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="group relative"
-            >
-              {/* Card Container */}
-              <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl active:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100">
-                {/* Top Accent Bar */}
-                <div className="h-2 bg-gradient-to-r from-accent to-primary"></div>
-
-                <div className="p-10">
-                  {/* Profile Image Section */}
-                  <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start mb-8">
-                    <div className="relative flex-shrink-0">
-                      {/* Image with Decorative Ring */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full transform group-hover:scale-110 group-active:scale-110 transition-transform duration-500 blur-md"></div>
-                      <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-xl ring-4 ring-accent/10">
-                        <img
-                          src={partner.image}
-                          alt={partner.name}
-                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-active:grayscale-0 transition-all duration-500"
-                        />
-                      </div>
-                      {/* Verified Badge */}
-                      <div className="absolute -bottom-2 -right-2 bg-accent text-white p-2 rounded-full shadow-lg">
-                        <Award className="h-5 w-5" />
-                      </div>
-                    </div>
-
-                    {/* Info Section */}
-                    <div className="flex-1 text-center sm:text-left">
-                      <h3 className="text-2xl font-serif font-bold text-primary mb-2 group-hover:text-accent group-active:text-accent transition-colors">
-                        {partner.name}
-                      </h3>
-
-                      <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
-                        <span className="inline-block px-3 py-1 bg-gradient-to-r from-accent/10 to-primary/10 text-accent text-xs font-bold uppercase tracking-wider rounded-full border border-accent/20">
-                          {partner.role}
-                        </span>
-                      </div>
-
-                      <p className="text-gray-700 font-semibold mb-4 flex items-center justify-center sm:justify-start gap-2">
-                        <Scale className="h-4 w-4 text-accent" />
-                        {partner.designation}
-                      </p>
-
-                      {/* Social Links - Placeholder */}
-                      <div className="flex gap-3 justify-center sm:justify-start">
-                        <button className="p-2 bg-gray-100 hover:bg-accent active:bg-accent hover:text-white active:text-white text-gray-600 rounded-full transition-colors">
-                          <Linkedin className="h-4 w-4" />
-                        </button>
-                        <button className="p-2 bg-gray-100 hover:bg-accent active:bg-accent hover:text-white active:text-white text-gray-600 rounded-full transition-colors">
-                          <Mail className="h-4 w-4" />
-                        </button>
-                        <button className="p-2 bg-gray-100 hover:bg-accent active:bg-accent hover:text-white active:text-white text-gray-600 rounded-full transition-colors">
-                          <Phone className="h-4 w-4" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Divider */}
-                  <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-6"></div>
-
-                  {/* Description */}
-                  <p className="text-gray-600 leading-relaxed text-base">
-                    {partner.description}
-                  </p>
+        <div className="relative w-full overflow-hidden flex whitespace-nowrap group">
+          <div className="flex animate-infinite-scroll group-hover:[animation-play-state:paused] w-max">
+            {carouselItems.map((member, index) => (
+              <Link
+                key={index}
+                to="/team"
+                className="flex flex-col items-center mx-6 w-40 sm:w-48 transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg ring-4 ring-accent/10 mb-5 bg-white flex-shrink-0 flex items-end justify-center">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
-
-                {/* Bottom Gradient Accent */}
-                <div className="h-1 bg-gradient-to-r from-primary/5 via-accent/20 to-primary/5"></div>
-              </div>
-            </motion.div>
-          ))}
+                <h3 className="text-lg font-serif font-bold text-slate-800 text-center truncate w-full group-hover:text-accent transition-colors">
+                  {member.name}
+                </h3>
+                <span className="text-[11px] sm:text-xs text-accent font-bold uppercase tracking-widest text-center w-full truncate mt-1">
+                  {member.role}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
-      </SectionWrapper>
+
+        {/* Fading Edges */}
+        <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+
+        <div className="mt-16 text-center relative z-10">
+          <Link
+            to="/team"
+            className="inline-flex items-center gap-2 text-primary font-semibold hover:text-accent transition-colors border-b-2 border-accent pb-1"
+          >
+            Meet Our Team <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
 
       {/* 3.6.5 Testimonials */}
       <TestimonialsSection />
+
+      {/* --- CLIENTS SECTION --- */}
+      <section className="py-16 md:py-24 bg-gray-50 border-t border-gray-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold text-[#0a1e3c] mb-4">
+            Trusted Clients
+          </h2>
+          <div className="w-16 md:w-20 h-1 bg-accent mx-auto"></div>
+        </div>
+
+        <div className="relative w-full flex flex-col gap-6 md:gap-8 overflow-hidden">
+          <style>{`
+            @keyframes scrollLeft {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            @keyframes scrollRight {
+              0% { transform: translateX(-50%); }
+              100% { transform: translateX(0); }
+            }
+            .animate-scroll-left {
+              animation: scrollLeft 40s linear infinite;
+            }
+            .animate-scroll-right {
+              animation: scrollRight 40s linear infinite;
+            }
+            .pause-on-hover:hover {
+              animation-play-state: paused;
+            }
+          `}</style>
+
+          {/* Top Row - Moving Left */}
+          <div className="flex w-max animate-scroll-left pause-on-hover px-4">
+            {[
+              ...vidhitClients,
+              ...vidhitClients,
+              ...vidhitClients,
+              ...vidhitClients,
+            ].map((client, idx) => (
+              <div
+                key={`row1-${idx}`}
+                className="w-48 md:w-64 h-24 md:h-28 mx-3 flex flex-col items-center justify-center bg-white border border-gray-100 rounded-xl p-3 shadow-sm group hover:border-[#fbbf24] hover:shadow-md transition-all duration-300 shrink-0"
+              >
+                <div className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-slate-50 text-gray-400 group-hover:bg-accent/20 group-hover:text-accent transition-all duration-300 mb-2">
+                  <Building2 className="h-5 w-5 md:h-6 md:w-6" />
+                </div>
+                <span className="text-xs md:text-sm font-semibold text-gray-500 group-hover:text-[#0a1e3c] text-center line-clamp-1 transition-colors">
+                  {client.name}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Row - Moving Right */}
+          <div className="flex w-max animate-scroll-right pause-on-hover px-12">
+            {[
+              ...vidhitClients,
+              ...vidhitClients,
+              ...vidhitClients,
+              ...vidhitClients,
+            ]
+              .reverse()
+              .map((client, idx) => (
+                <div
+                  key={`row2-${idx}`}
+                  className="w-48 md:w-64 h-24 md:h-28 mx-3 flex flex-col items-center justify-center bg-white border border-gray-100 rounded-xl p-3 shadow-sm group hover:border-[#0a1e3c] hover:shadow-md transition-all duration-300 shrink-0"
+                >
+                  <div className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-slate-50 text-gray-400 group-hover:bg-[#0a1e3c]/10 group-hover:text-[#0a1e3c] transition-all duration-300 mb-2">
+                    <Building2 className="h-5 w-5 md:h-6 md:w-6" />
+                  </div>
+                  <span className="text-xs md:text-sm font-semibold text-gray-500 group-hover:text-accent text-center line-clamp-1 transition-colors">
+                    {client.name}
+                  </span>
+                </div>
+              ))}
+          </div>
+        </div>
+      </section>
 
       {/* 3.7 Blog Section */}
       <BlogSection />

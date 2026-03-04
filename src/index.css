@@ -52,3 +52,16 @@ html {
 body {
   overflow-x: hidden;
 }
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 35s linear infinite;
+}
