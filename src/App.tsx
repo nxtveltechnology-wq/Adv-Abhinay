@@ -4,6 +4,8 @@ import Layout from "./components/layout/Layout";
 import DisclaimerModal from "./components/ui/DisclaimerModal";
 import { BrandProvider, brandConfig } from "./context/BrandContext";
 
+import StickySocialSidebar from "./components/ui/StickySocialSidebar";
+
 // ── VidhitLaw Pages ────────────────────────────────────────────────
 const VidhitHome = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/AboutUs"));
@@ -63,6 +65,7 @@ function App() {
     <Router>
       <BrandProvider>
         <DisclaimerModal />
+        <StickySocialSidebar />
         <Suspense fallback={<Loading />}>
           {isLexRera ? (
             // ── LEX RERA ROUTING ──────────────────────────────────

@@ -11,13 +11,12 @@ const reraNavLinks = [
 ];
 
 const reraServices = [
-  { name: "Pre-Project Assistance", path: "/pre-project" },
-  { name: "Project Registration", path: "/registration" },
-  { name: "Agent Registration", path: "/agent-registration" },
-  { name: "Compliance & Filings", path: "/compliance" },
-  { name: "Dispute Resolution", path: "/dispute-resolution" },
-  { name: "Allottees Services", path: "/allottees" },
-  { name: "Legal Drafting", path: "/drafting" },
+  { name: "PRE-PROJECT ASSISTANCE", path: "/pre-project" },
+  { name: "AGENT SERVICES", path: "/agent-services" },
+  { name: "PROJECT SERVICES", path: "/project-services" },
+  { name: "CONSULTANCY SERVICES", path: "/consultancy" },
+  { name: "TRAINING SERVICES", path: "/training" },
+  { name: "OTHER SERVICES", path: "/other-services" },
 ];
 
 const ReraFooter = () => {

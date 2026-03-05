@@ -42,14 +42,12 @@ const officeDetails = [
 ];
 
 const services = [
-  "Project Registration",
-  "Agent Registration",
-  "Compliance & Filings",
-  "Dispute Resolution",
-  "Legal Drafting",
-  "Allottees Services",
-  "Pre-Project Advisory",
-  "Other",
+  "Pre-Project Assistance",
+  "Agent Services",
+  "Project Services",
+  "Consultancy Services",
+  "Training Services",
+  "Other Services",
 ];
 
 const ReraContact = () => {

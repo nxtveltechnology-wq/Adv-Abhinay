@@ -7,13 +7,13 @@ import {
   Gavel,
   FileText,
   ShieldCheck,
-  ScrollText,
   Building2,
   FileCheck,
   Briefcase,
   Zap,
   Heart,
   Coffee,
+  PhoneCall,
 } from "lucide-react";
 
 // Assets
@@ -341,40 +341,40 @@ export const supportTeam: Partner[] = [
 
 export const reraServices: ReraService[] = [
   {
-    icon: ScrollText,
-    title: "Project Registration",
-    desc: "Comprehensive assistance for RERA registration of real estate projects, ensuring all statutory documents and disclosures are compliant with the Act/Rules.",
-    slug: "registration",
-  },
-  {
-    icon: Users,
-    title: "Agent Registration",
-    desc: "Facilitating RERA registration for real estate agents, including renewal services and compliance advisory.",
-    slug: "agent-registration",
-  },
-  {
-    icon: FileCheck,
-    title: "Compliance & Filings",
-    desc: "Quarterly and annual compliance filings (QPR/APR), professional certificates, and financial disclosures maintenance.",
-    slug: "compliance",
-  },
-  {
-    icon: Gavel,
-    title: "Litigation Services",
-    desc: "Representation before RERA Authorities, Adjudicating Officers, and Appellate Tribunals for complaints and appeals.",
-    slug: "dispute-resolution",
-  },
-  {
-    icon: Building2,
-    title: "Promoter Advisory",
-    desc: "Strategic legal advice for developers on advertisement norms, booking rules, agreement to sale drafting, and fund utilization.",
+    icon: Lightbulb,
+    title: "PRE-PROJECT ASSISTANCE",
+    desc: "Comprehensive guidance and assistance to developers before launching a project under RERA.",
     slug: "pre-project",
   },
   {
-    icon: ShieldCheck,
-    title: "Allottee Rights",
-    desc: "Advising homebuyers on their rights, delay compensation, possession claims, and refund executions.",
-    slug: "allottees",
+    icon: Users,
+    title: "AGENT SERVICES",
+    desc: "Complete registration, compliance, and renewal solutions for real estate agents.",
+    slug: "agent-services",
+  },
+  {
+    icon: Building2,
+    title: "PROJECT SERVICES",
+    desc: "End-to-end assistance for project registration, compliance, and modifications.",
+    slug: "project-services",
+  },
+  {
+    icon: PhoneCall,
+    title: "CONSULTANCY SERVICES",
+    desc: "Expert legal consultancy for developers, agents, and buyers regarding RERA concerns.",
+    slug: "consultancy",
+  },
+  {
+    icon: BookOpen,
+    title: "TRAINING SERVICES",
+    desc: "Specialized training programs on RERA acts, compliances, and best practices.",
+    slug: "training",
+  },
+  {
+    icon: FileCheck,
+    title: "OTHER SERVICES",
+    desc: "Additional statutory support services, including annual audits for projects.",
+    slug: "other-services",
   },
 ];
 
@@ -419,16 +419,10 @@ export const reraPackages: ReraPackage[] = [
 
 export const reraServiceDetails: Record<string, ReraServiceDetail> = {
   "pre-project": {
-    title: "Pre-Project Registration Assistance",
+    title: "Pre-Project Assistance",
     description:
       "Before a project launch, thorough due diligence and documentation are critical. We assist promoters in structuring their projects to ensure seamless RERA compliance from day one, minimizing future legal risks.",
-    keyServices: [
-      "Land Title Verification & Due Diligence",
-      "Approvals & NOCs Review",
-      "Drafting of Allotment Letters & Agreements",
-      "Structuring of Project Promotion Materials",
-      "Promoter Entity Legal Structuring",
-    ],
+    keyServices: ["Pre-Project Assistance"],
     process: [
       "Initial Consultation & Document Collection",
       "Legal Vetting of Land & Approvals",
@@ -441,39 +435,16 @@ export const reraServiceDetails: Record<string, ReraServiceDetail> = {
       "Compliance Checklist",
     ],
   },
-  registration: {
-    title: "RERA Project Registration",
+  "agent-services": {
+    title: "Agent Services",
     description:
-      "Mandatory for all ongoing and new real estate projects. We handle the end-to-end registration process on the RERA portal, ensuring accurate data submission to prevent rejection or penalties.",
+      "Real Estate Agents must be registered to facilitate any transaction. We simplify the registration, renewal, and compliance processes for individuals and companies, ensuring you can operate legally.",
     keyServices: [
-      "Account Creation & Profile Management",
-      "Form A & Form B Filing",
-      "Technical & Financial Document Uploads",
-      "Declaration & Affidavit Drafting",
-      "Handling Queries from RERA Authority",
-    ],
-    process: [
-      "Data Gathering (Technical, Financial, Legal)",
-      "Drafting of Affidavits & Declarations",
-      "Online Filing on RERA Portal",
-      "Follow-up & Query Resolution",
-      "Grant of Registration Certificate",
-    ],
-    deliverables: [
-      "RERA Registration Certificate",
-      "Project Login Credentials",
-      "Filed Copy of Application",
-    ],
-  },
-  "agent-registration": {
-    title: "RERA Agent Registration",
-    description:
-      "Real Estate Agents must be registered to facilitate any transaction. We simplify the registration process for individuals and companies, ensuring you can operate legally.",
-    keyServices: [
-      "Individual & Firm Registration",
-      "Renewal of Agent Registration",
-      "Maintenance of Books & Records Advisory",
-      "Compliance with Advertisement Norms",
+      "Agent Registration",
+      "Agent Renewal",
+      "Agent Compliances",
+      "Change in Application",
+      "Withdrawal of Application",
     ],
     process: [
       "Document Verification (KYC + Business)",
@@ -482,96 +453,96 @@ export const reraServiceDetails: Record<string, ReraServiceDetail> = {
       "Certificate Issuance",
     ],
     deliverables: [
-      "Agent Registration Certificate (Form H)",
-      "Validity Tracker",
+      "Agent Registration Certificate",
+      "Compliance Trackers",
+      "Renewal Reminders",
     ],
   },
-  compliance: {
-    title: "Compliance & Filings",
+  "project-services": {
+    title: "Project Services",
     description:
-      "Post-registration, projects must adhere to strict reporting norms. We manage your ongoing statutory compliance to keep your project in good standing.",
+      "End-to-end support for real estate projects under RERA. From initial registration and quarterly compliances to modifications, extensions, and final project completion filing.",
     keyServices: [
-      "Quarterly Progress Reports (QPR)",
-      "Annual Audit Reports (Form 5)",
-      "Project Extension Applications",
-      "Change in Promoter/Project Details",
-      "Quarterly Updation of Web Page",
+      "Project Registration",
+      "Project Registration with Quarterly Compliance",
+      "RERA Project Package",
+      "Project Quarterly Compliances",
+      "Project Completion Filing",
+      "Project Extension",
+      "Project Withdrawal",
+      "Plan Modification",
+      "Change in Bank Account",
+      "Change in Project Name",
     ],
     process: [
-      "Quarterly Data Collection",
-      "Verification against Chartered Accountant Certificates",
-      "Online Upload & Status Check",
-      "Annual Audit Coordination",
-    ],
-    deliverables: ["Filed QPR Receipts", "Annual Compliance Certificate"],
-  },
-  "dispute-resolution": {
-    title: "Legal Representation & Dispute Resolution",
-    description:
-      "Expert litigation services for complaints filed before the RERA Authority, Adjudicating Officer, or Appellate Tribunal. We represent both Promoters and Allottees.",
-    keyServices: [
-      "Drafting Legal Replies to Notices",
-      "Filing Complaints (Form M / Form N)",
-      "Representation in Hearings",
-      "Filing Recalls & Restoration Applications",
-      "Execution of RERA Orders",
-    ],
-    process: [
-      "Case Merit Analysis",
-      "Drafting of Petition/Reply",
-      "Filing & Listing",
-      "Arguments & Representation",
-      "Final Order Procurement",
+      "Data Gathering (Technical, Financial, Legal)",
+      "Drafting of Affidavits & Declarations",
+      "Online Filing on RERA Portal",
+      "Follow-up & Query Resolution",
+      "Grant of Certificates & Approvals",
     ],
     deliverables: [
-      "Drafted Pleadings",
-      "Hearing Updates",
-      "Certified Copy of Orders",
+      "RERA Registration Certificate",
+      "Filed QPR Receipts",
+      "Modification/Extension Approvals",
     ],
   },
-  allottees: {
-    title: "Allottees / Buyers Services",
+  consultancy: {
+    title: "Consultancy Services",
     description:
-      "Protecting the rights of homebuyers. extensive support for issues like delayed possession, non-refund of booking amount, or deviation from sanctioned plans.",
+      "Expert legal consultancy for developers, agents, and buyers regarding all RERA concerns and interpretations of the law. Book a session to resolve your doubts.",
     keyServices: [
-      "Complaint Filing for Delay Compensation",
-      "Refund with Interest Claims",
-      "Execution of Possession Orders",
-      "Formation of Allottee Associations",
-      "Review of Builder-Buyer Agreements",
+      "Telephonic Consultancy",
+      "Video Calling Consultancy",
+      "Yearly Consultancy",
     ],
     process: [
-      "Consultation & Document Review",
-      "Legal Notice Issuance",
-      "Filing of Complaint",
-      "Legal Representation",
+      "Booking a Slot",
+      "Sharing Preliminary Queries / Documents",
+      "Consultation Session with Expert",
+      "Post-session Actionable Advice",
     ],
     deliverables: [
-      "Legal Opinion",
-      "Filed Complaint Copy",
-      "Order Execution Support",
+      "Detailed Legal Opinion",
+      "Clarity on Compliance Roadmap",
+      "Yearly Support Retainership (If applicable)",
     ],
   },
-  drafting: {
-    title: "RERA Legal Drafting",
+  training: {
+    title: "Training Services",
     description:
-      "Precision legal drafting that aligns with RERA statutes. We create robust contracts that protect your interests and stand the test of legal scrutiny.",
+      "Specialized training programs designed for real estate professionals to understand RERA acts, compliances, and best practices in sales and marketing.",
     keyServices: [
-      "Allotment Letters",
-      "Agreement to Sale (RERA Format)",
-      "Conveyance / Sale Deeds",
-      "Joint Development Agreements (JDA)",
-      "Construction Contracts",
+      "RERA Training",
+      "Sales & Marketing Training",
+      "Institutional Training",
     ],
     process: [
-      "Requirement Analysis",
-      "Drafting & Internal Vetting",
-      "Client Review & Iteration",
-      "Finalization",
+      "Needs Assessment",
+      "Customized Curriculum Development",
+      "Conducting Interactive Workshops",
+      "Feedback & Evaluation",
     ],
     deliverables: [
-      "Execute-ready Legal Agreements",
-      "Clauses Explanation Note",
+      "Training Materials & Toolkits",
+      "Certificate of Participation",
+      "Post-Training Strategy Session",
+    ],
+  },
+  "other-services": {
+    title: "Other Services",
+    description:
+      "Additional statutory support services, including annual audit reports and bespoke compliances to maintain a pristine legal standing.",
+    keyServices: ["Annual Audit Report Submission"],
+    process: [
+      "Data Collection & Coordination with CAs",
+      "Review of Financial Documents",
+      "Preparation of Annual Audit Report",
+      "Filing with RERA Authority",
+    ],
+    deliverables: [
+      "Filed Annual Audit Report",
+      "Compliance Acknowledgement Receipt",
     ],
   },
 };

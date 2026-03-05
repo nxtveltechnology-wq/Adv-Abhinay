@@ -148,33 +148,33 @@ const ReraHome = () => {
                 {[
                   {
                     ...reraServices[0],
-                    color: "bg-blue-500",
-                    path: "/registration",
-                  },
-                  {
-                    ...reraServices[1],
-                    color: "bg-green-500",
-                    path: "/agent-registration",
-                  },
-                  {
-                    ...reraServices[2],
-                    color: "bg-purple-500",
-                    path: "/compliance",
-                  },
-                  {
-                    ...reraServices[3],
-                    color: "bg-red-500",
-                    path: "/dispute-resolution",
-                  },
-                  {
-                    ...reraServices[4],
                     color: "bg-indigo-500",
                     path: "/pre-project",
                   },
                   {
+                    ...reraServices[1],
+                    color: "bg-green-500",
+                    path: "/agent-services",
+                  },
+                  {
+                    ...reraServices[2],
+                    color: "bg-blue-500",
+                    path: "/project-services",
+                  },
+                  {
+                    ...reraServices[3],
+                    color: "bg-purple-500",
+                    path: "/consultancy",
+                  },
+                  {
+                    ...reraServices[4],
+                    color: "bg-red-500",
+                    path: "/training",
+                  },
+                  {
                     ...reraServices[5],
                     color: "bg-orange-500",
-                    path: "/allottees",
+                    path: "/other-services",
                   },
                 ].map((item, i) => (
                   <Link
@@ -230,40 +230,40 @@ const ReraHome = () => {
                 {[
                   {
                     ...reraServices[0],
-                    color: "bg-blue-500",
+                    color: "bg-indigo-500",
                     angle: 270,
-                    path: "/registration",
-                  }, // Project Reg (Top)
+                    path: "/pre-project",
+                  },
                   {
                     ...reraServices[1],
                     color: "bg-green-500",
                     angle: 330,
-                    path: "/agent-registration",
-                  }, // Agent Reg (Top Right)
+                    path: "/agent-services",
+                  },
                   {
                     ...reraServices[2],
-                    color: "bg-purple-500",
+                    color: "bg-blue-500",
                     angle: 30,
-                    path: "/compliance",
-                  }, // Compliance (Bottom Right)
+                    path: "/project-services",
+                  },
                   {
                     ...reraServices[3],
-                    color: "bg-red-500",
+                    color: "bg-purple-500",
                     angle: 90,
-                    path: "/dispute-resolution",
-                  }, // Litigation (Bottom)
+                    path: "/consultancy",
+                  },
                   {
                     ...reraServices[4],
-                    color: "bg-indigo-500",
+                    color: "bg-red-500",
                     angle: 150,
-                    path: "/pre-project",
-                  }, // Promoter Advisory (Bottom Left)
+                    path: "/training",
+                  },
                   {
                     ...reraServices[5],
                     color: "bg-orange-500",
                     angle: 210,
-                    path: "/allottees",
-                  }, // Allottees (Top Left)
+                    path: "/other-services",
+                  },
                 ].map((item, index) => {
                   const angleRad = (item.angle * Math.PI) / 180;
                   const radius = 160; // Max radius
