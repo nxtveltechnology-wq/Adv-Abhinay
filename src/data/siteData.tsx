@@ -274,16 +274,7 @@ export const practiceAreas: PracticeArea[] = [
 ];
 
 export const partners: Partner[] = [
-  {
-    name: "Abhinay Priyadarshi",
-    role: "Partner",
-    designation: "Advocate, Patna High Court",
-    description:
-      "Mr. Abhinay Priyadarshi is a young and dynamic Advocate with a strong academic foundation and extensive practical experience across diverse areas of law. He graduated with a BBA LL.B. (Hons.) with specialization in Intellectual Property Rights from KIIT University and has further strengthened his academic credentials with an LL.M., while presently pursuing his Ph.D. in Law.",
-    image: "./team/Abhinay.jpeg",
-    email: "vidhitlawassociates8@gmail.com",
-    phone: "+91-7008222725",
-  },
+  
   {
     name: "Jainandra Kumar",
     role: "Partner",
@@ -293,7 +284,16 @@ export const partners: Partner[] = [
     image: "./team/Jainandra.jpeg",
     email: "vidhitlawassociates8@gmail.com",
     phone: "+91-9934652263",
-  },
+  },{
+    name: "Abhinay Priyadarshi",
+    role: "Partner",
+    designation: "Advocate, Patna High Court",
+    description:
+      "Mr. Abhinay Priyadarshi is a young and dynamic Advocate with a strong academic foundation and extensive practical experience across diverse areas of law. He graduated with a BBA LL.B. (Hons.) with specialization in Intellectual Property Rights from KIIT University and has further strengthened his academic credentials with an LL.M., while presently pursuing his Ph.D. in Law.",
+    image: "./team/Abhinay.jpeg",
+    email: "vidhitlawassociates8@gmail.com",
+    phone: "+91-7008222725",
+  }
 ];
 
 export const supportTeam: Partner[] = [

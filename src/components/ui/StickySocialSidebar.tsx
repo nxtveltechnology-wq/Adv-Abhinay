@@ -1,5 +1,5 @@
 import { useBrand } from "../../context/BrandContext";
-import { Facebook, Instagram, Phone } from "lucide-react";
+import { Linkedin, Instagram, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
@@ -31,11 +31,11 @@ const StickySocialSidebar = () => {
 
   const socials = [
     {
-      id: "facebook",
-      icon: <Facebook className="w-4 h-4 md:w-5 md:h-5 text-white" />,
-      href: socialLinks.facebook,
-      bgBase: "bg-[#3b5998]",
-      hoverBg: "hover:bg-[#2d4373]",
+      id: "linkedin",
+      icon: <Linkedin className="w-4 h-4 md:w-5 md:h-5 text-white" />,
+      href: socialLinks.linkedin,
+      bgBase: "bg-[#0077b5]",
+      hoverBg: "hover:bg-[#005582]",
     },
     {
       id: "instagram",

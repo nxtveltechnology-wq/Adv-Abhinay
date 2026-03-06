@@ -126,7 +126,7 @@ const Footer = () => {
                 href="#"
                 className="flex items-center group text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-accent transition-colors"
               >
-                Facebook{" "}
+                Instagram{" "}
                 <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

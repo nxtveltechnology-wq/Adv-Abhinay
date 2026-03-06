@@ -82,7 +82,7 @@ const ReraHome = () => {
       />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-[720px] md:min-h-[760px] flex items-center bg-slate-900 overflow-hidden pt-32 md:pt-32 pb-12 md:pb-16">
+      <section className="relative min-h-[720px] md:min-h-[760px] flex items-center bg-slate-900 overflow-hidden pt-36 md:pt-36 pb-12 md:pb-16">
         {/* Background Image with Overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"

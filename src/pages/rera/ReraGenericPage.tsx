@@ -28,7 +28,7 @@ const ReraGenericPage = () => {
   // Handle Packages Route specifically
   if (slug === "packages") {
     return (
-      <div className="pt-24 min-h-screen bg-gray-50 flex flex-col">
+      <div className="pt-32 min-h-screen bg-gray-50 flex flex-col">
         {/* Packages Content (Simpler version or component reuse strategy could be applied here)
                    For now, we render the packages section similar to Home but dedicated.
                */}
@@ -98,7 +98,7 @@ const ReraGenericPage = () => {
 
   if (!detail) {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center pt-24 bg-gray-50 text-center px-4">
+      <div className="min-h-[60vh] flex flex-col items-center justify-center pt-32 bg-gray-50 text-center px-4">
         <HelpCircle className="h-16 w-16 text-gray-300 mb-4" />
         <h2 className="text-2xl font-bold text-gray-800 mb-2">
           Service Not Found
@@ -117,7 +117,7 @@ const ReraGenericPage = () => {
   }
 
   return (
-    <div className="pt-20 min-h-screen bg-white">
+    <div className="pt-32 min-h-screen bg-white">
       {/* Dynamic Header */}
       <div className="bg-slate-900 text-white py-12 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>

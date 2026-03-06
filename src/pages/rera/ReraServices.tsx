@@ -83,7 +83,7 @@ const ReraServices = () => {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-[#0a1628] to-[#0f2448] text-white py-16 md:py-20 pt-28 md:pt-36">
+      <div className="bg-gradient-to-br from-[#0a1628] to-[#0f2448] text-white py-16 md:py-20 pt-36 md:pt-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-amber-400 text-xs uppercase tracking-widest font-semibold mb-3">

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail, ChevronRight } from "lucide-react";
+import { Menu, X, Phone, Mail, ChevronRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useBrand } from "../../../context/BrandContext";
 
@@ -12,10 +12,14 @@ interface NavLink {
 const reraNavLinks: NavLink[] = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "Services", path: "/services" },
-  { name: "Packages", path: "/packages" },
   { name: "News", path: "/blogs" },
   { name: "Contact", path: "/contact" },
+];
+
+const reraDropdownLinks: NavLink[] = [
+  { name: "Services", path: "/services" },
+  { name: "Packages", path: "/packages" },
+  { name: "RERA Act & Rules", path: "/compliance" },
 ];
 
 const ReraNavbar = () => {
@@ -23,6 +27,7 @@ const ReraNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
   const brand = useBrand();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -30,9 +35,9 @@ const ReraNavbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
+    setDropdownOpen(false);
   }, [pathname]);
 
   const isActive = (path: string) => {
@@ -40,6 +45,10 @@ const ReraNavbar = () => {
     if (path !== "/" && pathname.startsWith(path)) return true;
     return false;
   };
+
+  const isDropdownActive = reraDropdownLinks.some((link) =>
+    isActive(link.path),
+  );
 
   return (
     <nav
@@ -109,27 +118,84 @@ const ReraNavbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            {reraNavLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`relative px-4 py-2 text-[13px] uppercase tracking-wider font-bold transition-colors duration-200 rounded-sm group ${
-                  isActive(link.path)
-                    ? "text-amber-600"
-                    : "text-slate-700 hover:text-amber-600"
-                }`}
-              >
-                {link.name}
-                {/* Active underline */}
-                {isActive(link.path) && (
-                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-500 rounded-full" />
-                )}
-                {/* Hover underline */}
-                {!isActive(link.path) && (
-                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-500 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
-                )}
-              </Link>
-            ))}
+            {reraNavLinks.map((link) => {
+              if (link.name === "News") {
+                // Insert Dropdown before News
+                return (
+                  <div
+                    key="dropdown"
+                    className="relative"
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseLeave={() => setDropdownOpen(false)}
+                  >
+                    <button
+                      className={`relative px-4 py-2 text-[13px] uppercase tracking-wider font-bold transition-colors duration-200 rounded-sm group flex items-center gap-1 ${
+                        isDropdownActive
+                          ? "text-amber-600"
+                          : "text-slate-700 hover:text-amber-600"
+                      }`}
+                    >
+                      Legal & Services <ChevronDown className="h-4 w-4" />
+                      {isDropdownActive && (
+                        <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-500 rounded-full" />
+                      )}
+                      {!isDropdownActive && (
+                        <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-500 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                      )}
+                    </button>
+
+                    <AnimatePresence>
+                      {dropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 w-56 bg-white shadow-xl border border-gray-100 rounded-md py-2 z-50 overflow-hidden"
+                        >
+                          {reraDropdownLinks.map((sublink) => (
+                            <Link
+                              key={sublink.name}
+                              to={sublink.path}
+                              onClick={() => setDropdownOpen(false)}
+                              className={`block px-5 py-2.5 text-[12px] uppercase tracking-wider font-bold transition-colors ${
+                                isActive(sublink.path)
+                                  ? "text-amber-600 bg-amber-50"
+                                  : "text-slate-700 hover:text-amber-600 hover:bg-slate-50"
+                              }`}
+                            >
+                              {sublink.name}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`relative px-4 py-2 text-[13px] uppercase tracking-wider font-bold transition-colors duration-200 rounded-sm group flex items-center ${
+                    isActive(link.path)
+                      ? "text-amber-600"
+                      : "text-slate-700 hover:text-amber-600"
+                  }`}
+                >
+                  {link.name}
+                  {/* Active underline */}
+                  {isActive(link.path) && (
+                    <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-500 rounded-full" />
+                  )}
+                  {/* Hover underline */}
+                  {!isActive(link.path) && (
+                    <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-500 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                  )}
+                </Link>
+              );
+            })}
 
             {/* CTA Button */}
             <Link
@@ -169,25 +235,77 @@ const ReraNavbar = () => {
             className="lg:hidden bg-white border-t border-gray-100 shadow-xl overflow-hidden absolute w-full left-0 top-full"
           >
             <div className="px-6 py-6 space-y-2">
-              {reraNavLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-sm text-sm uppercase tracking-wider font-bold transition-colors ${
-                    isActive(link.path)
-                      ? "text-amber-600 bg-amber-50"
-                      : "text-slate-700 hover:text-amber-600 hover:bg-amber-50/50"
-                  }`}
-                >
-                  <ChevronRight
-                    className={`h-3.5 w-3.5 ${
-                      isActive(link.path) ? "text-amber-500" : "text-gray-400"
+              {reraNavLinks.map((link) => {
+                if (link.name === "News") {
+                  return (
+                    <div key="mobile-dropdown" className="space-y-2 pb-2">
+                      <div className="px-4 py-2 text-[11px] text-gray-500 uppercase tracking-widest font-bold">
+                        Legal & Services
+                      </div>
+                      {reraDropdownLinks.map((sublink) => (
+                        <Link
+                          key={sublink.name}
+                          to={sublink.path}
+                          onClick={() => setIsOpen(false)}
+                          className={`flex items-center gap-3 px-4 py-3 ml-2 rounded-sm text-sm uppercase tracking-wider font-bold transition-colors ${
+                            isActive(sublink.path)
+                              ? "text-amber-600 bg-amber-50"
+                              : "text-slate-700 hover:text-amber-600 hover:bg-amber-50/50"
+                          }`}
+                        >
+                          <ChevronRight
+                            className={`h-3.5 w-3.5 ${
+                              isActive(sublink.path)
+                                ? "text-amber-500"
+                                : "text-gray-400"
+                            }`}
+                          />
+                          {sublink.name}
+                        </Link>
+                      ))}
+                      {/* Now render the News link itself */}
+                      <Link
+                        to={link.path}
+                        onClick={() => setIsOpen(false)}
+                        className={`flex items-center gap-3 px-4 py-3 rounded-sm text-sm uppercase tracking-wider font-bold transition-colors mt-2 ${
+                          isActive(link.path)
+                            ? "text-amber-600 bg-amber-50"
+                            : "text-slate-700 hover:text-amber-600 hover:bg-amber-50/50"
+                        }`}
+                      >
+                        <ChevronRight
+                          className={`h-3.5 w-3.5 ${
+                            isActive(link.path)
+                              ? "text-amber-500"
+                              : "text-gray-400"
+                          }`}
+                        />
+                        {link.name}
+                      </Link>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-sm text-sm uppercase tracking-wider font-bold transition-colors ${
+                      isActive(link.path)
+                        ? "text-amber-600 bg-amber-50"
+                        : "text-slate-700 hover:text-amber-600 hover:bg-amber-50/50"
                     }`}
-                  />
-                  {link.name}
-                </Link>
-              ))}
+                  >
+                    <ChevronRight
+                      className={`h-3.5 w-3.5 ${
+                        isActive(link.path) ? "text-amber-500" : "text-gray-400"
+                      }`}
+                    />
+                    {link.name}
+                  </Link>
+                );
+              })}
 
               <div className="pt-4 border-t border-gray-100 mt-4">
                 <Link

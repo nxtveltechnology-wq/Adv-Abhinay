@@ -1,5 +1,5 @@
 {
-  "activeBrand": "vidhitlaw",
+  "activeBrand": "lexrera",
 
   "brands": {
     "vidhitlaw": {
@@ -20,10 +20,10 @@
       "barCouncilNote": "Bar Council of India Compliance: No solicitation intended.",
       "homeComponent": "VidhitHome",
       "socialLinks": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/vidhit-law-associates-undefined-7b26373b5/",
         "twitter": "#",
         "facebook": "#",
-        "instagram": "#"
+        "instagram": "https://www.instagram.com/vidhitlawassociates8"
       }
     },
     "lexrera": {
@@ -44,10 +44,10 @@
       "barCouncilNote": "Bar Council of India Compliance: No solicitation intended.",
       "homeComponent": "LexReraHome",
       "socialLinks": {
-        "linkedin": "#",
+        "linkedin": "https://www.linkedin.com/in/lex-rera-advisors-lex-rera-7207233b5/",
         "twitter": "#",
         "facebook": "#",
-        "instagram": "#"
+        "instagram": "https://www.instagram.com/lexreraadvisors/"
       }
     }
   }

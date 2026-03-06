@@ -31,6 +31,7 @@ const ReraServices = lazy(() => import("./pages/rera/ReraServices"));
 const ReraPackages = lazy(() => import("./pages/rera/ReraPackages"));
 const ReraContact = lazy(() => import("./pages/rera/ReraContact"));
 const ReraGenericPage = lazy(() => import("./pages/rera/ReraGenericPage"));
+const ReraCompliance = lazy(() => import("./pages/rera/ReraCompliance"));
 
 // ── Active Brand ───────────────────────────────────────────────────
 const activeBrand = brandConfig.activeBrand;
@@ -79,6 +80,7 @@ function App() {
                 <Route path="/packages" element={<ReraPackages />} />
                 <Route path="/contact" element={<ReraContact />} />
                 <Route path="/blogs" element={<Blogs />} />
+                <Route path="/compliance" element={<ReraCompliance />} />
                 <Route path="/:slug" element={<ReraGenericPage />} />
               </Route>
               <Route path="*" element={<PageNotFound />} />

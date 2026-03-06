@@ -1,14 +1,4 @@
-import {
-  Scale,
-  Award,
-  HeartHandshake,
-  Linkedin,
-  Twitter,
-  Instagram,
-  X,
-  Mail,
-  Phone,
-} from "lucide-react";
+import { Scale, Award, HeartHandshake, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   partners,
@@ -38,7 +28,7 @@ const TeamCard = ({
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
       className={`relative w-full ${
-        isPartner ? "h-[640px]" : "h-[460px]"
+        isPartner ? "h-[540px]" : "h-[380px]"
       } cursor-pointer group bg-slate-100 shadow-xl overflow-hidden rounded-2xl border border-gray-100 flex flex-col`}
       onClick={() => onClick(member)}
     >
@@ -47,7 +37,7 @@ const TeamCard = ({
         <img
           src={member.image}
           alt={member.name}
-          className="w-full h-[75%] object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+          className="w-full h-[80%] object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
         />
       </div>
 
@@ -56,10 +46,10 @@ const TeamCard = ({
         className="absolute bottom-0 left-0 right-0 bg-white transition-all duration-300"
         style={{
           clipPath: "polygon(0 15%, 100% 0, 100% 100%, 0% 100%)",
-          height: "40%",
+          height: "30%",
         }}
       >
-        <div className="pt-8 pb-8 px-4 text-center h-full flex flex-col justify-between items-center relative z-10 w-full">
+        <div className="pt-8 pb-4 px-4 text-center h-full flex flex-col justify-between items-center relative z-10 w-full">
           <div className="flex-1 flex flex-col justify-center w-full">
             <h3 className="text-xl font-medium text-slate-800 mb-1 w-full truncate">
               {member.name}
@@ -71,40 +61,7 @@ const TeamCard = ({
             </p>
           </div>
 
-          <div className="flex justify-center gap-6 text-gray-400 mt-auto">
-            {member.phone && (
-              <a
-                href={`tel:${member.phone.replace(/\s+/g, "")}`}
-                onClick={(e) => e.stopPropagation()}
-                className="hover:text-emerald-600 transition-colors"
-                title="Call"
-              >
-                <Phone size={16} />
-              </a>
-            )}
-            {member.email && (
-              <a
-                href={`mailto:${member.email}`}
-                onClick={(e) => e.stopPropagation()}
-                className="hover:text-emerald-600 transition-colors"
-                title="Email"
-              >
-                <Mail size={16} />
-              </a>
-            )}
-            <Twitter
-              size={16}
-              className="hover:text-emerald-600 transition-colors"
-            />
-            <Linkedin
-              size={16}
-              className="hover:text-emerald-600 transition-colors"
-            />
-            <Instagram
-              size={16}
-              className="hover:text-emerald-600 transition-colors"
-            />
-          </div>
+          {/* Contact options removed per user request */}
         </div>
       </div>
     </motion.div>
@@ -428,31 +385,7 @@ const Team = () => {
                   {selectedMember.description}
                 </div>
 
-                {/* Contact Information */}
-                <div className="w-full flex flex-col sm:flex-row gap-3 mt-auto border-t border-slate-100 pt-6">
-                  {selectedMember.phone && (
-                    <a
-                      href={`tel:${selectedMember.phone.replace(/\s+/g, "")}`}
-                      className="flex-1 flex items-center justify-center gap-2.5 text-sm text-slate-700 hover:text-emerald-700 transition-all bg-slate-50 hover:bg-emerald-50 py-3 px-4 rounded-xl border border-slate-200 hover:border-emerald-200"
-                    >
-                      <Phone size={18} className="text-emerald-600" />
-                      <span className="font-medium tracking-wide">
-                        {selectedMember.phone}
-                      </span>
-                    </a>
-                  )}
-                  {selectedMember.email && (
-                    <a
-                      href={`mailto:${selectedMember.email}`}
-                      className="flex-1 flex items-center justify-center gap-2.5 text-sm text-slate-700 hover:text-emerald-700 transition-all bg-slate-50 hover:bg-emerald-50 py-3 px-4 rounded-xl border border-slate-200 hover:border-emerald-200"
-                    >
-                      <Mail size={18} className="text-emerald-600" />
-                      <span className="font-medium tracking-wide truncate max-w-[200px]">
-                        Email Me
-                      </span>
-                    </a>
-                  )}
-                </div>
+                {/* Contact Information removed per user request */}
               </div>
             </motion.div>
           </motion.div>
