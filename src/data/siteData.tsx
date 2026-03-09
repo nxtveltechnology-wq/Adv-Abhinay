@@ -533,7 +533,7 @@ export const testimonials: Testimonial[] = [
     role: "Lakshya Bharti Global Infra Corporation Ltd.",
     content:
       "Vidhut Law Associates is a end to end legal services provider.  We are in real estate business and have availed services of Vidhit for land verification, deed preparation, registry, RERA filing for new project approval, QPR filings and for cases also. We recommend Vidhit to all the real estate developers.",
-    image: "./src/assets/anshu.jpeg",
+    image: "./client/anshu.jpeg",
   },
   {
     id: 2,
