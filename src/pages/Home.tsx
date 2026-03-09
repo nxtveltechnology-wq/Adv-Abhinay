@@ -26,7 +26,6 @@ const Home = () => {
 
   const banners = [bgBanner, ...heroSliderImages];
   const allTeam = [...partners, ...supportTeam];
-  const carouselItems = [...allTeam, ...allTeam, ...allTeam, ...allTeam];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -437,35 +436,31 @@ const Home = () => {
           <div className="w-24 h-1 bg-accent mx-auto"></div>
         </div>
 
-        <div className="relative w-full overflow-hidden flex whitespace-nowrap group">
-          <div className="flex animate-infinite-scroll group-hover:[animation-play-state:paused] w-max">
-            {carouselItems.map((member, index) => (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 justify-items-center">
+            {allTeam.map((member, index) => (
               <Link
                 key={index}
                 to="/team"
-                className="flex flex-col items-center mx-6 w-40 sm:w-48 transform hover:-translate-y-2 transition-transform duration-300"
+                className="flex flex-col items-center w-full max-w-[280px] transform hover:-translate-y-2 transition-transform duration-300 group"
               >
-                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg ring-4 ring-accent/10 mb-5 bg-white flex-shrink-0 flex items-end justify-center">
+                <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-white shadow-lg ring-4 ring-accent/10 mb-5 bg-white flex-shrink-0 flex items-end justify-center">
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <h3 className="text-lg font-serif font-bold text-slate-800 text-center truncate w-full group-hover:text-accent transition-colors">
+                <h3 className="text-xl font-serif font-bold text-slate-800 text-center w-full break-words group-hover:text-accent transition-colors">
                   {member.name}
                 </h3>
-                <span className="text-[11px] sm:text-xs text-accent font-bold uppercase tracking-widest text-center w-full truncate mt-1">
+                <span className="text-xs text-accent font-bold uppercase tracking-widest text-center w-full mt-2 break-words">
                   {member.role}
                 </span>
               </Link>
             ))}
           </div>
         </div>
-
-        {/* Fading Edges */}
-        <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
 
         <div className="mt-16 text-center relative z-10">
           <Link

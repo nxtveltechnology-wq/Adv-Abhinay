@@ -13,10 +13,10 @@ import { useBrand } from "../../context/BrandContext";
 const contactInfo = [
   {
     icon: Phone,
-    label: "Phone",
-    getValue: (brand: { phone: string; phoneRaw: string }) => brand.phone,
-    getHref: (brand: { phone: string; phoneRaw: string }) =>
-      `tel:${brand.phoneRaw}`,
+    label: "Mobile",
+    getValue: (brand: { phone: string; altPhone: string }) =>
+      `${brand.phone} | ${brand.altPhone}`,
+    getHref: (brand: { phoneRaw: string }) => `tel:${brand.phoneRaw}`,
   },
   {
     icon: Mail,
@@ -29,8 +29,15 @@ const contactInfo = [
 const officeDetails = [
   {
     icon: MapPin,
-    label: "Office Address",
-    value: "Darsrath Gali, Agamkuan Thana Road Kankarbagh, Patna - 800026",
+    label: "Boring Road",
+    value:
+      "House No. 9/10, Lane–2, Kasturba Path, North S.K. Puri, Boring Road, Patna – 800013",
+    href: null,
+  },
+  {
+    icon: MapPin,
+    label: "Kankarbagh",
+    value: "Dasrath Gali, Agamkuan Thana Road, Kankarbagh, Patna - 800026",
     href: null,
   },
   {
@@ -119,10 +126,12 @@ const ReraContact = () => {
             <h1 className="text-3xl md:text-5xl font-serif font-bold mb-4 leading-tight">
               Get in Touch
             </h1>
-            <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-              Have a RERA question or want to book a consultation? Fill the form
-              and our experts will get back to you within 24 hours.
-            </p>
+            <div className="text-gray-300 text-base md:text-lg leading-relaxed">
+              <p className="font-bold text-2xl text-white mb-1">
+                Lex RERA Advisors
+              </p>
+              <p>Your Complete Real Estate Regulatory Partner</p>
+            </div>
           </div>
         </div>
       </div>

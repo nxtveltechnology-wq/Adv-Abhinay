@@ -19,8 +19,12 @@ const Footer = () => {
                 className="w-48 lg:w-56 object-contain"
               />
             </Link>
-            <p className="mt-4 text-sm text-gray-400 font-medium tracking-wide">
-              {brand.tagline}
+            <p className="mt-4 text-sm text-gray-400 font-medium text-center tracking-wide">
+              All Fields, One Platform, Limitless Solutions
+            </p>
+            <p className="mt-4 text-sm italic text-center tracking-wide">
+              Supreme court, High courts, District & session courts, Family
+              Courts and Tribunals
             </p>
           </div>
 

@@ -1,77 +1,19 @@
-// import React from "react";
 import { motion } from "framer-motion";
-import {
-  FileText,
-  Download,
-  BookOpen,
-  Scale,
-  FileSignature,
-} from "lucide-react";
+import { FileText, Download } from "lucide-react";
 import SEO from "../../components/SEO";
 import { backgroundImages } from "../../data/siteData";
 
-// Import PDFs
-import RealEstateActPDF from "../../assets/rules-act/Real_Estate_Act.pdf";
-import BiharRERARulesPDF from "../../assets/rules-act/Bihar_RERA_Rules_2017.pdf";
-import RegulationEngPDF from "../../assets/rules-act/RegulationEng20022025.pdf";
-import RegulationHindiPDF from "../../assets/rules-act/Regulation-Hindi.pdf";
-import BuildingByeLawsPDF from "../../assets/rules-act/Important Points of Bihar Building Bye-laws (2014 as amended in 2022) from RERA Perspective.pdf";
-import ApartmentOwnershipActPDF from "../../assets/rules-act/Important Points of the Bihar Apartment Ownership Act, 2006 from the Perspective of RERA.pdf";
+import LandmarkJudgmentsPDF from "../../assets/rera-judgment/Land Mark Judgements.pdf";
 
-const complianceLinks = [
+const judgmentsLinks = [
   {
-    title: "Real Estate Act",
+    title: "Landmark Judgments",
     description:
-      "Download the complete Real Estate (Regulation and Development) Act, 2016.",
-    icon: Scale,
-    fileUrl: RealEstateActPDF,
-    fileName: "Real_Estate_Act.pdf",
+      "Download the compilation of Landmark Judgments under Real Estate (Regulation and Development) Act.",
+    icon: FileText,
+    fileUrl: LandmarkJudgmentsPDF,
+    fileName: "Land_Mark_Judgements.pdf",
     color: "bg-blue-500",
-  },
-  {
-    title: "Bihar RERA Rules",
-    description:
-      "Download the Bihar Real Estate (Regulation and Development) Rules, 2017.",
-    icon: BookOpen,
-    fileUrl: BiharRERARulesPDF,
-    fileName: "Bihar_RERA_Rules_2017.pdf",
-    color: "bg-green-500",
-  },
-  {
-    title: "Bihar Real Estate Regulatory Authority",
-    description:
-      "Information and guidelines regarding the Bihar Real Estate Regulatory Authority.",
-    icon: FileText,
-    fileUrl: RegulationEngPDF,
-    fileName: "RegulationEng20022025.pdf",
-    color: "bg-indigo-500",
-  },
-  {
-    title: "Regulations",
-    description:
-      "Download the official regulations and circulars issued by the authority.",
-    icon: FileSignature,
-    fileUrl: RegulationHindiPDF,
-    fileName: "Regulation-Hindi.pdf",
-    color: "bg-purple-500",
-  },
-  {
-    title: "Building Bye-laws Points",
-    description:
-      "Important Points of Bihar Building Bye-laws (2014 as amended in 2022) from RERA Perspective.",
-    icon: BookOpen,
-    fileUrl: BuildingByeLawsPDF,
-    fileName: "Important Points of Bihar Building Bye-laws.pdf",
-    color: "bg-teal-500",
-  },
-  {
-    title: "Apartment Ownership Act Points",
-    description:
-      "Important Points of the Bihar Apartment Ownership Act, 2006 from the Perspective of RERA.",
-    icon: FileText,
-    fileUrl: ApartmentOwnershipActPDF,
-    fileName: "Important Points of the Bihar Apartment Ownership Act, 2006.pdf",
-    color: "bg-rose-500",
   },
 ];
 
@@ -80,13 +22,13 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const ReraCompliance = () => {
+const ReraJudgments = () => {
   return (
     <div className="font-sans text-gray-800 bg-slate-50 min-h-screen">
       <SEO
-        title="RERA Act & Rules | Lex Rera Advisors - Bihar RERA Experts"
-        description="Download important documents including the Real Estate Act, Bihar RERA Rules, and other regulations."
-        keywords="RERA Act, Bihar RERA Rules, Real Estate Regulations, RERA Download"
+        title="RERA Judgments | Lex Rera Advisors - Bihar RERA Experts"
+        description="Download important RERA Landmark Judgments."
+        keywords="RERA Judgments, Bihar RERA Judgments, Real Estate Judgments, RERA Download"
       />
 
       {/* Hero Section */}
@@ -108,11 +50,11 @@ const ReraCompliance = () => {
               Legal Repository
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-              RERA Act & <span className="text-[#fbbf24]">Rules</span>
+              RERA <span className="text-[#fbbf24]">Judgments</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 font-light">
-              Access and download essential statutory documents, acts, and rules
-              governing the real estate sector.
+              Access and download essential Landmark Judgments governing the
+              real estate sector.
             </p>
           </motion.div>
         </div>
@@ -122,7 +64,7 @@ const ReraCompliance = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0a1e3c] mb-4">
-            Important Documents
+            Important Judgments
           </h2>
           <div className="w-20 h-1 bg-[#fbbf24] mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -132,7 +74,7 @@ const ReraCompliance = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {complianceLinks.map((link, index) => (
+          {judgmentsLinks.map((link, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -171,4 +113,4 @@ const ReraCompliance = () => {
   );
 };
 
-export default ReraCompliance;
+export default ReraJudgments;

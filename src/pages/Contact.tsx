@@ -14,11 +14,14 @@ const Contact = () => {
       <div className="bg-primary text-white pt-[120px] md:pt-[160px] pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-            Contact Us
+            Get in Touch
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl">
-            Get in touch for professional legal consultation.
-          </p>
+          <div className="text-xl text-gray-300 max-w-2xl">
+            <p className="font-bold text-2xl text-white mb-1">
+              VIDHIT Law Associates
+            </p>
+            <p>Your Trusted Legal Partner</p>
+          </div>
         </div>
       </div>
 
@@ -41,15 +44,32 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-primary mb-1">
-                    Our Offices
+                    Office Locations
                   </h4>
-                  <p className="text-gray-600">
-                    <strong>Office:</strong> Boring Road, Patna <br />
-                    <strong>Chamber – High Court:</strong> Room No. 1, Table No.
-                    2, Lawyers’ Chamber <br />
-                    <strong>Chamber – Civil Court:</strong> Table No. 4A, Main
-                    Hall, Civil Court
-                  </p>
+                  <div className="text-gray-600 space-y-3">
+                    <p>
+                      <strong>📍 Boring Road:</strong>
+                      <br />
+                      House No. 9/10, Lane–2, Kasturba Path, North S.K. Puri,
+                      <br />
+                      Boring Road, Patna – 800013
+                    </p>
+                    <p>
+                      <strong>📍 Kankarbagh:</strong>
+                      <br />
+                      Dasrath Gali, Agamkuan Thana Road,
+                      <br />
+                      Kankarbagh, Patna – 800026
+                    </p>
+                    <p>
+                      <strong>Seating Place High Court:</strong> Room No.1,
+                      Table No.2, Lawer's Association, Patna High Court
+                    </p>
+                    <p>
+                      <strong>Seating Palace Civil Court:</strong> Table No. 4A,
+                      Main Hall, Civil Court
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -58,12 +78,13 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg text-primary mb-1">Phone</h4>
-                  <p className="text-gray-600">
-                    +91 99346 52263, +91 70082 22725
-                  </p>
+                  <h4 className="font-bold text-lg text-primary mb-1">
+                    Mobile
+                  </h4>
+                  <p className="text-gray-600">9934652263 | 7008222725</p>
                   <p className="text-sm text-gray-500 mt-1">
-                    Mon-Sat, 10:00 AM - 7:00 PM
+                    Mon-Sat, 10:00 AM - 9:00 PM <br />
+                    Sunday - On Prior Appointment
                   </p>
                 </div>
               </div>

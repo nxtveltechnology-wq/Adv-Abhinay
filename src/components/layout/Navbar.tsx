@@ -36,6 +36,10 @@ const Navbar = () => {
   // Bottom Row Links
   const bottomRowLinks: NavLink[] = [
     {
+      name: "Home",
+      path: "/",
+    },
+    {
       name: "About Us",
       path: "/about",
     },

@@ -6,7 +6,6 @@ import {
   BookOpen,
   Gavel,
   FileText,
-  ShieldCheck,
   Building2,
   FileCheck,
   Briefcase,
@@ -145,82 +144,53 @@ export const coreValues: CoreValue[] = [
 
 export const practiceAreas: PracticeArea[] = [
   {
-    title:
-      "Civil and criminal litigation before Trial Courts, Appellate Courts, and High Courts",
-    desc: "Comprehensive representation in civil disputes and criminal defense across all levels of the judiciary.",
+    title: "Civil, Constitutional & Criminal Litigation",
+    desc: "Comprehensive representation in civil disputes, criminal trials, and constitutional writ jurisdictions across all forums.",
     icon: Scale,
-    backgroundImage:
-      "https://jimhalelaw.com/wp-content/uploads/2024/01/cuffed-hands-behind-back.jpg",
-  },
-  {
-    title: "Civil, Criminal & Constitutional Matters",
-    desc: "Expert legal counsel and representation in complex civil suits, criminal trials, and constitutional writ jurisdictions.",
-    icon: Shield,
     backgroundImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP2RFPMPqmcQs4iLheWx2OqMEtuHxh2NkWiQ&s",
   },
   {
-    title: "Service & Employment Law",
-    desc: "Expert handling of government service matters, employment contracts, workplace disputes, and disciplinary proceedings.",
+    title: "Election, Municipal & Representation Matters",
+    desc: "Legal support for election petitions, municipal disputes, and representation before administrative bodies.",
+    icon: BookOpen,
+    backgroundImage:
+      "https://www.livelaw.in/h-upload/2022/11/01/1500x900_441858-election-commission-of-india-eci-and-sc-1.jpg",
+  },
+  {
+    title: "Corporate & Business Laws",
+    desc: "Advisory on company law, regulatory compliance, corporate governance, and commercial transactions.",
+    icon: Building2,
+    backgroundImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1ZCFoc9vRjN54u_BKdVC07JEP41GmgorU6w&s",
+  },
+  {
+    title: "Consumer & Commercial Litigation, Arbitration & ADR",
+    desc: "Strategic resolution of complex business and consumer disputes through litigation and alternative dispute mechanisms (Mediation & Conciliation).",
+    icon: Gavel,
+    backgroundImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1XBK-vxtO3rW4GEH-X0psUzZrbe3wgB8Jbg&s",
+  },
+  {
+    title: "Contract Drafting & Agreements",
+    desc: "Meticulous drafting, vetting, and negotiation of corporate, commercial, and individual agreements.",
+    icon: FileText,
+    backgroundImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR0SKALhgWN_LUkAht1PRhj5K2TUg1_13Ghw&s",
+  },
+  {
+    title: "Service, Education & Employment Law",
+    desc: "Handling government service matters, employment contracts, and regulatory issues in the education sector.",
     icon: Users,
     backgroundImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_nYdKlrZB5SpUPgmroycLOhbdQhbBCUXbGA&s",
   },
   {
     title: "Banking, Insurance & Financial Disputes",
-    desc: "Specialized in debt recovery (DRT/DRAT), insurance claim disputes, and banking regulatory compliance matters.",
+    desc: "Specialized advocacy in debt recovery, insurance claims, and banking regulatory compliance matters.",
     icon: Briefcase,
     backgroundImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVuoSwPzSsanQU8HIx6sSpxSP2bqg-GNtFJA&s",
-  },
-  {
-    title: "Commercial Litigation & Arbitration",
-    desc: "Strategic resolution of complex business disputes through aggressive litigation and alternative dispute resolution mechanisms.",
-    icon: Gavel,
-    backgroundImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1XBK-vxtO3rW4GEH-X0psUzZrbe3wgB8Jbg&s",
-  },
-  {
-    title: "Dispute Resolution – Litigation, Arbitration & Mediation",
-    desc: "Alternative dispute resolution services providing cost-effective and timely settlement of civil and commercial conflicts.",
-    icon: Heart,
-    backgroundImage:
-      "https://lh5.googleusercontent.com/proxy/MwOSjzEZ1tTwJlJPEHmE1JOD8ZmyInlkMTFXH_6nEEda0OwvnmwiwI41SIe56ANivmGefpZGfoN6Dk_sG1SPSXapwesoZy9Na8Ui-AeASPEuvk280dimM7Uxkw",
-  },
-  {
-    title: "Corporate & Business Laws",
-    desc: "Advisory on company law, regulatory compliance, mergers & acquisitions, and corporate governance for businesses.",
-    icon: Building2,
-    backgroundImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1ZCFoc9vRjN54u_BKdVC07JEP41GmgorU6w&s",
-  },
-  {
-    title: "Labour, Industrial & Employment Relations",
-    desc: "Ensuring compliance with labour codes, handling industrial disputes, and advising on employee welfare laws.",
-    icon: Users,
-    backgroundImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDVI8PzvJOYExGe-G9HwoMP727daSf9BNQ_w&s",
-  },
-  {
-    title: "Contract Drafting & Commercial Agreements",
-    desc: "Meticulous drafting, vetting, and negotiation of commercial contracts, sale deeds, and legal agreements.",
-    icon: FileText,
-    backgroundImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR0SKALhgWN_LUkAht1PRhj5K2TUg1_13Ghw&s",
-  },
-  {
-    title: "Real Estate (RERA), Infrastructure & Project Disputes",
-    desc: "Specialized regulatory and advisory support to real estate stakeholders for compliance and dispute resolution.",
-    icon: Building2,
-    backgroundImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVuoSwPzSsanQU8HIx6sSpxSP2bqg-GNtFJA&s",
-  },
-  {
-    title: "Election Law & Representation",
-    desc: "Legal support for election petitions, representation before election commissions, and political compliance.",
-    icon: BookOpen,
-    backgroundImage:
-      "https://www.livelaw.in/h-upload/2022/11/01/1500x900_441858-election-commission-of-india-eci-and-sc-1.jpg",
   },
   {
     title: "Insolvency, Bankruptcy & Taxation",
@@ -230,51 +200,35 @@ export const practiceAreas: PracticeArea[] = [
       "https://blog.ipleaders.in/wp-content/uploads/2020/09/Bankruptcylaw-1.png",
   },
   {
-    title: "Franchising, Licensing & Distributorship Agreements",
-    desc: "Drafting and negotiating comprehensive agreements to protect business interests across supply chains and brand expansions.",
-    icon: FileCheck,
+    title: "Real Estate Litigation & RERA Advisory",
+    desc: "Comprehensive support in property disputes, Real Estate (RERA) compliance, and infrastructure matters.",
+    icon: Building2,
     backgroundImage:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800",
+      "https://goelgangadevelopments.com/wp-content/uploads/2019/08/28.jpg",
   },
   {
-    title:
-      "Intellectual Property Laws - Trademark, Patent & Copyright (Filing & Infringement)",
+    title: "Family Law & Disputes",
+    desc: "Sensitive and effective handling of divorce, child custody, maintenance, and family property settlements.",
+    icon: Heart,
+    backgroundImage:
+      "https://lh5.googleusercontent.com/proxy/MwOSjzEZ1tTwJlJPEHmE1JOD8ZmyInlkMTFXH_6nEEda0OwvnmwiwI41SIe56ANivmGefpZGfoN6Dk_sG1SPSXapwesoZy9Na8Ui-AeASPEuvk280dimM7Uxkw",
+  },
+  {
+    title: "Intellectual Property Rights",
     desc: "Protection and enforcement of trademarks, copyrights, and patents to safeguard intellectual assets.",
     icon: Lightbulb,
     backgroundImage:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu9uOgtI1wsFvwtl4QZBqeB2YcNmJKHp-Dhw&s",
   },
   {
-    title: "Education & Environment Laws",
-    desc: "Navigating legal issues in the education sector and ensuring compliance with environmental regulations.",
-    icon: BookOpen,
-    backgroundImage:
-      "https://blog.ipleaders.in/wp-content/uploads/2020/12/web_climate_law_istock-961826918_0.jpg",
-  },
-  {
-    title: "Start-ups & Emerging Businesses",
-    desc: "End-to-end legal structuring, incorporation, and advisory services tailored for startups and new ventures.",
+    title: "Environment Law, Startups & Emerging Businesses Advisory",
+    desc: "End-to-end legal structuring for startups and ensuring compliance with stringent environmental regulations.",
     icon: Zap,
     backgroundImage: "https://etimg.etb2bimg.com/photo/106867403.cms",
-  },
-  {
-    title: "EPF & Social Security Laws",
-    desc: "Expert counsel on provident fund disputes, social security compliance, and employee benefits.",
-    icon: ShieldCheck,
-    backgroundImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-ZSFi1i4Q1-zRi8R1FjWg3SKSsRrOP5ga2g&s",
-  },
-  {
-    title: "Family & Matrimonial Disputes",
-    desc: "Sensitive and effective handling of divorce, custody, maintenance, and family property settlements.",
-    icon: Users,
-    backgroundImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP2RFPMPqmcQs4iLheWx2OqMEtuHxh2NkWiQ&s",
   },
 ];
 
 export const partners: Partner[] = [
-  
   {
     name: "Jainandra Kumar",
     role: "Partner",
@@ -284,7 +238,8 @@ export const partners: Partner[] = [
     image: "./team/Jainandra.jpeg",
     email: "vidhitlawassociates8@gmail.com",
     phone: "+91-9934652263",
-  },{
+  },
+  {
     name: "Abhinay Priyadarshi",
     role: "Partner",
     designation: "Advocate, Patna High Court",
@@ -293,7 +248,7 @@ export const partners: Partner[] = [
     image: "./team/Abhinay.jpeg",
     email: "vidhitlawassociates8@gmail.com",
     phone: "+91-7008222725",
-  }
+  },
 ];
 
 export const supportTeam: Partner[] = [
@@ -574,12 +529,11 @@ export const awards: Award[] = [
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Rajesh Kumar",
-    role: "Director, Sunshine Buildtech Pvt Ltd",
+    name: "Anshu Priyadarshi",
+    role: "Lakshya Bharti Global Infra Corporation Ltd.",
     content:
-      "Vidhit Law Associates provided exceptional guidance during our complex RERA registration process. Their team is knowledgeable, responsive, and truly professional.",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces",
+      "Vidhut Law Associates is a end to end legal services provider.  We are in real estate business and have availed services of Vidhit for land verification, deed preparation, registry, RERA filing for new project approval, QPR filings and for cases also. We recommend Vidhit to all the real estate developers.",
+    image: "./src/assets/anshu.jpeg",
   },
   {
     id: 2,

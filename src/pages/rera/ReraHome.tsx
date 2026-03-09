@@ -9,8 +9,6 @@ import {
   Building2,
   Scale,
   BookOpen,
-  HelpCircle,
-  Calendar,
   Loader2,
 } from "lucide-react";
 import {
@@ -66,9 +64,11 @@ const ReraHome = () => {
       icon: FileText,
       path: "/judgments",
     },
-    { name: "Cause List", icon: Calendar, path: "/cause-list" },
-    { name: "Defaulter List", icon: HelpCircle, path: "/defaulter-list" },
-    { name: "Calculate Fees", icon: Scale, path: "/packages" },
+    {
+      name: "Calculate Fees",
+      icon: Scale,
+      path: "https://rera.bihar.gov.in/PaymentCalculator.aspx",
+    },
   ];
 
   const MotionLink = motion(Link);
@@ -466,20 +466,37 @@ const ReraHome = () => {
             Important Links
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {importantLinks.map((link, idx) => (
-              <Link
-                key={idx}
-                to={link.path}
-                className="flex flex-col items-center justify-center p-6 md:p-8 bg-white rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group border border-gray-100"
-              >
-                <div className="p-3 md:p-4 bg-gray-50 rounded-full mb-3 md:mb-4 group-hover:bg-[#fbbf24]/20 transition-colors">
-                  <link.icon className="h-6 w-6 md:h-8 md:w-8 text-gray-600 group-hover:text-[#d97706] transition-colors" />
-                </div>
-                <span className="text-center font-semibold text-xs md:text-sm text-gray-700 group-hover:text-[#0a1e3c] transition-colors">
-                  {link.name}
-                </span>
-              </Link>
-            ))}
+            {importantLinks.map((link, idx) =>
+              link.path.startsWith("http") ? (
+                <a
+                  key={idx}
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center p-6 md:p-8 bg-white rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group border border-gray-100"
+                >
+                  <div className="p-3 md:p-4 bg-gray-50 rounded-full mb-3 md:mb-4 group-hover:bg-[#fbbf24]/20 transition-colors">
+                    <link.icon className="h-6 w-6 md:h-8 md:w-8 text-gray-600 group-hover:text-[#d97706] transition-colors" />
+                  </div>
+                  <span className="text-center font-semibold text-xs md:text-sm text-gray-700 group-hover:text-[#0a1e3c] transition-colors">
+                    {link.name}
+                  </span>
+                </a>
+              ) : (
+                <Link
+                  key={idx}
+                  to={link.path}
+                  className="flex flex-col items-center justify-center p-6 md:p-8 bg-white rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group border border-gray-100"
+                >
+                  <div className="p-3 md:p-4 bg-gray-50 rounded-full mb-3 md:mb-4 group-hover:bg-[#fbbf24]/20 transition-colors">
+                    <link.icon className="h-6 w-6 md:h-8 md:w-8 text-gray-600 group-hover:text-[#d97706] transition-colors" />
+                  </div>
+                  <span className="text-center font-semibold text-xs md:text-sm text-gray-700 group-hover:text-[#0a1e3c] transition-colors">
+                    {link.name}
+                  </span>
+                </Link>
+              ),
+            )}
           </div>
         </div>
       </section>
