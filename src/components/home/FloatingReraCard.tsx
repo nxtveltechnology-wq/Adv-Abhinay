@@ -41,7 +41,7 @@ const FloatingReraCard = () => {
         {/* Link */}
         <div className="border-t border-gray-700/50 pt-6">
           <a
-            href="https://lexrera.vercel.app/"
+            href="https://lexreraadvisors.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase hover:text-[#FF8C00] transition-colors group"
