@@ -11,18 +11,18 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
           {/* Column 1: Logo */}
-          <div className="lg:col-span-1">
-            <Link to="/" className="block">
+          <div className="lg:col-span-1 flex flex-col items-center lg:items-start">
+            <Link to="/" className="inline-block">
               <img
                 src={brand.footerLogo}
                 alt={brand.footerLogoAlt}
                 className="w-48 lg:w-56 object-contain"
               />
             </Link>
-            <p className="mt-4 text-sm text-gray-400 font-medium text-center tracking-wide">
+            <p className="mt-4 text-sm text-gray-400 font-medium text-center lg:text-left tracking-wide">
               All Fields, One Platform, Limitless Solutions
             </p>
-            <p className="mt-4 text-sm italic text-center tracking-wide">
+            <p className="mt-4 text-sm italic text-center lg:text-left tracking-wide">
               Supreme court, High courts, District & session courts, Family
               Courts and Tribunals
             </p>

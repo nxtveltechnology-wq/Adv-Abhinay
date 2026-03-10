@@ -234,7 +234,7 @@ export const partners: Partner[] = [
     role: "Partner",
     designation: "Advocate, Patna High Court",
     description:
-      "JAINANDRA has  15 years of extensive experience in litigation, legal advisory, documentation, and regulatory compliance. Education:- LL.B, M.B.A.(HRM), M.COM . Practicing before the Hon’ble Patna High Court since 2011, he has successfully represented clients in matters relating to Arbitration, Consumer Protection, Negotiable Instruments Act, Civil & Criminal Writs, Bail Matters, Appeals, and allied laws.",
+      "Mr. Jainandra Kumar is a legal professional with over 15 years of extensive experience in litigation, legal advisory, documentation, and regulatory compliance. He holds LL.B., M.B.A. (HRM), and M.Com. degrees, reflecting a strong interdisciplinary academic background in law, management, and commerce. He has been practicing before the Hon’ble Patna High Court since 2011 and has successfully represented clients in a wide range of matters including Arbitration, Consumer Protection, Negotiable Instruments Act cases, Civil and Criminal Writ Petitions, Bail Matters, Appeals, and other allied legal proceedings. Mr. Kumar possesses significant expertise in drafting and vetting legal documents, including contracts, statutory notices, pleadings, deeds, agreements, and corporate documentation. His professional practice also extends to property and real estate matters, labour and service laws, corporate compliance under the Companies Act, and legal due diligence. He has been empanelled with several prominent government and statutory bodies, including the Bihar State Housing Board, Real Estate Regulatory Authority (RERA), Bihar, Bihar State Food & Civil Supplies Corporation Ltd., and the Employees’ Provident Fund Organisation (EPFO) and the Rural Development Department, Government of Bihar. In the course of his professional practice, Mr. Kumar regularly appears before the High Courts, Civil Courts, Consumer Forums, and various Tribunals, providing comprehensive legal representation and advisory services.",
     image: "./team/Jainandra.jpeg",
     email: "vidhitlawassociates8@gmail.com",
     phone: "+91-9934652263",
@@ -244,7 +244,7 @@ export const partners: Partner[] = [
     role: "Partner",
     designation: "Advocate, Patna High Court",
     description:
-      "Mr. Abhinay Priyadarshi is a young and dynamic Advocate with a strong academic foundation and extensive practical experience across diverse areas of law. He graduated with a BBA LL.B. (Hons.) with specialization in Intellectual Property Rights from KIIT University and has further strengthened his academic credentials with an LL.M., while presently pursuing his Ph.D. in Law.",
+      "Mr. Abhinay Priyadarshi is a young and dynamic Advocate with a strong academic foundation and extensive practical experience across diverse areas of law. He holds a BBA LL.B. (Hons.) with specialization in Intellectual Property Rights from KIIT University and has further strengthened his academic credentials by completing his LL.M. He is presently pursuing a Ph.D. in Law from Gopal Narayan Singh University. With over seven years of active legal practice, Mr. Priyadarshi regularly appears before the High Court, Consumer Forums, Central Administrative Tribunal (CAT), Real Estate Regulatory Authority (RERA), Labour Courts, Tribunals, and various other judicial and quasi-judicial forums. His practice spans a wide range of legal disciplines including Criminal Law, Corporate and Commercial Law, Insurance Law, Constitutional Law, Service Law, Intellectual Property Rights, Banking Law, Arbitration, Real Estate Law, Revenue matters, and Land-related disputes. He possesses substantial expertise in legal counselling, contract drafting, legal documentation, regulatory compliance, and dispute resolution, and has successfully represented clients before Courts, Tribunals, Regulatory Authorities, Commissions, and Administrative Bodies. Mr. Priyadarshi’s approach to legal practice is characterized by analytical precision, strategic thinking, and a strong commitment to safeguarding client interests through ethical, professional, and result-oriented advocacy. In recognition of his professional competence and legal acumen, he has been empanelled with prominent government and statutory bodies, including the Real Estate Regulatory Authority (RERA), Bihar, the Bihar State Legal Services Authority, and the Rural Development Department, Government of Bihar.",
     image: "./team/Abhinay.jpeg",
     email: "vidhitlawassociates8@gmail.com",
     phone: "+91-7008222725",
@@ -267,7 +267,7 @@ export const supportTeam: Partner[] = [
     role: "Associate",
     designation: "Associate",
     description:
-      "Ms. Priyanka Kumari is a bright and dynamic young lawyer with sound knowledge and practical exposure across diverse areas of law. She holds a B.A. LL.B. degree from UPES, Dehradun, and has been actively engaged in legal practice since her enrollment.",
+      "Ms. Priyanka Kumari is a bright and dynamic young lawyer with sound knowledge and practical exposure across diverse areas of law. She holds a B.A. LL.B. degree from UPES, Dehradun, and has been actively engaged in legal practice since her enrollment. She regularly appears before the High Court, Consumer Forums, Central Administrative Tribunal (CAT), various Tribunals, and other Courts, representing clients in a wide range of matters. Ms. Kumari has advised and represented numerous clients, earning recognition for her diligent approach and client-focused advocacy. Her primary practice areas include Civil and Criminal Law, Matrimonial Law, Service Law, Land Disputes, and Arbitration. She also possesses considerable experience in handling and resolving disputes through Mediation and Arbitration Centres, where her skills in negotiation and settlement have led to effective dispute resolution. Ms. Kumari is known for her professionalism, clarity in legal strategy, and commitment to delivering practical and timely legal solutions.",
     image: "./team/Priyanka.jpeg",
     email: "vikram@vidhitlaw.com",
     phone: "+91 98765 43213",
@@ -277,7 +277,7 @@ export const supportTeam: Partner[] = [
     role: "Senior Associate",
     designation: "Senior Associate",
     description:
-      "Ram Ratna Singh is an advocate with over 20 years of litigation experience. He completed his graduation and LL.B. from Magadh University and was enrolled with the Bar in 1996. He is also an Advocate-on-Record at the Patna High Court.",
+      "Ram Ratna Singh is an advocate with over 20 years of litigation experience. He completed his graduation and LL.B. from Magadh University and was enrolled with the Bar in 1996. He is also an Advocate-on-Record at the Patna High Court. His areas of practice include Civil, Criminal, Banking, and Insurance Law. He regularly appears before Civil Courts and various Tribunals and has represented several reputed companies, including Oriental Insurance and National Insurance, as counsel.",
     image: "./team/Ram-ratan.jpeg",
     email: "neha@vidhitlaw.com",
     phone: "+91 98765 43214",
@@ -287,7 +287,7 @@ export const supportTeam: Partner[] = [
     role: "Associate",
     designation: "Associate",
     description:
-      "Bishwash Vijeta  is a young and dynamic Advocate with a strong academic foundation and substantial practical experience across diverse areas of law. He completed his B.A. LL.B. (Hons.) and further enhanced his academic credentials by obtaining an LL.M. from Chanakya National Law University (CNLU). He is presently pursuing his Ph.D. in Law.",
+      "With over three years of active court practice, he regularly appears before the High Court, RERA Authorities, and various other judicial and quasi-judicial forums. His areas of practice encompass a broad range of legal disciplines, including Corporate and Commercial Law, Constitutional Law, Service Law, Arbitration, and Real Estate Law. Mr. Vijeta possesses considerable expertise in legal counselling, contract drafting, documentation, statutory compliance, and dispute resolution. His legal practice is distinguished by analytical precision, strategic thinking, and a steadfast commitment to ethical and result-oriented advocacy, consistently focused on protecting and advancing client interests.",
     image: "./team/Bishwash.jpeg",
     email: "rohan@vidhitlaw.com",
     phone: "+91 98765 43215",
@@ -529,20 +529,19 @@ export const awards: Award[] = [
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Anshu Priyadarshi",
-    role: "Lakshya Bharti Global Infra Corporation Ltd.",
+    name: "Lakshya Bharti Global Infra Corporation Ltd.",
+    role: "",
     content:
-      "Vidhut Law Associates is a end to end legal services provider.  We are in real estate business and have availed services of Vidhit for land verification, deed preparation, registry, RERA filing for new project approval, QPR filings and for cases also. We recommend Vidhit to all the real estate developers.",
-    image: "./client/anshu.jpeg",
+      "Vidhut Law Associates is a end to end legal services provider. We are in real estate business and have availed services of Vidhit for land verification, deed preparation, registry, RERA filing for new project approval, QPR filings and for cases also. We recommend Vidhit to all the real estate developers.",
+    image: "./client/lakshaya-bharti.jpeg",
   },
   {
     id: 2,
-    name: "Amit Singh",
+    name: "Anshu Priyadarshi",
     role: "Civil Contractor",
     content:
       "I was impressed by their strategic approach to my legal dispute. They not only won the case but also ensured a smooth execution of the order. Highly recommended.",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces",
+    image: "./client/anshu.jpeg",
   },
   {
     id: 3,
