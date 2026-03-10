@@ -50,7 +50,7 @@ const Navbar = () => {
       children: [
         { name: "Practice Areas", path: "/practice-areas" },
         { name: "Courts & Tribunals", path: "/courts-and-tribunals" },
-        { name: "RERA Services", path: "https://lexrera.vercel.app/" },
+        { name: "RERA Services", path: "https://lexreraadvisors.com/" },
       ],
     },
   ];
